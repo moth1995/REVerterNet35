@@ -3642,7 +3642,7 @@ public class frmWEPES : Form
 
 		this.btnClose.BackColor = SystemColors.Control;
 		Button button = this.btnClose;
-		location = new Point(264, 472);
+		location = new Point(264, 502);
 		button.Location = location;
 		this.btnClose.Name = "btnClose";
 		Button button2 = this.btnClose;
@@ -3653,7 +3653,7 @@ public class frmWEPES : Form
 
         this.btnCopyStats.BackColor = SystemColors.Control;
         button = this.btnCopyStats;
-        location = new Point(264, 502);
+        location = new Point(264, 472);
         button.Location = location;
         this.btnCopyStats.Name = "btnCopyStats";
         Button button3 = this.btnCopyStats;
