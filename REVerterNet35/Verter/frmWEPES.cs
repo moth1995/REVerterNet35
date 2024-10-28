@@ -4066,8 +4066,7 @@ Weak Foot Accuracy: {lblSecondFootAccuracy.Text}
 Weak Foot Frequency: {lblSecondFootFrequency.Text}
 
 SPECIAL ABILITIES:
-{specialAbilitiesString}
-";
+{specialAbilitiesString}";
         Clipboard.SetText(s);
     }
 }
