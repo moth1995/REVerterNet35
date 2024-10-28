@@ -3060,7 +3060,7 @@ public class Verter : Form
 		this.lblPosition.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
 		this.cmbPosition.ItemHeight = 13;
-		this.cmbPosition.Items.AddRange(new object[8] { "CB", "SB", "DMF", "CMF", "SMF", "OMF", "WF", "ST/CF" });
+		this.cmbPosition.Items.AddRange(new string[8] { "CB", "SB", "DMF", "CMF", "SMF", "OMF", "WF", "ST/CF" });
 		ComboBox comboBox = this.cmbPosition;
 		location = new Point(112, 50);
 		comboBox.Location = location;
@@ -3165,7 +3165,7 @@ public class Verter : Form
 		this.grpFM2005Stats.TabStop = false;
 		this.grpFM2005Stats.Text = "Football Manager 2005 Stats";
 		this.cmbTeamwork.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbTeamwork.Items.AddRange(new object[20]
+		this.cmbTeamwork.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3188,7 +3188,7 @@ public class Verter : Form
 		this.lblTeamwork.Text = "Teamwork";
 		this.lblTeamwork.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbPositioning.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPositioning.Items.AddRange(new object[20]
+		this.cmbPositioning.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3211,7 +3211,7 @@ public class Verter : Form
 		this.lblPositioning.Text = "Positioning";
 		this.lblPositioning.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbOffTheBall.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbOffTheBall.Items.AddRange(new object[20]
+		this.cmbOffTheBall.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3236,7 +3236,7 @@ public class Verter : Form
 		this.lblOffTheBall.Text = "Off The Ball";
 		this.lblOffTheBall.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbInfluence.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbInfluence.Items.AddRange(new object[20]
+		this.cmbInfluence.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3261,7 +3261,7 @@ public class Verter : Form
 		this.lblInfluence.Text = "Influence";
 		this.lblInfluence.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbFlair.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFlair.Items.AddRange(new object[20]
+		this.cmbFlair.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3286,7 +3286,7 @@ public class Verter : Form
 		this.lblFlair.Text = "Flair";
 		this.lblFlair.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbDetermination.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbDetermination.Items.AddRange(new object[20]
+		this.cmbDetermination.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3311,7 +3311,7 @@ public class Verter : Form
 		this.lblDetermination.Text = "Determination";
 		this.lblDetermination.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbDecisions.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbDecisions.Items.AddRange(new object[20]
+		this.cmbDecisions.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3336,7 +3336,7 @@ public class Verter : Form
 		this.lblDecisions.Text = "Decisions";
 		this.lblDecisions.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbCreativity.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbCreativity.Items.AddRange(new object[20]
+		this.cmbCreativity.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3361,7 +3361,7 @@ public class Verter : Form
 		this.lblCreativity.Text = "Creativity";
 		this.lblCreativity.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbConcentration.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbConcentration.Items.AddRange(new object[20]
+		this.cmbConcentration.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3386,7 +3386,7 @@ public class Verter : Form
 		this.lblConcentration.Text = "Concentration";
 		this.lblConcentration.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbComposure.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbComposure.Items.AddRange(new object[20]
+		this.cmbComposure.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3411,7 +3411,7 @@ public class Verter : Form
 		this.lblComposure.Text = "Composure";
 		this.lblComposure.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbPreferredFoot.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPreferredFoot.Items.AddRange(new object[5] { "Right", "Right Only", "Left", "Left Only", "Either" });
+		this.cmbPreferredFoot.Items.AddRange(new string[5] { "Right", "Right Only", "Left", "Left Only", "Either" });
 		ComboBox comboBox23 = this.cmbPreferredFoot;
 		location = new Point(408, 216);
 		comboBox23.Location = location;
@@ -3433,7 +3433,7 @@ public class Verter : Form
 		this.lblPreferredFoot.Text = "Preferred Foot";
 		this.lblPreferredFoot.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbStrength.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbStrength.Items.AddRange(new object[20]
+		this.cmbStrength.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3459,7 +3459,7 @@ public class Verter : Form
 		this.lblStrength.Text = "Strength";
 		this.lblStrength.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbStamina.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbStamina.Items.AddRange(new object[20]
+		this.cmbStamina.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3485,7 +3485,7 @@ public class Verter : Form
 		this.lblStamina.Text = "Stamina";
 		this.lblStamina.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbPace.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPace.Items.AddRange(new object[20]
+		this.cmbPace.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3499,7 +3499,7 @@ public class Verter : Form
 		comboBox30.Size = size;
 		this.cmbPace.TabIndex = 150;
 		this.cmbTechnique.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbTechnique.Items.AddRange(new object[20]
+		this.cmbTechnique.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3524,7 +3524,7 @@ public class Verter : Form
 		this.lblTechnique.Text = "Technique";
 		this.lblTechnique.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbTackling.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbTackling.Items.AddRange(new object[20]
+		this.cmbTackling.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3549,7 +3549,7 @@ public class Verter : Form
 		this.lblTackling.Text = "Tackling";
 		this.lblTackling.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbPenaltyTaking.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPenaltyTaking.Items.AddRange(new object[20]
+		this.cmbPenaltyTaking.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3574,7 +3574,7 @@ public class Verter : Form
 		this.lblPenaltyTaking.Text = "Penalty Taking";
 		this.lblPenaltyTaking.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbPassing.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPassing.Items.AddRange(new object[20]
+		this.cmbPassing.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3599,7 +3599,7 @@ public class Verter : Form
 		this.lblPassing.Text = "Passing";
 		this.lblPassing.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbMarking.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbMarking.Items.AddRange(new object[20]
+		this.cmbMarking.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3624,7 +3624,7 @@ public class Verter : Form
 		this.lblMarking.Text = "Marking";
 		this.lblMarking.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbLongThrows.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbLongThrows.Items.AddRange(new object[20]
+		this.cmbLongThrows.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3649,7 +3649,7 @@ public class Verter : Form
 		this.lblLongThrows.Text = "Long Throws";
 		this.lblLongThrows.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbLongShots.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbLongShots.Items.AddRange(new object[20]
+		this.cmbLongShots.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3674,7 +3674,7 @@ public class Verter : Form
 		this.lblLongShots.Text = "Long Shots";
 		this.lblLongShots.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbHeading.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbHeading.Items.AddRange(new object[20]
+		this.cmbHeading.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3699,7 +3699,7 @@ public class Verter : Form
 		this.lblHeading.Text = "Heading";
 		this.lblHeading.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbFreeKicks.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFreeKicks.Items.AddRange(new object[20]
+		this.cmbFreeKicks.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3724,7 +3724,7 @@ public class Verter : Form
 		this.lblFreeKicks.Text = "Free Kicks";
 		this.lblFreeKicks.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbFirstTouch.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFirstTouch.Items.AddRange(new object[20]
+		this.cmbFirstTouch.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3749,7 +3749,7 @@ public class Verter : Form
 		this.lblFirstTouch.Text = "First Touch";
 		this.lblFirstTouch.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbFinishing.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFinishing.Items.AddRange(new object[20]
+		this.cmbFinishing.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3774,7 +3774,7 @@ public class Verter : Form
 		this.lblFinishing.Text = "Finishing";
 		this.lblFinishing.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbDribbling.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbDribbling.Items.AddRange(new object[20]
+		this.cmbDribbling.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3788,7 +3788,7 @@ public class Verter : Form
 		comboBox54.Size = size;
 		this.cmbDribbling.TabIndex = 88;
 		this.cmbBravery.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbBravery.Items.AddRange(new object[20]
+		this.cmbBravery.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3813,7 +3813,7 @@ public class Verter : Form
 		this.lblBravery.Text = "Bravery";
 		this.lblBravery.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbAnticipation.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAnticipation.Items.AddRange(new object[20]
+		this.cmbAnticipation.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3849,7 +3849,7 @@ public class Verter : Form
 		this.lblAnticipation.Text = "Anticipation";
 		this.lblAnticipation.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbAggression.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAggression.Items.AddRange(new object[20]
+		this.cmbAggression.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3874,7 +3874,7 @@ public class Verter : Form
 		this.lblAggression.Text = "Aggression";
 		this.lblAggression.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbCorners.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbCorners.Items.AddRange(new object[20]
+		this.cmbCorners.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3922,7 +3922,7 @@ public class Verter : Form
 		this.lblPace.Text = "Pace";
 		this.lblPace.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbNaturalFitness.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbNaturalFitness.Items.AddRange(new object[20]
+		this.cmbNaturalFitness.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3936,7 +3936,7 @@ public class Verter : Form
 		comboBox64.Size = size;
 		this.cmbNaturalFitness.TabIndex = 148;
 		this.cmbCrossing.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbCrossing.Items.AddRange(new object[20]
+		this.cmbCrossing.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3962,7 +3962,7 @@ public class Verter : Form
 		this.lblNaturalFitness.Text = "Natural Fitness";
 		this.lblNaturalFitness.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbJumping.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbJumping.Items.AddRange(new object[20]
+		this.cmbJumping.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -3987,7 +3987,7 @@ public class Verter : Form
 		this.lblJumping.Text = "Jumping";
 		this.lblJumping.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbBalance.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbBalance.Items.AddRange(new object[20]
+		this.cmbBalance.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -4012,7 +4012,7 @@ public class Verter : Form
 		this.lblBalance.Text = "Balance";
 		this.lblBalance.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbAgility.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAgility.Items.AddRange(new object[20]
+		this.cmbAgility.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -4037,7 +4037,7 @@ public class Verter : Form
 		this.lblAgility.Text = "Agility";
 		this.lblAgility.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbAcceleration.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAcceleration.Items.AddRange(new object[20]
+		this.cmbAcceleration.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
@@ -4062,7 +4062,7 @@ public class Verter : Form
 		this.lblAcceleration.Text = "Acceleration";
 		this.lblAcceleration.TextAlign = ContentAlignment.MiddleRight;
 		this.cmbWorkRate.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbWorkRate.Items.AddRange(new object[20]
+		this.cmbWorkRate.Items.AddRange(new string[20]
 		{
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
