@@ -243,7 +243,10 @@ public class frmWEPES : Form
 	[AccessedThroughProperty("btnClose")]
 	private Button _btnClose;
 
-	[AccessedThroughProperty("lblHeading")]
+    [AccessedThroughProperty("btnCopyStats")]
+    private Button _btnCopyStats;
+
+    [AccessedThroughProperty("lblHeading")]
 	private Label _lblHeading;
 
 	[AccessedThroughProperty("lblAggressiveness")]
@@ -1045,8 +1048,28 @@ public class frmWEPES : Form
 			}
 		}
 	}
+    internal virtual Button btnCopyStats
+    {
+        get
+        {
+            return _btnCopyStats;
+        }
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        set
+        {
+            if (_btnCopyStats != null)
+            {
+                _btnCopyStats.Click -= btnCopyStats_Click;
+            }
+            _btnCopyStats = value;
+            if (_btnCopyStats != null)
+            {
+                _btnCopyStats.Click += btnCopyStats_Click;
+            }
+        }
+    }
 
-	internal virtual Label lblCooperation2
+    internal virtual Label lblCooperation2
 	{
 		get
 		{
@@ -2551,7 +2574,7 @@ public class frmWEPES : Form
 		this.lblPKKicker2 = new Label();
 		this.lblDribbler2 = new Label();
 		this.btnClose = new Button();
-		this.lblMiddleShot = new System.Windows.Forms.Label();
+        this.btnCopyStats = new Button();
         this.lblMiddleShot = new Label();
 		this.lblMiddleShot2 = new Label();
 		this.grpSpecialAbilities = new GroupBox();
@@ -3627,9 +3650,19 @@ public class frmWEPES : Form
 		button2.Size = size;
 		this.btnClose.TabIndex = 100;
 		this.btnClose.Text = "Close";
-		this.lblMiddleShot.BackColor = System.Drawing.Color.Transparent;
-		System.Windows.Forms.Label label201 = this.lblMiddleShot;
-		location = new System.Drawing.Point(144, 184);
+
+        this.btnCopyStats.BackColor = SystemColors.Control;
+        button = this.btnCopyStats;
+        location = new Point(264, 502);
+        button.Location = location;
+        this.btnCopyStats.Name = "btnCopyStats";
+        Button button3 = this.btnCopyStats;
+        size = new Size(72, 24);
+        button3.Size = size;
+        this.btnCopyStats.TabIndex = 100;
+        this.btnCopyStats.Text = "Copy Stats";
+
+
         this.lblMiddleShot.BackColor = Color.Transparent;
 		Label label201 = this.lblMiddleShot;
 		location = new Point(144, 184);
@@ -3838,7 +3871,7 @@ public class frmWEPES : Form
 		this.Controls.Add(this.grpAbilities);
 		this.Controls.Add(this.grpSpecialAbilities);
 		this.Controls.Add(this.btnClose);
-		this.Font = new System.Drawing.Font("Tahoma", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+        this.Controls.Add(this.btnCopyStats);
         this.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
 		this.FormBorderStyle = FormBorderStyle.FixedSingle;
 		this.Name = "frmWEPES";
@@ -3905,4 +3938,136 @@ public class frmWEPES : Form
 		lblMiddleShot.Text = "";
 		Hide();
 	}
+
+    private void btnCopyStats_Click(object sender, EventArgs e)
+    {
+		string foot = lblPreferredFoot.Text == "Right" || lblPreferredFoot.Text == "Either" ? "R" : "L";
+		string specialAbilitiesString = "";
+
+		if (!string.IsNullOrEmpty(lblDribbler.Text))
+		{
+            specialAbilitiesString += "* Dribbling\n";
+        }
+        if (!string.IsNullOrEmpty(lblKeepDribble.Text))
+        {
+            specialAbilitiesString += "* Tactical dribble\n";
+        }
+        if (!string.IsNullOrEmpty(lblPositioning.Text))
+        {
+            specialAbilitiesString += "* Positioning\n";
+        }
+        if (!string.IsNullOrEmpty(lblDashIn.Text))
+        {
+            specialAbilitiesString += "* Reaction\n";
+        }
+        if (!string.IsNullOrEmpty(lblCommander.Text))
+        {
+            specialAbilitiesString += "* Playmaking\n";
+        }
+        if (!string.IsNullOrEmpty(lblPasser.Text))
+        {
+            specialAbilitiesString += "* Passing\n";
+        }
+        if (!string.IsNullOrEmpty(lblStriker.Text))
+        {
+            specialAbilitiesString += "* Scoring\n";
+        }
+        if (!string.IsNullOrEmpty(lblShoot1On1.Text))
+        {
+            specialAbilitiesString += "* 1-1 Scoring\n";
+        }
+        if (!string.IsNullOrEmpty(lblHoldingUpTheBall.Text))
+        {
+            specialAbilitiesString += "* Post player\n";
+        }
+        if (!string.IsNullOrEmpty(lblLinePositioning.Text))
+        {
+            specialAbilitiesString += "* Lines\n";
+        }
+        if (!string.IsNullOrEmpty(lblMiddleShot.Text))
+        {
+            specialAbilitiesString += "* Middle shooting\n";
+        }
+        if (!string.IsNullOrEmpty(lblSidePlayer.Text))
+        {
+            specialAbilitiesString += "* Side\n";
+        }
+        if (!string.IsNullOrEmpty(lblCentrePlayer.Text))
+        {
+            specialAbilitiesString += "* Centre\n";
+        }
+        if (!string.IsNullOrEmpty(lblPKKicker.Text))
+        {
+            specialAbilitiesString += "* Penalties\n";
+        }
+        if (!string.IsNullOrEmpty(lblDirectPlay.Text))
+        {
+            specialAbilitiesString += "* 1-Touch pass\n";
+        }
+        if (!string.IsNullOrEmpty(lblOutside.Text))
+        {
+            specialAbilitiesString += "* Outside\n";
+        }
+        if (!string.IsNullOrEmpty(lblManMarking.Text))
+        {
+            specialAbilitiesString += "* Marking\n";
+        }
+        if (!string.IsNullOrEmpty(lblSliding.Text))
+        {
+            specialAbilitiesString += "* Sliding\n";
+        }
+        if (!string.IsNullOrEmpty(lblCovering.Text))
+        {
+            specialAbilitiesString += "* Covering\n";
+        }
+        if (!string.IsNullOrEmpty(lblBackLineControl.Text))
+        {
+            specialAbilitiesString += "* D-Line control\n";
+        }
+        if (!string.IsNullOrEmpty(lblLongThrow.Text))
+        {
+            specialAbilitiesString += "* Long throw\n";
+        }
+
+        string position = lblPosition.Text == "ST/CF" ? "CF" : lblPosition.Text;
+        string s = $@"Foot: {foot}
+Positions: {position}*
+
+STATS:
+Attack: {lblAttack.Text}
+Defence: {lblDefense.Text}
+Balance: {lblBodyBalance.Text}
+Stamina: {lblStamina.Text}
+Top Speed: {lblTopSpeed.Text}
+Acceleration: {lblAcceleration.Text}
+Response: {lblResponse.Text}
+Agility: {lblAgility.Text}
+Dribble Accuracy: {lblDribblePrecision.Text}
+Dribble Speed: {lblDribbleSpeed.Text}
+Short Pass Accuracy: {lblShortPassPrecision.Text}
+Short Pass Speed: {lblShortPassSpeed.Text}
+Long Pass Accuracy: {lblLongPassPrecision.Text}
+Long Pass Speed: {lblLongPassSpeed.Text}
+Shot Accuracy: {lblShotPrecision.Text}
+Shot Power: {lblShotPower.Text}
+Shot Technique: {lblShotTechnique.Text}
+Free Kick Accuracy: {lblFreeKickPrecision.Text}
+Curling: {lblBend.Text}
+Header: {lblHeading.Text}
+Jump: {lblJump.Text}
+Technique: {lblTechnique.Text}
+Aggression: {lblAggressiveness.Text}
+Mentality: {lblMentality.Text}
+Keeper Skills: {lblGoalKeeperSkill.Text}
+Teamwork: {lblCooperation.Text}
+Consistency: {lblStabilityOfPlay.Text}
+Condition/Fitness: {lblStabilityOfCondition.Text}
+Weak Foot Accuracy: {lblSecondFootAccuracy.Text}
+Weak Foot Frequency: {lblSecondFootFrequency.Text}
+
+SPECIAL ABILITIES:
+{specialAbilitiesString}
+";
+        Clipboard.SetText(s);
+    }
 }
