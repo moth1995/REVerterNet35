@@ -4067,6 +4067,9 @@ Weak Foot Frequency: {lblSecondFootFrequency.Text}
 
 SPECIAL ABILITIES:
 {specialAbilitiesString}";
+
         Clipboard.SetText(s);
+        
+		MessageBox.Show("Stats copied correctly!", "Verter - WE/PES Stats");
     }
 }
