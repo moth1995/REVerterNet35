@@ -1,4 +1,7 @@
-using System;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace REVerterNet35.Verter
@@ -160,17 +163,8 @@ namespace REVerterNet35.Verter
 
             string position = lblPosition.Text == "ST/CF" ? "CF" : lblPosition.Text;
 
-
-            string shirtName = "";
-            string[] nameParts = PlayerName.Split(new char[] { ' ' });
-            if (nameParts.Length > 0)
-            {
-                int lastIndex = nameParts.Length - 1;
-                shirtName = nameParts[lastIndex].Trim().ToUpper();
-            }
-
             string s = $@"Name: {PlayerName}
-Shirt Name: {shirtName}
+Shirt Name: {NameToShirtName(PlayerName)}
 Foot: {foot}
 Positions: {position}*
 
@@ -212,6 +206,75 @@ SPECIAL ABILITIES:
             Clipboard.SetText(s);
         
 		    MessageBox.Show("Stats copied correctly!", "Verter - WE/PES Stats");
+        }
+        public string NameToShirtName(string name)
+        {
+            string[] nameParts = name.Split(' ');
+            string lastName = nameParts[nameParts.Length - 1].ToUpper();
+
+            Dictionary<char, char> translationMap = new Dictionary<char, char>
+            {
+                {'Á', 'A'},
+                {'À', 'A'},
+                {'Â', 'A'},
+                {'Ä', 'A'},
+                {'Ã', 'A'},
+                {'É', 'E'},
+                {'È', 'E'},
+                {'Ê', 'E'},
+                {'Ë', 'E'},
+                {'Í', 'I'},
+                {'Ì', 'I'},
+                {'Î', 'I'},
+                {'Ï', 'I'},
+                {'Ó', 'O'},
+                {'Ò', 'O'},
+                {'Ô', 'O'},
+                {'Ö', 'O'},
+                {'Õ', 'O'},
+                {'Ú', 'U'},
+                {'Ù', 'U'},
+                {'Û', 'U'},
+                {'Ü', 'U'},
+                {'Ñ', 'N'},
+                {'Ç', 'C'},
+                {'Ć', 'C'},
+                {'Å', 'A'}
+            };
+
+            char[] translatedChars = new char[lastName.Length];
+            for (int i = 0; i < lastName.Length; i++)
+            {
+                char c = lastName[i];
+                translatedChars[i] = translationMap.ContainsKey(c) ? translationMap[c] : c;
+            }
+
+            string translatedLastName = new string(translatedChars);
+
+            if (translatedLastName.Length > 16)
+            {
+                translatedLastName = translatedLastName.Substring(0, 15);
+            }
+            else if (translatedLastName.Length < 5)
+            {
+                string[] charArrayToStringArray = new string[translatedLastName.Length];
+                for (int i = 0; i < translatedLastName.Length; i++)
+                {
+                    charArrayToStringArray[i] = translatedLastName[i].ToString();
+                }
+                translatedLastName = string.Join("  ", charArrayToStringArray);
+            }
+            else if (translatedLastName.Length < 9)
+            {
+                string[] charArrayToStringArray = new string[translatedLastName.Length];
+                for (int i = 0; i < translatedLastName.Length; i++)
+                {
+                    charArrayToStringArray[i] = translatedLastName[i].ToString();
+                }
+                translatedLastName = string.Join(" ", charArrayToStringArray);
+            }
+
+            return translatedLastName;
         }
     }
 }
