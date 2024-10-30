@@ -1,9 +1,6 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
-
-namespace Verter
+﻿namespace REVerterNet35.Verter
 {
-    public partial class Verter
+    public partial class frmVerter
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -108,7 +105,6 @@ namespace Verter
             // 
             // txtName
             // 
-            this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(112, 24);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(160, 21);

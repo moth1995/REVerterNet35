@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Verter
+﻿namespace REVerterNet35.Verter
 {
     partial class frmWEPES
     {

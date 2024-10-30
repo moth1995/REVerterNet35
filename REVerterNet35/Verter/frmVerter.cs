@@ -2,9 +2,9 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Verter
+namespace REVerterNet35.Verter
 {
-	public partial class Verter : Form
+	public partial class frmVerter : Form
 	{
 
 		private readonly frmWEPES frmWEPES;
@@ -723,13 +723,7 @@ namespace Verter
 
 		private readonly decimal decSTCFStarPlayer;
 
-		[STAThread]
-		public static void Main()
-		{
-			Application.Run(new Verter());
-		}
-
-		public Verter()
+		public frmVerter()
 		{
 			frmWEPES = new frmWEPES();
 			decCBAttackMax = 76m;
@@ -1137,6 +1131,7 @@ namespace Verter
 		{
 			checked
 			{
+				frmWEPES.PlayerName = txtName.Text;
 				decimal fmStatsOverall = (decimal)((cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbHeading.SelectedIndex + cmbLongShots.SelectedIndex + cmbLongThrows.SelectedIndex + cmbMarking.SelectedIndex + cmbPassing.SelectedIndex + cmbPenaltyTaking.SelectedIndex + cmbTackling.SelectedIndex + cmbTechnique.SelectedIndex + cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbCreativity.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbFlair.SelectedIndex + cmbInfluence.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPositioning.SelectedIndex + cmbTeamwork.SelectedIndex + cmbWorkRate.SelectedIndex + cmbAcceleration.SelectedIndex + cmbAgility.SelectedIndex + cmbBalance.SelectedIndex + cmbJumping.SelectedIndex + cmbNaturalFitness.SelectedIndex + cmbPace.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + 36) / 36.0);
 				int condition = (int)Math.Round(5.0 * ((double)(cmbNaturalFitness.SelectedIndex + 1) * 0.4) / 8.0 + 3.0);
 				if (condition > 7)

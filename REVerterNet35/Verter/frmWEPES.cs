@@ -1,14 +1,16 @@
 using System;
 using System.Windows.Forms;
 
-namespace Verter
+namespace REVerterNet35.Verter
 {
     public partial class frmWEPES : Form
     {
+        public string PlayerName { get; set; }
 	    public frmWEPES()
 	    {
 		    InitializeComponent();
-	    }
+            PlayerName = "";
+        }
 
 	    private void btnClose_Click(object sender, EventArgs e)
 	    {
@@ -157,7 +159,19 @@ namespace Verter
             }
 
             string position = lblPosition.Text == "ST/CF" ? "CF" : lblPosition.Text;
-            string s = $@"Foot: {foot}
+
+
+            string shirtName = "";
+            string[] nameParts = PlayerName.Split(new char[] { ' ' });
+            if (nameParts.Length > 0)
+            {
+                int lastIndex = nameParts.Length - 1;
+                shirtName = nameParts[lastIndex].Trim().ToUpper();
+            }
+
+            string s = $@"Name: {PlayerName}
+Shirt Name: {shirtName}
+Foot: {foot}
 Positions: {position}*
 
 STATS:
