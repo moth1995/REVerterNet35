@@ -1,5386 +1,2345 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.CompilerServices;
 
-namespace Verter;
-
-public class Verter : Form
+namespace Verter
 {
-	[AccessedThroughProperty("lblLongShots")]
-	private Label _lblLongShots;
-
-	[AccessedThroughProperty("cmbOffTheBall")]
-	private ComboBox _cmbOffTheBall;
-
-	[AccessedThroughProperty("lblOffTheBall")]
-	private Label _lblOffTheBall;
-
-	[AccessedThroughProperty("cmbInfluence")]
-	private ComboBox _cmbInfluence;
-
-	[AccessedThroughProperty("lblInfluence")]
-	private Label _lblInfluence;
-
-	[AccessedThroughProperty("cmbFlair")]
-	private ComboBox _cmbFlair;
-
-	[AccessedThroughProperty("lblFlair")]
-	private Label _lblFlair;
-
-	[AccessedThroughProperty("cmbDetermination")]
-	private ComboBox _cmbDetermination;
-
-	[AccessedThroughProperty("cmbAcceleration")]
-	private ComboBox _cmbAcceleration;
-
-	[AccessedThroughProperty("lblHeading")]
-	private Label _lblHeading;
-
-	[AccessedThroughProperty("cmbAgility")]
-	private ComboBox _cmbAgility;
-
-	[AccessedThroughProperty("lblDetermination")]
-	private Label _lblDetermination;
-
-	[AccessedThroughProperty("cmbDecisions")]
-	private ComboBox _cmbDecisions;
-
-	[AccessedThroughProperty("lblDecisions")]
-	private Label _lblDecisions;
-
-	[AccessedThroughProperty("cmbCreativity")]
-	private ComboBox _cmbCreativity;
-
-	[AccessedThroughProperty("lblCreativity")]
-	private Label _lblCreativity;
-
-	[AccessedThroughProperty("cmbConcentration")]
-	private ComboBox _cmbConcentration;
-
-	[AccessedThroughProperty("lblConcentration")]
-	private Label _lblConcentration;
-
-	[AccessedThroughProperty("cmbComposure")]
-	private ComboBox _cmbComposure;
-
-	[AccessedThroughProperty("lblComposure")]
-	private Label _lblComposure;
-
-	[AccessedThroughProperty("cmbBravery")]
-	private ComboBox _cmbBravery;
-
-	[AccessedThroughProperty("lblTeamwork")]
-	private Label _lblTeamwork;
-
-	[AccessedThroughProperty("cmbPositioning")]
-	private ComboBox _cmbPositioning;
-
-	[AccessedThroughProperty("grpFM2005Stats")]
-	private GroupBox _grpFM2005Stats;
-
-	[AccessedThroughProperty("cmbPosition")]
-	private ComboBox _cmbPosition;
-
-	[AccessedThroughProperty("txtName")]
-	private TextBox _txtName;
-
-	[AccessedThroughProperty("lblName")]
-	private Label _lblName;
-
-	[AccessedThroughProperty("cmbPreferredFoot")]
-	private ComboBox _cmbPreferredFoot;
-
-	[AccessedThroughProperty("cmbStrength")]
-	private ComboBox _cmbStrength;
-
-	[AccessedThroughProperty("lblStrength")]
-	private Label _lblStrength;
-
-	[AccessedThroughProperty("cmbStamina")]
-	private ComboBox _cmbStamina;
-
-	[AccessedThroughProperty("cmbPace")]
-	private ComboBox _cmbPace;
-
-	[AccessedThroughProperty("lblPace")]
-	private Label _lblPace;
-
-	[AccessedThroughProperty("cmbNaturalFitness")]
-	private ComboBox _cmbNaturalFitness;
-
-	[AccessedThroughProperty("lblNaturalFitness")]
-	private Label _lblNaturalFitness;
-
-	[AccessedThroughProperty("cmbJumping")]
-	private ComboBox _cmbJumping;
-
-	[AccessedThroughProperty("lblBravery")]
-	private Label _lblBravery;
-
-	[AccessedThroughProperty("cmbAnticipation")]
-	private ComboBox _cmbAnticipation;
-
-	[AccessedThroughProperty("lblAnticipation")]
-	private Label _lblAnticipation;
-
-	[AccessedThroughProperty("cmbWorkRate")]
-	private ComboBox _cmbWorkRate;
-
-	[AccessedThroughProperty("cmbAggression")]
-	private ComboBox _cmbAggression;
-
-	[AccessedThroughProperty("lblAggression")]
-	private Label _lblAggression;
-
-	[AccessedThroughProperty("cmbTechnique")]
-	private ComboBox _cmbTechnique;
-
-	[AccessedThroughProperty("lblPosition")]
-	private Label _lblPosition;
-
-	[AccessedThroughProperty("lblJumping")]
-	private Label _lblJumping;
-
-	[AccessedThroughProperty("lblAcceleration")]
-	private Label _lblAcceleration;
-
-	[AccessedThroughProperty("cmbTackling")]
-	private ComboBox _cmbTackling;
-
-	[AccessedThroughProperty("lblTackling")]
-	private Label _lblTackling;
-
-	[AccessedThroughProperty("lblPreferredFoot")]
-	private Label _lblPreferredFoot;
-
-	[AccessedThroughProperty("lblStamina")]
-	private Label _lblStamina;
-
-	[AccessedThroughProperty("cmbPenaltyTaking")]
-	private ComboBox _cmbPenaltyTaking;
-
-	[AccessedThroughProperty("lblPenaltyTaking")]
-	private Label _lblPenaltyTaking;
-
-	[AccessedThroughProperty("cmbPassing")]
-	private ComboBox _cmbPassing;
-
-	[AccessedThroughProperty("lblAgility")]
-	private Label _lblAgility;
-
-	[AccessedThroughProperty("lblPassing")]
-	private Label _lblPassing;
-
-	[AccessedThroughProperty("lblWorkRate")]
-	private Label _lblWorkRate;
-
-	[AccessedThroughProperty("cmbMarking")]
-	private ComboBox _cmbMarking;
-
-	[AccessedThroughProperty("lblMarking")]
-	private Label _lblMarking;
-
-	[AccessedThroughProperty("cmbBalance")]
-	private ComboBox _cmbBalance;
-
-	[AccessedThroughProperty("lblTechnique")]
-	private Label _lblTechnique;
-
-	[AccessedThroughProperty("cmbLongThrows")]
-	private ComboBox _cmbLongThrows;
-
-	[AccessedThroughProperty("lblLongThrows")]
-	private Label _lblLongThrows;
-
-	[AccessedThroughProperty("cmbLongShots")]
-	private ComboBox _cmbLongShots;
-
-	[AccessedThroughProperty("grpPlayerInformation")]
-	private GroupBox _grpPlayerInformation;
-
-	[AccessedThroughProperty("cmbHeading")]
-	private ComboBox _cmbHeading;
-
-	[AccessedThroughProperty("cmbFreeKicks")]
-	private ComboBox _cmbFreeKicks;
-
-	[AccessedThroughProperty("lblFreeKicks")]
-	private Label _lblFreeKicks;
-
-	[AccessedThroughProperty("cmbFirstTouch")]
-	private ComboBox _cmbFirstTouch;
-
-	[AccessedThroughProperty("lblPositioning")]
-	private Label _lblPositioning;
-
-	[AccessedThroughProperty("cmbTeamwork")]
-	private ComboBox _cmbTeamwork;
-
-	[AccessedThroughProperty("lblFirstTouch")]
-	private Label _lblFirstTouch;
-
-	[AccessedThroughProperty("lblBalance")]
-	private Label _lblBalance;
-
-	[AccessedThroughProperty("cmbFinishing")]
-	private ComboBox _cmbFinishing;
-
-	[AccessedThroughProperty("lblFinishing")]
-	private Label _lblFinishing;
-
-	[AccessedThroughProperty("cmbDribbling")]
-	private ComboBox _cmbDribbling;
-
-	[AccessedThroughProperty("lblDribbling")]
-	private Label _lblDribbling;
-
-	[AccessedThroughProperty("cmbCrossing")]
-	private ComboBox _cmbCrossing;
-
-	[AccessedThroughProperty("lblCrossing")]
-	private Label _lblCrossing;
-
-	[AccessedThroughProperty("cmbCorners")]
-	private ComboBox _cmbCorners;
-
-	[AccessedThroughProperty("lblCorners")]
-	private Label _lblCorners;
-
-	[AccessedThroughProperty("btnConvert")]
-	private Button _btnConvert;
-
-	[AccessedThroughProperty("btnReset")]
-	private Button _btnReset;
-
-	[AccessedThroughProperty("btnExit")]
-	private Button _btnExit;
-
-	private IContainer components;
-
-	private frmWEPES frmWEPES;
-
-	private decimal decCBAttackMax;
-
-	private decimal decCBAttackMin;
-
-	private decimal decCBDefenseMax;
-
-	private decimal decCBDefenseMin;
-
-	private decimal decCBBodyBalanceMax;
-
-	private decimal decCBBodyBalanceMin;
-
-	private decimal decCBStaminaMax;
-
-	private decimal decCBStaminaMin;
-
-	private decimal decCBTopSpeedMax;
-
-	private decimal decCBTopSpeedMin;
-
-	private decimal decCBAccelerationMax;
-
-	private decimal decCBAccelerationMin;
-
-	private decimal decCBResponseMax;
-
-	private decimal decCBResponseMin;
-
-	private decimal decCBAgilityMax;
-
-	private decimal decCBAgilityMin;
-
-	private decimal decCBDribblePrecisionMax;
-
-	private decimal decCBDribblePrecisionMin;
-
-	private decimal decCBDribbleSpeedMax;
+	public partial class Verter : Form
+	{
 
-	private decimal decCBDribbleSpeedMin;
+		private readonly frmWEPES frmWEPES;
 
-	private decimal decCBShortPassPrecisionMax;
+		private readonly decimal decCBAttackMax;
 
-	private decimal decCBShortPassPrecisionMin;
+		private readonly decimal decCBAttackMin;
 
-	private decimal decCBShortPassSpeedMax;
+		private readonly decimal decCBDefenseMax;
 
-	private decimal decCBShortPassSpeedMin;
+		private readonly decimal decCBDefenseMin;
 
-	private decimal decCBLongPassPrecisionMax;
+		private readonly decimal decCBBodyBalanceMax;
 
-	private decimal decCBLongPassPrecisionMin;
+		private readonly decimal decCBBodyBalanceMin;
 
-	private decimal decCBLongPassSpeedMax;
+		private readonly decimal decCBStaminaMax;
 
-	private decimal decCBLongPassSpeedMin;
+		private readonly decimal decCBStaminaMin;
 
-	private decimal decCBShotPrecisionMax;
+		private readonly decimal decCBTopSpeedMax;
 
-	private decimal decCBShotPrecisionMin;
+		private readonly decimal decCBTopSpeedMin;
 
-	private decimal decCBShotPowerMax;
+		private readonly decimal decCBAccelerationMax;
 
-	private decimal decCBShotPowerMin;
+		private readonly decimal decCBAccelerationMin;
 
-	private decimal decCBShotTechniqueMax;
+		private readonly decimal decCBResponseMax;
 
-	private decimal decCBShotTechniqueMin;
+		private readonly decimal decCBResponseMin;
 
-	private decimal decCBFreeKickPrecisionMax;
+		private readonly decimal decCBAgilityMax;
 
-	private decimal decCBFreeKickPrecisionMin;
+		private readonly decimal decCBAgilityMin;
 
-	private decimal decCBBendMax;
+		private readonly decimal decCBDribblePrecisionMax;
 
-	private decimal decCBBendMin;
+		private readonly decimal decCBDribblePrecisionMin;
 
-	private decimal decCBHeadingMax;
+		private readonly decimal decCBDribbleSpeedMax;
 
-	private decimal decCBHeadingMin;
+		private readonly decimal decCBDribbleSpeedMin;
 
-	private decimal decCBJumpMax;
+		private readonly decimal decCBShortPassPrecisionMax;
 
-	private decimal decCBJumpMin;
+		private readonly decimal decCBShortPassPrecisionMin;
 
-	private decimal decCBTechniqueMax;
+		private readonly decimal decCBShortPassSpeedMax;
 
-	private decimal decCBTechniqueMin;
+		private readonly decimal decCBShortPassSpeedMin;
 
-	private decimal decCBAggressivenessMax;
+		private readonly decimal decCBLongPassPrecisionMax;
 
-	private decimal decCBAggressivenessMin;
+		private readonly decimal decCBLongPassPrecisionMin;
 
-	private decimal decCBMentalityMax;
+		private readonly decimal decCBLongPassSpeedMax;
 
-	private decimal decCBMentalityMin;
+		private readonly decimal decCBLongPassSpeedMin;
 
-	private decimal decCBCooperationMax;
+		private readonly decimal decCBShotPrecisionMax;
 
-	private decimal decCBCooperationMin;
+		private readonly decimal decCBShotPrecisionMin;
 
-	private decimal decCBStarPlayer;
+		private readonly decimal decCBShotPowerMax;
 
-	private decimal decSBAttackMax;
+		private readonly decimal decCBShotPowerMin;
 
-	private decimal decSBAttackMin;
+		private readonly decimal decCBShotTechniqueMax;
 
-	private decimal decSBDefenseMax;
+		private readonly decimal decCBShotTechniqueMin;
 
-	private decimal decSBDefenseMin;
+		private readonly decimal decCBFreeKickPrecisionMax;
 
-	private decimal decSBBodyBalanceMax;
+		private readonly decimal decCBFreeKickPrecisionMin;
 
-	private decimal decSBBodyBalanceMin;
+		private readonly decimal decCBBendMax;
 
-	private decimal decSBStaminaMax;
+		private readonly decimal decCBBendMin;
 
-	private decimal decSBStaminaMin;
+		private readonly decimal decCBHeadingMax;
 
-	private decimal decSBTopSpeedMax;
+		private readonly decimal decCBHeadingMin;
 
-	private decimal decSBTopSpeedMin;
+		private readonly decimal decCBJumpMax;
 
-	private decimal decSBAccelerationMax;
+		private readonly decimal decCBJumpMin;
 
-	private decimal decSBAccelerationMin;
+		private readonly decimal decCBTechniqueMax;
 
-	private decimal decSBResponseMax;
+		private readonly decimal decCBTechniqueMin;
 
-	private decimal decSBResponseMin;
+		private readonly decimal decCBAggressivenessMax;
 
-	private decimal decSBAgilityMax;
+		private readonly decimal decCBAggressivenessMin;
 
-	private decimal decSBAgilityMin;
+		private readonly decimal decCBMentalityMax;
 
-	private decimal decSBDribblePrecisionMax;
+		private readonly decimal decCBMentalityMin;
 
-	private decimal decSBDribblePrecisionMin;
+		private readonly decimal decCBCooperationMax;
 
-	private decimal decSBDribbleSpeedMax;
+		private readonly decimal decCBCooperationMin;
 
-	private decimal decSBDribbleSpeedMin;
+		private readonly decimal decCBStarPlayer;
 
-	private decimal decSBShortPassPrecisionMax;
+		private readonly decimal decSBAttackMax;
 
-	private decimal decSBShortPassPrecisionMin;
+		private readonly decimal decSBAttackMin;
 
-	private decimal decSBShortPassSpeedMax;
+		private readonly decimal decSBDefenseMax;
 
-	private decimal decSBShortPassSpeedMin;
+		private readonly decimal decSBDefenseMin;
 
-	private decimal decSBLongPassPrecisionMax;
+		private readonly decimal decSBBodyBalanceMax;
 
-	private decimal decSBLongPassPrecisionMin;
+		private readonly decimal decSBBodyBalanceMin;
 
-	private decimal decSBLongPassSpeedMax;
+		private readonly decimal decSBStaminaMax;
 
-	private decimal decSBLongPassSpeedMin;
+		private readonly decimal decSBStaminaMin;
 
-	private decimal decSBShotPrecisionMax;
+		private readonly decimal decSBTopSpeedMax;
 
-	private decimal decSBShotPrecisionMin;
+		private readonly decimal decSBTopSpeedMin;
 
-	private decimal decSBShotPowerMax;
+		private readonly decimal decSBAccelerationMax;
 
-	private decimal decSBShotPowerMin;
+		private readonly decimal decSBAccelerationMin;
 
-	private decimal decSBShotTechniqueMax;
+		private readonly decimal decSBResponseMax;
 
-	private decimal decSBShotTechniqueMin;
+		private readonly decimal decSBResponseMin;
 
-	private decimal decSBFreeKickPrecisionMax;
+		private readonly decimal decSBAgilityMax;
 
-	private decimal decSBFreeKickPrecisionMin;
+		private readonly decimal decSBAgilityMin;
 
-	private decimal decSBBendMax;
+		private readonly decimal decSBDribblePrecisionMax;
 
-	private decimal decSBBendMin;
+		private readonly decimal decSBDribblePrecisionMin;
 
-	private decimal decSBHeadingMax;
+		private readonly decimal decSBDribbleSpeedMax;
 
-	private decimal decSBHeadingMin;
+		private readonly decimal decSBDribbleSpeedMin;
 
-	private decimal decSBJumpMax;
+		private readonly decimal decSBShortPassPrecisionMax;
 
-	private decimal decSBJumpMin;
+		private readonly decimal decSBShortPassPrecisionMin;
 
-	private decimal decSBTechniqueMax;
+		private readonly decimal decSBShortPassSpeedMax;
 
-	private decimal decSBTechniqueMin;
+		private readonly decimal decSBShortPassSpeedMin;
 
-	private decimal decSBAggressivenessMax;
+		private readonly decimal decSBLongPassPrecisionMax;
 
-	private decimal decSBAggressivenessMin;
+		private readonly decimal decSBLongPassPrecisionMin;
 
-	private decimal decSBMentalityMax;
+		private readonly decimal decSBLongPassSpeedMax;
 
-	private decimal decSBMentalityMin;
+		private readonly decimal decSBLongPassSpeedMin;
 
-	private decimal decSBCooperationMax;
+		private readonly decimal decSBShotPrecisionMax;
 
-	private decimal decSBCooperationMin;
+		private readonly decimal decSBShotPrecisionMin;
 
-	private decimal decSBStarPlayer;
+		private readonly decimal decSBShotPowerMax;
 
-	private decimal decDMFAttackMax;
+		private readonly decimal decSBShotPowerMin;
 
-	private decimal decDMFAttackMin;
+		private readonly decimal decSBShotTechniqueMax;
 
-	private decimal decDMFDefenseMax;
+		private readonly decimal decSBShotTechniqueMin;
 
-	private decimal decDMFDefenseMin;
+		private readonly decimal decSBFreeKickPrecisionMax;
 
-	private decimal decDMFBodyBalanceMax;
+		private readonly decimal decSBFreeKickPrecisionMin;
 
-	private decimal decDMFBodyBalanceMin;
+		private readonly decimal decSBBendMax;
 
-	private decimal decDMFStaminaMax;
+		private readonly decimal decSBBendMin;
 
-	private decimal decDMFStaminaMin;
+		private readonly decimal decSBHeadingMax;
 
-	private decimal decDMFTopSpeedMax;
+		private readonly decimal decSBHeadingMin;
 
-	private decimal decDMFTopSpeedMin;
+		private readonly decimal decSBJumpMax;
 
-	private decimal decDMFAccelerationMax;
+		private readonly decimal decSBJumpMin;
 
-	private decimal decDMFAccelerationMin;
+		private readonly decimal decSBTechniqueMax;
 
-	private decimal decDMFResponseMax;
+		private readonly decimal decSBTechniqueMin;
 
-	private decimal decDMFResponseMin;
+		private readonly decimal decSBAggressivenessMax;
 
-	private decimal decDMFAgilityMax;
+		private readonly decimal decSBAggressivenessMin;
 
-	private decimal decDMFAgilityMin;
+		private readonly decimal decSBMentalityMax;
 
-	private decimal decDMFDribblePrecisionMax;
+		private readonly decimal decSBMentalityMin;
 
-	private decimal decDMFDribblePrecisionMin;
+		private readonly decimal decSBCooperationMax;
 
-	private decimal decDMFDribbleSpeedMax;
+		private readonly decimal decSBCooperationMin;
 
-	private decimal decDMFDribbleSpeedMin;
+		private readonly decimal decSBStarPlayer;
 
-	private decimal decDMFShortPassPrecisionMax;
+		private readonly decimal decDMFAttackMax;
 
-	private decimal decDMFShortPassPrecisionMin;
+		private readonly decimal decDMFAttackMin;
 
-	private decimal decDMFShortPassSpeedMax;
+		private readonly decimal decDMFDefenseMax;
 
-	private decimal decDMFShortPassSpeedMin;
+		private readonly decimal decDMFDefenseMin;
 
-	private decimal decDMFLongPassPrecisionMax;
+		private readonly decimal decDMFBodyBalanceMax;
 
-	private decimal decDMFLongPassPrecisionMin;
+		private readonly decimal decDMFBodyBalanceMin;
 
-	private decimal decDMFLongPassSpeedMax;
+		private readonly decimal decDMFStaminaMax;
 
-	private decimal decDMFLongPassSpeedMin;
+		private readonly decimal decDMFStaminaMin;
 
-	private decimal decDMFShotPrecisionMax;
+		private readonly decimal decDMFTopSpeedMax;
 
-	private decimal decDMFShotPrecisionMin;
+		private readonly decimal decDMFTopSpeedMin;
 
-	private decimal decDMFShotPowerMax;
+		private readonly decimal decDMFAccelerationMax;
 
-	private decimal decDMFShotPowerMin;
+		private readonly decimal decDMFAccelerationMin;
 
-	private decimal decDMFShotTechniqueMax;
+		private readonly decimal decDMFResponseMax;
 
-	private decimal decDMFShotTechniqueMin;
+		private readonly decimal decDMFResponseMin;
 
-	private decimal decDMFFreeKickPrecisionMax;
+		private readonly decimal decDMFAgilityMax;
 
-	private decimal decDMFFreeKickPrecisionMin;
+		private readonly decimal decDMFAgilityMin;
 
-	private decimal decDMFBendMax;
+		private readonly decimal decDMFDribblePrecisionMax;
 
-	private decimal decDMFBendMin;
+		private readonly decimal decDMFDribblePrecisionMin;
 
-	private decimal decDMFHeadingMax;
+		private readonly decimal decDMFDribbleSpeedMax;
 
-	private decimal decDMFHeadingMin;
+		private readonly decimal decDMFDribbleSpeedMin;
 
-	private decimal decDMFJumpMax;
+		private readonly decimal decDMFShortPassPrecisionMax;
 
-	private decimal decDMFJumpMin;
+		private readonly decimal decDMFShortPassPrecisionMin;
 
-	private decimal decDMFTechniqueMax;
+		private readonly decimal decDMFShortPassSpeedMax;
 
-	private decimal decDMFTechniqueMin;
+		private readonly decimal decDMFShortPassSpeedMin;
 
-	private decimal decDMFAggressivenessMax;
+		private readonly decimal decDMFLongPassPrecisionMax;
 
-	private decimal decDMFAggressivenessMin;
+		private readonly decimal decDMFLongPassPrecisionMin;
 
-	private decimal decDMFMentalityMax;
+		private readonly decimal decDMFLongPassSpeedMax;
 
-	private decimal decDMFMentalityMin;
+		private readonly decimal decDMFLongPassSpeedMin;
 
-	private decimal decDMFCooperationMax;
+		private readonly decimal decDMFShotPrecisionMax;
 
-	private decimal decDMFCooperationMin;
+		private readonly decimal decDMFShotPrecisionMin;
 
-	private decimal decDMFStarPlayer;
+		private readonly decimal decDMFShotPowerMax;
 
-	private decimal decSMFAttackMax;
+		private readonly decimal decDMFShotPowerMin;
 
-	private decimal decSMFAttackMin;
+		private readonly decimal decDMFShotTechniqueMax;
 
-	private decimal decSMFDefenseMax;
+		private readonly decimal decDMFShotTechniqueMin;
 
-	private decimal decSMFDefenseMin;
+		private readonly decimal decDMFFreeKickPrecisionMax;
 
-	private decimal decSMFBodyBalanceMax;
+		private readonly decimal decDMFFreeKickPrecisionMin;
 
-	private decimal decSMFBodyBalanceMin;
+		private readonly decimal decDMFBendMax;
 
-	private decimal decSMFStaminaMax;
+		private readonly decimal decDMFBendMin;
 
-	private decimal decSMFStaminaMin;
+		private readonly decimal decDMFHeadingMax;
 
-	private decimal decSMFTopSpeedMax;
+		private readonly decimal decDMFHeadingMin;
 
-	private decimal decSMFTopSpeedMin;
+		private readonly decimal decDMFJumpMax;
 
-	private decimal decSMFAccelerationMax;
+		private readonly decimal decDMFJumpMin;
 
-	private decimal decSMFAccelerationMin;
+		private readonly decimal decDMFTechniqueMax;
 
-	private decimal decSMFResponseMax;
+		private readonly decimal decDMFTechniqueMin;
 
-	private decimal decSMFResponseMin;
+		private readonly decimal decDMFAggressivenessMax;
 
-	private decimal decSMFAgilityMax;
+		private readonly decimal decDMFAggressivenessMin;
 
-	private decimal decSMFAgilityMin;
+		private readonly decimal decDMFMentalityMax;
 
-	private decimal decSMFDribblePrecisionMax;
+		private readonly decimal decDMFMentalityMin;
 
-	private decimal decSMFDribblePrecisionMin;
+		private readonly decimal decDMFCooperationMax;
 
-	private decimal decSMFDribbleSpeedMax;
+		private readonly decimal decDMFCooperationMin;
 
-	private decimal decSMFDribbleSpeedMin;
+		private readonly decimal decDMFStarPlayer;
 
-	private decimal decSMFShortPassPrecisionMax;
+		private readonly decimal decSMFAttackMax;
 
-	private decimal decSMFShortPassPrecisionMin;
+		private readonly decimal decSMFAttackMin;
 
-	private decimal decSMFShortPassSpeedMax;
+		private readonly decimal decSMFDefenseMax;
 
-	private decimal decSMFShortPassSpeedMin;
+		private readonly decimal decSMFDefenseMin;
 
-	private decimal decSMFLongPassPrecisionMax;
+		private readonly decimal decSMFBodyBalanceMax;
 
-	private decimal decSMFLongPassPrecisionMin;
+		private readonly decimal decSMFBodyBalanceMin;
 
-	private decimal decSMFLongPassSpeedMax;
+		private readonly decimal decSMFStaminaMax;
 
-	private decimal decSMFLongPassSpeedMin;
+		private readonly decimal decSMFStaminaMin;
 
-	private decimal decSMFShotPrecisionMax;
+		private readonly decimal decSMFTopSpeedMax;
 
-	private decimal decSMFShotPrecisionMin;
+		private readonly decimal decSMFTopSpeedMin;
 
-	private decimal decSMFShotPowerMax;
+		private readonly decimal decSMFAccelerationMax;
 
-	private decimal decSMFShotPowerMin;
+		private readonly decimal decSMFAccelerationMin;
 
-	private decimal decSMFShotTechniqueMax;
+		private readonly decimal decSMFResponseMax;
 
-	private decimal decSMFShotTechniqueMin;
+		private readonly decimal decSMFResponseMin;
 
-	private decimal decSMFFreeKickPrecisionMax;
+		private readonly decimal decSMFAgilityMax;
 
-	private decimal decSMFFreeKickPrecisionMin;
+		private readonly decimal decSMFAgilityMin;
 
-	private decimal decSMFBendMax;
+		private readonly decimal decSMFDribblePrecisionMax;
 
-	private decimal decSMFBendMin;
+		private readonly decimal decSMFDribblePrecisionMin;
 
-	private decimal decSMFHeadingMax;
+		private readonly decimal decSMFDribbleSpeedMax;
 
-	private decimal decSMFHeadingMin;
+		private readonly decimal decSMFDribbleSpeedMin;
 
-	private decimal decSMFJumpMax;
+		private readonly decimal decSMFShortPassPrecisionMax;
 
-	private decimal decSMFJumpMin;
+		private readonly decimal decSMFShortPassPrecisionMin;
 
-	private decimal decSMFTechniqueMax;
+		private readonly decimal decSMFShortPassSpeedMax;
 
-	private decimal decSMFTechniqueMin;
+		private readonly decimal decSMFShortPassSpeedMin;
 
-	private decimal decSMFAggressivenessMax;
+		private readonly decimal decSMFLongPassPrecisionMax;
 
-	private decimal decSMFAggressivenessMin;
+		private readonly decimal decSMFLongPassPrecisionMin;
 
-	private decimal decSMFMentalityMax;
+		private readonly decimal decSMFLongPassSpeedMax;
 
-	private decimal decSMFMentalityMin;
+		private readonly decimal decSMFLongPassSpeedMin;
 
-	private decimal decSMFCooperationMax;
+		private readonly decimal decSMFShotPrecisionMax;
 
-	private decimal decSMFCooperationMin;
+		private readonly decimal decSMFShotPrecisionMin;
 
-	private decimal decSMFStarPlayer;
+		private readonly decimal decSMFShotPowerMax;
 
-	private decimal decOMFAttackMax;
+		private readonly decimal decSMFShotPowerMin;
 
-	private decimal decOMFAttackMin;
+		private readonly decimal decSMFShotTechniqueMax;
 
-	private decimal decOMFDefenseMax;
+		private readonly decimal decSMFShotTechniqueMin;
 
-	private decimal decOMFDefenseMin;
+		private readonly decimal decSMFFreeKickPrecisionMax;
 
-	private decimal decOMFBodyBalanceMax;
+		private readonly decimal decSMFFreeKickPrecisionMin;
 
-	private decimal decOMFBodyBalanceMin;
+		private readonly decimal decSMFBendMax;
 
-	private decimal decOMFStaminaMax;
+		private readonly decimal decSMFBendMin;
 
-	private decimal decOMFStaminaMin;
+		private readonly decimal decSMFHeadingMax;
 
-	private decimal decOMFTopSpeedMax;
+		private readonly decimal decSMFHeadingMin;
 
-	private decimal decOMFTopSpeedMin;
+		private readonly decimal decSMFJumpMax;
 
-	private decimal decOMFAccelerationMax;
+		private readonly decimal decSMFJumpMin;
 
-	private decimal decOMFAccelerationMin;
+		private readonly decimal decSMFTechniqueMax;
 
-	private decimal decOMFResponseMax;
+		private readonly decimal decSMFTechniqueMin;
 
-	private decimal decOMFResponseMin;
+		private readonly decimal decSMFAggressivenessMax;
 
-	private decimal decOMFAgilityMax;
+		private readonly decimal decSMFAggressivenessMin;
 
-	private decimal decOMFAgilityMin;
+		private readonly decimal decSMFMentalityMax;
 
-	private decimal decOMFDribblePrecisionMax;
+		private readonly decimal decSMFMentalityMin;
 
-	private decimal decOMFDribblePrecisionMin;
+		private readonly decimal decSMFCooperationMax;
 
-	private decimal decOMFDribbleSpeedMax;
+		private readonly decimal decSMFCooperationMin;
 
-	private decimal decOMFDribbleSpeedMin;
+		private readonly decimal decSMFStarPlayer;
 
-	private decimal decOMFShortPassPrecisionMax;
+		private readonly decimal decOMFAttackMax;
 
-	private decimal decOMFShortPassPrecisionMin;
+		private readonly decimal decOMFAttackMin;
 
-	private decimal decOMFShortPassSpeedMax;
+		private readonly decimal decOMFDefenseMax;
 
-	private decimal decOMFShortPassSpeedMin;
+		private readonly decimal decOMFDefenseMin;
 
-	private decimal decOMFLongPassPrecisionMax;
+		private readonly decimal decOMFBodyBalanceMax;
 
-	private decimal decOMFLongPassPrecisionMin;
+		private readonly decimal decOMFBodyBalanceMin;
 
-	private decimal decOMFLongPassSpeedMax;
+		private readonly decimal decOMFStaminaMax;
 
-	private decimal decOMFLongPassSpeedMin;
+		private readonly decimal decOMFStaminaMin;
 
-	private decimal decOMFShotPrecisionMax;
+		private readonly decimal decOMFTopSpeedMax;
 
-	private decimal decOMFShotPrecisionMin;
+		private readonly decimal decOMFTopSpeedMin;
 
-	private decimal decOMFShotPowerMax;
+		private readonly decimal decOMFAccelerationMax;
 
-	private decimal decOMFShotPowerMin;
+		private readonly decimal decOMFAccelerationMin;
 
-	private decimal decOMFShotTechniqueMax;
+		private readonly decimal decOMFResponseMax;
 
-	private decimal decOMFShotTechniqueMin;
+		private readonly decimal decOMFResponseMin;
 
-	private decimal decOMFFreeKickPrecisionMax;
+		private readonly decimal decOMFAgilityMax;
 
-	private decimal decOMFFreeKickPrecisionMin;
+		private readonly decimal decOMFAgilityMin;
 
-	private decimal decOMFBendMax;
+		private readonly decimal decOMFDribblePrecisionMax;
 
-	private decimal decOMFBendMin;
+		private readonly decimal decOMFDribblePrecisionMin;
 
-	private decimal decOMFHeadingMax;
+		private readonly decimal decOMFDribbleSpeedMax;
 
-	private decimal decOMFHeadingMin;
+		private readonly decimal decOMFDribbleSpeedMin;
 
-	private decimal decOMFJumpMax;
+		private readonly decimal decOMFShortPassPrecisionMax;
 
-	private decimal decOMFJumpMin;
+		private readonly decimal decOMFShortPassPrecisionMin;
 
-	private decimal decOMFTechniqueMax;
+		private readonly decimal decOMFShortPassSpeedMax;
 
-	private decimal decOMFTechniqueMin;
+		private readonly decimal decOMFShortPassSpeedMin;
 
-	private decimal decOMFAggressivenessMax;
+		private readonly decimal decOMFLongPassPrecisionMax;
 
-	private decimal decOMFAggressivenessMin;
+		private readonly decimal decOMFLongPassPrecisionMin;
 
-	private decimal decOMFMentalityMax;
+		private readonly decimal decOMFLongPassSpeedMax;
 
-	private decimal decOMFMentalityMin;
+		private readonly decimal decOMFLongPassSpeedMin;
 
-	private decimal decOMFCooperationMax;
+		private readonly decimal decOMFShotPrecisionMax;
 
-	private decimal decOMFCooperationMin;
+		private readonly decimal decOMFShotPrecisionMin;
 
-	private decimal decOMFStarPlayer;
+		private readonly decimal decOMFShotPowerMax;
 
-	private decimal decWFAttackMax;
+		private readonly decimal decOMFShotPowerMin;
 
-	private decimal decWFAttackMin;
+		private readonly decimal decOMFShotTechniqueMax;
 
-	private decimal decWFDefenseMax;
+		private readonly decimal decOMFShotTechniqueMin;
 
-	private decimal decWFDefenseMin;
+		private readonly decimal decOMFFreeKickPrecisionMax;
 
-	private decimal decWFBodyBalanceMax;
+		private readonly decimal decOMFFreeKickPrecisionMin;
 
-	private decimal decWFBodyBalanceMin;
+		private readonly decimal decOMFBendMax;
 
-	private decimal decWFStaminaMax;
+		private readonly decimal decOMFBendMin;
 
-	private decimal decWFStaminaMin;
+		private readonly decimal decOMFHeadingMax;
 
-	private decimal decWFTopSpeedMax;
+		private readonly decimal decOMFHeadingMin;
 
-	private decimal decWFTopSpeedMin;
+		private readonly decimal decOMFJumpMax;
 
-	private decimal decWFAccelerationMax;
+		private readonly decimal decOMFJumpMin;
 
-	private decimal decWFAccelerationMin;
+		private readonly decimal decOMFTechniqueMax;
 
-	private decimal decWFResponseMax;
+		private readonly decimal decOMFTechniqueMin;
 
-	private decimal decWFResponseMin;
+		private readonly decimal decOMFAggressivenessMax;
 
-	private decimal decWFAgilityMax;
+		private readonly decimal decOMFAggressivenessMin;
 
-	private decimal decWFAgilityMin;
+		private readonly decimal decOMFMentalityMax;
 
-	private decimal decWFDribblePrecisionMax;
+		private readonly decimal decOMFMentalityMin;
 
-	private decimal decWFDribblePrecisionMin;
+		private readonly decimal decOMFCooperationMax;
 
-	private decimal decWFDribbleSpeedMax;
+		private readonly decimal decOMFCooperationMin;
 
-	private decimal decWFDribbleSpeedMin;
+		private readonly decimal decOMFStarPlayer;
 
-	private decimal decWFShortPassPrecisionMax;
+		private readonly decimal decWFAttackMax;
 
-	private decimal decWFShortPassPrecisionMin;
+		private readonly decimal decWFAttackMin;
 
-	private decimal decWFShortPassSpeedMax;
+		private readonly decimal decWFDefenseMax;
 
-	private decimal decWFShortPassSpeedMin;
+		private readonly decimal decWFDefenseMin;
 
-	private decimal decWFLongPassPrecisionMax;
+		private readonly decimal decWFBodyBalanceMax;
 
-	private decimal decWFLongPassPrecisionMin;
+		private readonly decimal decWFBodyBalanceMin;
 
-	private decimal decWFLongPassSpeedMax;
+		private readonly decimal decWFStaminaMax;
 
-	private decimal decWFLongPassSpeedMin;
+		private readonly decimal decWFStaminaMin;
 
-	private decimal decWFShotPrecisionMax;
+		private readonly decimal decWFTopSpeedMax;
 
-	private decimal decWFShotPrecisionMin;
+		private readonly decimal decWFTopSpeedMin;
 
-	private decimal decWFShotPowerMax;
+		private readonly decimal decWFAccelerationMax;
 
-	private decimal decWFShotPowerMin;
+		private readonly decimal decWFAccelerationMin;
 
-	private decimal decWFShotTechniqueMax;
+		private readonly decimal decWFResponseMax;
 
-	private decimal decWFShotTechniqueMin;
+		private readonly decimal decWFResponseMin;
 
-	private decimal decWFFreeKickPrecisionMax;
+		private readonly decimal decWFAgilityMax;
 
-	private decimal decWFFreeKickPrecisionMin;
+		private readonly decimal decWFAgilityMin;
 
-	private decimal decWFBendMax;
+		private readonly decimal decWFDribblePrecisionMax;
 
-	private decimal decWFBendMin;
+		private readonly decimal decWFDribblePrecisionMin;
 
-	private decimal decWFHeadingMax;
+		private readonly decimal decWFDribbleSpeedMax;
 
-	private decimal decWFHeadingMin;
+		private readonly decimal decWFDribbleSpeedMin;
 
-	private decimal decWFJumpMax;
+		private readonly decimal decWFShortPassPrecisionMax;
 
-	private decimal decWFJumpMin;
+		private readonly decimal decWFShortPassPrecisionMin;
 
-	private decimal decWFTechniqueMax;
+		private readonly decimal decWFShortPassSpeedMax;
 
-	private decimal decWFTechniqueMin;
+		private readonly decimal decWFShortPassSpeedMin;
 
-	private decimal decWFAggressivenessMax;
+		private readonly decimal decWFLongPassPrecisionMax;
 
-	private decimal decWFAggressivenessMin;
+		private readonly decimal decWFLongPassPrecisionMin;
 
-	private decimal decWFMentalityMax;
+		private readonly decimal decWFLongPassSpeedMax;
 
-	private decimal decWFMentalityMin;
+		private readonly decimal decWFLongPassSpeedMin;
 
-	private decimal decWFCooperationMax;
+		private readonly decimal decWFShotPrecisionMax;
 
-	private decimal decWFCooperationMin;
+		private readonly decimal decWFShotPrecisionMin;
 
-	private decimal decWFStarPlayer;
+		private readonly decimal decWFShotPowerMax;
 
-	private decimal decSTCFAttackMax;
+		private readonly decimal decWFShotPowerMin;
 
-	private decimal decSTCFAttackMin;
+		private readonly decimal decWFShotTechniqueMax;
 
-	private decimal decSTCFDefenseMax;
+		private readonly decimal decWFShotTechniqueMin;
 
-	private decimal decSTCFDefenseMin;
+		private readonly decimal decWFFreeKickPrecisionMax;
 
-	private decimal decSTCFBodyBalanceMax;
+		private readonly decimal decWFFreeKickPrecisionMin;
 
-	private decimal decSTCFBodyBalanceMin;
+		private readonly decimal decWFBendMax;
 
-	private decimal decSTCFStaminaMax;
+		private readonly decimal decWFBendMin;
 
-	private decimal decSTCFStaminaMin;
+		private readonly decimal decWFHeadingMax;
 
-	private decimal decSTCFTopSpeedMax;
+		private readonly decimal decWFHeadingMin;
 
-	private decimal decSTCFTopSpeedMin;
+		private readonly decimal decWFJumpMax;
 
-	private decimal decSTCFAccelerationMax;
+		private readonly decimal decWFJumpMin;
 
-	private decimal decSTCFAccelerationMin;
+		private readonly decimal decWFTechniqueMax;
 
-	private decimal decSTCFResponseMax;
+		private readonly decimal decWFTechniqueMin;
 
-	private decimal decSTCFResponseMin;
+		private readonly decimal decWFAggressivenessMax;
 
-	private decimal decSTCFAgilityMax;
+		private readonly decimal decWFAggressivenessMin;
 
-	private decimal decSTCFAgilityMin;
+		private readonly decimal decWFMentalityMax;
 
-	private decimal decSTCFDribblePrecisionMax;
+		private readonly decimal decWFMentalityMin;
 
-	private decimal decSTCFDribblePrecisionMin;
+		private readonly decimal decWFCooperationMax;
 
-	private decimal decSTCFDribbleSpeedMax;
+		private readonly decimal decWFCooperationMin;
 
-	private decimal decSTCFDribbleSpeedMin;
+		private readonly decimal decWFStarPlayer;
 
-	private decimal decSTCFShortPassPrecisionMax;
+		private readonly decimal decSTCFAttackMax;
 
-	private decimal decSTCFShortPassPrecisionMin;
+		private readonly decimal decSTCFAttackMin;
 
-	private decimal decSTCFShortPassSpeedMax;
+		private readonly decimal decSTCFDefenseMax;
 
-	private decimal decSTCFShortPassSpeedMin;
+		private readonly decimal decSTCFDefenseMin;
 
-	private decimal decSTCFLongPassPrecisionMax;
+		private readonly decimal decSTCFBodyBalanceMax;
 
-	private decimal decSTCFLongPassPrecisionMin;
+		private readonly decimal decSTCFBodyBalanceMin;
 
-	private decimal decSTCFLongPassSpeedMax;
+		private readonly decimal decSTCFStaminaMax;
 
-	private decimal decSTCFLongPassSpeedMin;
+		private readonly decimal decSTCFStaminaMin;
 
-	private decimal decSTCFShotPrecisionMax;
+		private readonly decimal decSTCFTopSpeedMax;
 
-	private decimal decSTCFShotPrecisionMin;
+		private readonly decimal decSTCFTopSpeedMin;
 
-	private decimal decSTCFShotPowerMax;
+		private readonly decimal decSTCFAccelerationMax;
 
-	private decimal decSTCFShotPowerMin;
+		private readonly decimal decSTCFAccelerationMin;
 
-	private decimal decSTCFShotTechniqueMax;
+		private readonly decimal decSTCFResponseMax;
 
-	private decimal decSTCFShotTechniqueMin;
+		private readonly decimal decSTCFResponseMin;
 
-	private decimal decSTCFFreeKickPrecisionMax;
+		private readonly decimal decSTCFAgilityMax;
 
-	private decimal decSTCFFreeKickPrecisionMin;
+		private readonly decimal decSTCFAgilityMin;
 
-	private decimal decSTCFBendMax;
+		private readonly decimal decSTCFDribblePrecisionMax;
 
-	private decimal decSTCFBendMin;
+		private readonly decimal decSTCFDribblePrecisionMin;
 
-	private decimal decSTCFHeadingMax;
+		private readonly decimal decSTCFDribbleSpeedMax;
 
-	private decimal decSTCFHeadingMin;
+		private readonly decimal decSTCFDribbleSpeedMin;
 
-	private decimal decSTCFJumpMax;
+		private readonly decimal decSTCFShortPassPrecisionMax;
 
-	private decimal decSTCFJumpMin;
+		private readonly decimal decSTCFShortPassPrecisionMin;
 
-	private decimal decSTCFTechniqueMax;
+		private readonly decimal decSTCFShortPassSpeedMax;
 
-	private decimal decSTCFTechniqueMin;
+		private readonly decimal decSTCFShortPassSpeedMin;
 
-	private decimal decSTCFAggressivenessMax;
+		private readonly decimal decSTCFLongPassPrecisionMax;
 
-	private decimal decSTCFAggressivenessMin;
+		private readonly decimal decSTCFLongPassPrecisionMin;
 
-	private decimal decSTCFMentalityMax;
+		private readonly decimal decSTCFLongPassSpeedMax;
 
-	private decimal decSTCFMentalityMin;
+		private readonly decimal decSTCFLongPassSpeedMin;
 
-	private decimal decSTCFCooperationMax;
+		private readonly decimal decSTCFShotPrecisionMax;
 
-	private decimal decSTCFCooperationMin;
+		private readonly decimal decSTCFShotPrecisionMin;
 
-	private decimal decSTCFStarPlayer;
+		private readonly decimal decSTCFShotPowerMax;
 
-	internal virtual Label lblPosition
-	{
-		get
-		{
-			return _lblPosition;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblPosition != null)
-			{
-			}
-			_lblPosition = value;
-			if (_lblPosition == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFShotPowerMin;
 
-	internal virtual ComboBox cmbPosition
-	{
-		get
-		{
-			return _cmbPosition;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbPosition != null)
-			{
-			}
-			_cmbPosition = value;
-			if (_cmbPosition == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFShotTechniqueMax;
 
-	internal virtual TextBox txtName
-	{
-		get
-		{
-			return _txtName;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_txtName != null)
-			{
-			}
-			_txtName = value;
-			if (_txtName == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFShotTechniqueMin;
 
-	internal virtual Label lblName
-	{
-		get
-		{
-			return _lblName;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblName != null)
-			{
-			}
-			_lblName = value;
-			if (_lblName == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFFreeKickPrecisionMax;
 
-	internal virtual ComboBox cmbPreferredFoot
-	{
-		get
-		{
-			return _cmbPreferredFoot;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbPreferredFoot != null)
-			{
-			}
-			_cmbPreferredFoot = value;
-			if (_cmbPreferredFoot == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFFreeKickPrecisionMin;
 
-	internal virtual Label lblPreferredFoot
-	{
-		get
-		{
-			return _lblPreferredFoot;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblPreferredFoot != null)
-			{
-			}
-			_lblPreferredFoot = value;
-			if (_lblPreferredFoot == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFBendMax;
 
-	internal virtual ComboBox cmbStrength
-	{
-		get
-		{
-			return _cmbStrength;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbStrength != null)
-			{
-			}
-			_cmbStrength = value;
-			if (_cmbStrength == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFBendMin;
 
-	internal virtual Label lblStrength
-	{
-		get
-		{
-			return _lblStrength;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblStrength != null)
-			{
-			}
-			_lblStrength = value;
-			if (_lblStrength == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFHeadingMax;
 
-	internal virtual ComboBox cmbStamina
-	{
-		get
-		{
-			return _cmbStamina;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbStamina != null)
-			{
-			}
-			_cmbStamina = value;
-			if (_cmbStamina == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFHeadingMin;
 
-	internal virtual Label lblStamina
-	{
-		get
-		{
-			return _lblStamina;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblStamina != null)
-			{
-			}
-			_lblStamina = value;
-			if (_lblStamina == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFJumpMax;
 
-	internal virtual ComboBox cmbPace
-	{
-		get
-		{
-			return _cmbPace;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbPace != null)
-			{
-			}
-			_cmbPace = value;
-			if (_cmbPace == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFJumpMin;
 
-	internal virtual Label lblPace
-	{
-		get
-		{
-			return _lblPace;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblPace != null)
-			{
-			}
-			_lblPace = value;
-			if (_lblPace == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFTechniqueMax;
 
-	internal virtual ComboBox cmbNaturalFitness
-	{
-		get
-		{
-			return _cmbNaturalFitness;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbNaturalFitness != null)
-			{
-			}
-			_cmbNaturalFitness = value;
-			if (_cmbNaturalFitness == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFTechniqueMin;
 
-	internal virtual Label lblNaturalFitness
-	{
-		get
-		{
-			return _lblNaturalFitness;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblNaturalFitness != null)
-			{
-			}
-			_lblNaturalFitness = value;
-			if (_lblNaturalFitness == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFAggressivenessMax;
 
-	internal virtual ComboBox cmbJumping
-	{
-		get
-		{
-			return _cmbJumping;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbJumping != null)
-			{
-			}
-			_cmbJumping = value;
-			if (_cmbJumping == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFAggressivenessMin;
 
-	internal virtual Label lblJumping
-	{
-		get
-		{
-			return _lblJumping;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblJumping != null)
-			{
-			}
-			_lblJumping = value;
-			if (_lblJumping == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFMentalityMax;
 
-	internal virtual ComboBox cmbBalance
-	{
-		get
-		{
-			return _cmbBalance;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbBalance != null)
-			{
-			}
-			_cmbBalance = value;
-			if (_cmbBalance == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFMentalityMin;
 
-	internal virtual Label lblBalance
-	{
-		get
-		{
-			return _lblBalance;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblBalance != null)
-			{
-			}
-			_lblBalance = value;
-			if (_lblBalance == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFCooperationMax;
 
-	internal virtual ComboBox cmbAgility
-	{
-		get
-		{
-			return _cmbAgility;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbAgility != null)
-			{
-			}
-			_cmbAgility = value;
-			if (_cmbAgility == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFCooperationMin;
 
-	internal virtual Label lblAgility
-	{
-		get
-		{
-			return _lblAgility;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblAgility != null)
-			{
-			}
-			_lblAgility = value;
-			if (_lblAgility == null)
-			{
-			}
-		}
-	}
+		private readonly decimal decSTCFStarPlayer;
 
-	internal virtual ComboBox cmbAcceleration
-	{
-		get
-		{
-			return _cmbAcceleration;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
+		[STAThread]
+		public static void Main()
 		{
-			if (_cmbAcceleration != null)
-			{
-			}
-			_cmbAcceleration = value;
-			if (_cmbAcceleration == null)
-			{
-			}
+			Application.Run(new Verter());
 		}
-	}
 
-	internal virtual Label lblAcceleration
-	{
-		get
+		public Verter()
 		{
-			return _lblAcceleration;
+			frmWEPES = new frmWEPES();
+			decCBAttackMax = 76m;
+			decCBAttackMin = 32m;
+			decCBDefenseMax = 97m;
+			decCBDefenseMin = 58m;
+			decCBBodyBalanceMax = 98m;
+			decCBBodyBalanceMin = 56m;
+			decCBStaminaMax = 90m;
+			decCBStaminaMin = 48m;
+			decCBTopSpeedMax = 89m;
+			decCBTopSpeedMin = 44m;
+			decCBAccelerationMax = 88m;
+			decCBAccelerationMin = 42m;
+			decCBResponseMax = 93m;
+			decCBResponseMin = 51m;
+			decCBAgilityMax = 84m;
+			decCBAgilityMin = 45m;
+			decCBDribblePrecisionMax = 84m;
+			decCBDribblePrecisionMin = 43m;
+			decCBDribbleSpeedMax = 83m;
+			decCBDribbleSpeedMin = 44m;
+			decCBShortPassPrecisionMax = 84m;
+			decCBShortPassPrecisionMin = 42m;
+			decCBShortPassSpeedMax = 81m;
+			decCBShortPassSpeedMin = 48m;
+			decCBLongPassPrecisionMax = 93m;
+			decCBLongPassPrecisionMin = 51m;
+			decCBLongPassSpeedMax = 88m;
+			decCBLongPassSpeedMin = 52m;
+			decCBShotPrecisionMax = 76m;
+			decCBShotPrecisionMin = 41m;
+			decCBShotPowerMax = 91m;
+			decCBShotPowerMin = 59m;
+			decCBShotTechniqueMax = 82m;
+			decCBShotTechniqueMin = 54m;
+			decCBFreeKickPrecisionMax = 88m;
+			decCBFreeKickPrecisionMin = 39m;
+			decCBBendMax = 85m;
+			decCBBendMin = 37m;
+			decCBHeadingMax = 94m;
+			decCBHeadingMin = 50m;
+			decCBJumpMax = 95m;
+			decCBJumpMin = 48m;
+			decCBTechniqueMax = 90m;
+			decCBTechniqueMin = 48m;
+			decCBAggressivenessMax = 84m;
+			decCBAggressivenessMin = 42m;
+			decCBMentalityMax = 88m;
+			decCBMentalityMin = 52m;
+			decCBCooperationMax = 88m;
+			decCBCooperationMin = 51m;
+			decCBStarPlayer = 12m;
+			decSBAttackMax = 86m;
+			decSBAttackMin = 50m;
+			decSBDefenseMax = 88m;
+			decSBDefenseMin = 51m;
+			decSBBodyBalanceMax = 93m;
+			decSBBodyBalanceMin = 49m;
+			decSBStaminaMax = 96m;
+			decSBStaminaMin = 50m;
+			decSBTopSpeedMax = 93m;
+			decSBTopSpeedMin = 54m;
+			decSBAccelerationMax = 93m;
+			decSBAccelerationMin = 45m;
+			decSBResponseMax = 85m;
+			decSBResponseMin = 56m;
+			decSBAgilityMax = 88m;
+			decSBAgilityMin = 50m;
+			decSBDribblePrecisionMax = 91m;
+			decSBDribblePrecisionMin = 61m;
+			decSBDribbleSpeedMax = 91m;
+			decSBDribbleSpeedMin = 58m;
+			decSBShortPassPrecisionMax = 85m;
+			decSBShortPassPrecisionMin = 54m;
+			decSBShortPassSpeedMax = 85m;
+			decSBShortPassSpeedMin = 54m;
+			decSBLongPassPrecisionMax = 91m;
+			decSBLongPassPrecisionMin = 56m;
+			decSBLongPassSpeedMax = 91m;
+			decSBLongPassSpeedMin = 56m;
+			decSBShotPrecisionMax = 81m;
+			decSBShotPrecisionMin = 52m;
+			decSBShotPowerMax = 96m;
+			decSBShotPowerMin = 60m;
+			decSBShotTechniqueMax = 84m;
+			decSBShotTechniqueMin = 55m;
+			decSBFreeKickPrecisionMax = 91m;
+			decSBFreeKickPrecisionMin = 46m;
+			decSBBendMax = 90m;
+			decSBBendMin = 44m;
+			decSBHeadingMax = 85m;
+			decSBHeadingMin = 52m;
+			decSBJumpMax = 92m;
+			decSBJumpMin = 47m;
+			decSBTechniqueMax = 88m;
+			decSBTechniqueMin = 56m;
+			decSBAggressivenessMax = 88m;
+			decSBAggressivenessMin = 53m;
+			decSBMentalityMax = 84m;
+			decSBMentalityMin = 57m;
+			decSBCooperationMax = 86m;
+			decSBCooperationMin = 54m;
+			decSBStarPlayer = 12.5m;
+			decDMFAttackMax = 85m;
+			decDMFAttackMin = 50m;
+			decDMFDefenseMax = 89m;
+			decDMFDefenseMin = 57m;
+			decDMFBodyBalanceMax = 95m;
+			decDMFBodyBalanceMin = 54m;
+			decDMFStaminaMax = 96m;
+			decDMFStaminaMin = 53m;
+			decDMFTopSpeedMax = 90m;
+			decDMFTopSpeedMin = 51m;
+			decDMFAccelerationMax = 86m;
+			decDMFAccelerationMin = 45m;
+			decDMFResponseMax = 88m;
+			decDMFResponseMin = 55m;
+			decDMFAgilityMax = 86m;
+			decDMFAgilityMin = 51m;
+			decDMFDribblePrecisionMax = 88m;
+			decDMFDribblePrecisionMin = 54m;
+			decDMFDribbleSpeedMax = 82m;
+			decDMFDribbleSpeedMin = 53m;
+			decDMFShortPassPrecisionMax = 94m;
+			decDMFShortPassPrecisionMin = 53m;
+			decDMFShortPassSpeedMax = 85m;
+			decDMFShortPassSpeedMin = 53m;
+			decDMFLongPassPrecisionMax = 95m;
+			decDMFLongPassPrecisionMin = 56m;
+			decDMFLongPassSpeedMax = 91m;
+			decDMFLongPassSpeedMin = 54m;
+			decDMFShotPrecisionMax = 85m;
+			decDMFShotPrecisionMin = 49m;
+			decDMFShotPowerMax = 95m;
+			decDMFShotPowerMin = 60m;
+			decDMFShotTechniqueMax = 89m;
+			decDMFShotTechniqueMin = 56m;
+			decDMFFreeKickPrecisionMax = 90m;
+			decDMFFreeKickPrecisionMin = 47m;
+			decDMFBendMax = 85m;
+			decDMFBendMin = 44m;
+			decDMFHeadingMax = 91m;
+			decDMFHeadingMin = 53m;
+			decDMFJumpMax = 92m;
+			decDMFJumpMin = 48m;
+			decDMFTechniqueMax = 92m;
+			decDMFTechniqueMin = 57m;
+			decDMFAggressivenessMax = 83m;
+			decDMFAggressivenessMin = 49m;
+			decDMFMentalityMax = 93m;
+			decDMFMentalityMin = 54m;
+			decDMFCooperationMax = 92m;
+			decDMFCooperationMin = 52m;
+			decDMFStarPlayer = 13m;
+			decSMFAttackMax = 89m;
+			decSMFAttackMin = 57m;
+			decSMFDefenseMax = 78m;
+			decSMFDefenseMin = 38m;
+			decSMFBodyBalanceMax = 90m;
+			decSMFBodyBalanceMin = 50m;
+			decSMFStaminaMax = 94m;
+			decSMFStaminaMin = 50m;
+			decSMFTopSpeedMax = 95m;
+			decSMFTopSpeedMin = 53m;
+			decSMFAccelerationMax = 94m;
+			decSMFAccelerationMin = 50m;
+			decSMFResponseMax = 87m;
+			decSMFResponseMin = 56m;
+			decSMFAgilityMax = 91m;
+			decSMFAgilityMin = 51m;
+			decSMFDribblePrecisionMax = 95m;
+			decSMFDribblePrecisionMin = 60m;
+			decSMFDribbleSpeedMax = 90m;
+			decSMFDribbleSpeedMin = 60m;
+			decSMFShortPassPrecisionMax = 90m;
+			decSMFShortPassPrecisionMin = 56m;
+			decSMFShortPassSpeedMax = 87m;
+			decSMFShortPassSpeedMin = 54m;
+			decSMFLongPassPrecisionMax = 93m;
+			decSMFLongPassPrecisionMin = 59m;
+			decSMFLongPassSpeedMax = 94m;
+			decSMFLongPassSpeedMin = 57m;
+			decSMFShotPrecisionMax = 87m;
+			decSMFShotPrecisionMin = 52m;
+			decSMFShotPowerMax = 93m;
+			decSMFShotPowerMin = 64m;
+			decSMFShotTechniqueMax = 84m;
+			decSMFShotTechniqueMin = 56m;
+			decSMFFreeKickPrecisionMax = 94m;
+			decSMFFreeKickPrecisionMin = 49m;
+			decSMFBendMax = 93m;
+			decSMFBendMin = 46m;
+			decSMFHeadingMax = 82m;
+			decSMFHeadingMin = 50m;
+			decSMFJumpMax = 89m;
+			decSMFJumpMin = 48m;
+			decSMFTechniqueMax = 91m;
+			decSMFTechniqueMin = 59m;
+			decSMFAggressivenessMax = 89m;
+			decSMFAggressivenessMin = 56m;
+			decSMFMentalityMax = 86m;
+			decSMFMentalityMin = 58m;
+			decSMFCooperationMax = 89m;
+			decSMFCooperationMin = 53m;
+			decSMFStarPlayer = 12.75m;
+			decOMFAttackMax = 91m;
+			decOMFAttackMin = 62m;
+			decOMFDefenseMax = 75m;
+			decOMFDefenseMin = 34m;
+			decOMFBodyBalanceMax = 93m;
+			decOMFBodyBalanceMin = 53m;
+			decOMFStaminaMax = 92m;
+			decOMFStaminaMin = 54m;
+			decOMFTopSpeedMax = 89m;
+			decOMFTopSpeedMin = 54m;
+			decOMFAccelerationMax = 93m;
+			decOMFAccelerationMin = 52m;
+			decOMFResponseMax = 88m;
+			decOMFResponseMin = 58m;
+			decOMFAgilityMax = 91m;
+			decOMFAgilityMin = 53m;
+			decOMFDribblePrecisionMax = 98m;
+			decOMFDribblePrecisionMin = 63m;
+			decOMFDribbleSpeedMax = 90m;
+			decOMFDribbleSpeedMin = 58m;
+			decOMFShortPassPrecisionMax = 97m;
+			decOMFShortPassPrecisionMin = 60m;
+			decOMFShortPassSpeedMax = 87m;
+			decOMFShortPassSpeedMin = 58m;
+			decOMFLongPassPrecisionMax = 95m;
+			decOMFLongPassPrecisionMin = 63m;
+			decOMFLongPassSpeedMax = 90m;
+			decOMFLongPassSpeedMin = 59m;
+			decOMFShotPrecisionMax = 91m;
+			decOMFShotPrecisionMin = 59m;
+			decOMFShotPowerMax = 93m;
+			decOMFShotPowerMin = 63m;
+			decOMFShotTechniqueMax = 92m;
+			decOMFShotTechniqueMin = 58m;
+			decOMFFreeKickPrecisionMax = 95m;
+			decOMFFreeKickPrecisionMin = 53m;
+			decOMFBendMax = 95m;
+			decOMFBendMin = 50m;
+			decOMFHeadingMax = 85m;
+			decOMFHeadingMin = 55m;
+			decOMFJumpMax = 88m;
+			decOMFJumpMin = 49m;
+			decOMFTechniqueMax = 97m;
+			decOMFTechniqueMin = 60m;
+			decOMFAggressivenessMax = 90m;
+			decOMFAggressivenessMin = 55m;
+			decOMFMentalityMax = 87m;
+			decOMFMentalityMin = 57m;
+			decOMFCooperationMax = 90m;
+			decOMFCooperationMin = 54m;
+			decOMFStarPlayer = 13m;
+			decWFAttackMax = 89m;
+			decWFAttackMin = 70m;
+			decWFDefenseMax = 61m;
+			decWFDefenseMin = 33m;
+			decWFBodyBalanceMax = 85m;
+			decWFBodyBalanceMin = 53m;
+			decWFStaminaMax = 90m;
+			decWFStaminaMin = 59m;
+			decWFTopSpeedMax = 95m;
+			decWFTopSpeedMin = 66m;
+			decWFAccelerationMax = 93m;
+			decWFAccelerationMin = 63m;
+			decWFResponseMax = 91m;
+			decWFResponseMin = 64m;
+			decWFAgilityMax = 90m;
+			decWFAgilityMin = 64m;
+			decWFDribblePrecisionMax = 94m;
+			decWFDribblePrecisionMin = 70m;
+			decWFDribbleSpeedMax = 93m;
+			decWFDribbleSpeedMin = 71m;
+			decWFShortPassPrecisionMax = 89m;
+			decWFShortPassPrecisionMin = 62m;
+			decWFShortPassSpeedMax = 84m;
+			decWFShortPassSpeedMin = 62m;
+			decWFLongPassPrecisionMax = 90m;
+			decWFLongPassPrecisionMin = 65m;
+			decWFLongPassSpeedMax = 87m;
+			decWFLongPassSpeedMin = 64m;
+			decWFShotPrecisionMax = 88m;
+			decWFShotPrecisionMin = 64m;
+			decWFShotPowerMax = 90m;
+			decWFShotPowerMin = 70m;
+			decWFShotTechniqueMax = 87m;
+			decWFShotTechniqueMin = 61m;
+			decWFFreeKickPrecisionMax = 87m;
+			decWFFreeKickPrecisionMin = 53m;
+			decWFBendMax = 85m;
+			decWFBendMin = 56m;
+			decWFHeadingMax = 81m;
+			decWFHeadingMin = 60m;
+			decWFJumpMax = 83m;
+			decWFJumpMin = 52m;
+			decWFTechniqueMax = 91m;
+			decWFTechniqueMin = 69m;
+			decWFAggressivenessMax = 92m;
+			decWFAggressivenessMin = 66m;
+			decWFMentalityMax = 77m;
+			decWFMentalityMin = 61m;
+			decWFCooperationMax = 81m;
+			decWFCooperationMin = 56m;
+			decWFStarPlayer = 12.75m;
+			decSTCFAttackMax = 97m;
+			decSTCFAttackMin = 68m;
+			decSTCFDefenseMax = 67m;
+			decSTCFDefenseMin = 27m;
+			decSTCFBodyBalanceMax = 97m;
+			decSTCFBodyBalanceMin = 50m;
+			decSTCFStaminaMax = 92m;
+			decSTCFStaminaMin = 50m;
+			decSTCFTopSpeedMax = 96m;
+			decSTCFTopSpeedMin = 54m;
+			decSTCFAccelerationMax = 97m;
+			decSTCFAccelerationMin = 50m;
+			decSTCFResponseMax = 96m;
+			decSTCFResponseMin = 61m;
+			decSTCFAgilityMax = 96m;
+			decSTCFAgilityMin = 52m;
+			decSTCFDribblePrecisionMax = 95m;
+			decSTCFDribblePrecisionMin = 59m;
+			decSTCFDribbleSpeedMax = 94m;
+			decSTCFDribbleSpeedMin = 57m;
+			decSTCFShortPassPrecisionMax = 92m;
+			decSTCFShortPassPrecisionMin = 54m;
+			decSTCFShortPassSpeedMax = 87m;
+			decSTCFShortPassSpeedMin = 54m;
+			decSTCFLongPassPrecisionMax = 90m;
+			decSTCFLongPassPrecisionMin = 55m;
+			decSTCFLongPassSpeedMax = 89m;
+			decSTCFLongPassSpeedMin = 54m;
+			decSTCFShotPrecisionMax = 97m;
+			decSTCFShotPrecisionMin = 60m;
+			decSTCFShotPowerMax = 97m;
+			decSTCFShotPowerMin = 61m;
+			decSTCFShotTechniqueMax = 98m;
+			decSTCFShotTechniqueMin = 59m;
+			decSTCFFreeKickPrecisionMax = 94m;
+			decSTCFFreeKickPrecisionMin = 46m;
+			decSTCFBendMax = 95m;
+			decSTCFBendMin = 42m;
+			decSTCFHeadingMax = 97m;
+			decSTCFHeadingMin = 58m;
+			decSTCFJumpMax = 95m;
+			decSTCFJumpMin = 50m;
+			decSTCFTechniqueMax = 99m;
+			decSTCFTechniqueMin = 58m;
+			decSTCFAggressivenessMax = 95m;
+			decSTCFAggressivenessMin = 59m;
+			decSTCFMentalityMax = 91m;
+			decSTCFMentalityMin = 57m;
+			decSTCFCooperationMax = 90m;
+			decSTCFCooperationMin = 51m;
+			decSTCFStarPlayer = 13.5m;
+			InitializeComponent();
 		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
+		private void Verter_Load(object sender, EventArgs e)
 		{
-			if (_lblAcceleration != null)
-			{
-			}
-			_lblAcceleration = value;
-			if (_lblAcceleration == null)
-			{
-			}
+			cmbPosition.SelectedIndex = 0;
+			cmbCorners.SelectedIndex = 9;
+			cmbCrossing.SelectedIndex = 9;
+			cmbDribbling.SelectedIndex = 9;
+			cmbFinishing.SelectedIndex = 9;
+			cmbFirstTouch.SelectedIndex = 9;
+			cmbFreeKicks.SelectedIndex = 9;
+			cmbHeading.SelectedIndex = 9;
+			cmbLongShots.SelectedIndex = 9;
+			cmbLongThrows.SelectedIndex = 9;
+			cmbMarking.SelectedIndex = 9;
+			cmbPassing.SelectedIndex = 9;
+			cmbPenaltyTaking.SelectedIndex = 9;
+			cmbTackling.SelectedIndex = 9;
+			cmbTechnique.SelectedIndex = 9;
+			cmbAggression.SelectedIndex = 9;
+			cmbAnticipation.SelectedIndex = 9;
+			cmbBravery.SelectedIndex = 9;
+			cmbComposure.SelectedIndex = 9;
+			cmbConcentration.SelectedIndex = 9;
+			cmbCreativity.SelectedIndex = 9;
+			cmbDecisions.SelectedIndex = 9;
+			cmbDetermination.SelectedIndex = 9;
+			cmbFlair.SelectedIndex = 9;
+			cmbInfluence.SelectedIndex = 9;
+			cmbOffTheBall.SelectedIndex = 9;
+			cmbPositioning.SelectedIndex = 9;
+			cmbTeamwork.SelectedIndex = 9;
+			cmbWorkRate.SelectedIndex = 9;
+			cmbAcceleration.SelectedIndex = 9;
+			cmbAgility.SelectedIndex = 9;
+			cmbBalance.SelectedIndex = 9;
+			cmbJumping.SelectedIndex = 9;
+			cmbNaturalFitness.SelectedIndex = 9;
+			cmbPace.SelectedIndex = 9;
+			cmbStamina.SelectedIndex = 9;
+			cmbStrength.SelectedIndex = 9;
+			cmbPreferredFoot.SelectedIndex = 0;
 		}
-	}
 
-	internal virtual ComboBox cmbWorkRate
-	{
-		get
-		{
-			return _cmbWorkRate;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
+		private void btnConvert_Click(object sender, EventArgs e)
 		{
-			if (_cmbWorkRate != null)
-			{
-			}
-			_cmbWorkRate = value;
-			if (_cmbWorkRate == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblWorkRate
-	{
-		get
-		{
-			return _lblWorkRate;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblWorkRate != null)
-			{
-			}
-			_lblWorkRate = value;
-			if (_lblWorkRate == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbTeamwork
-	{
-		get
-		{
-			return _cmbTeamwork;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbTeamwork != null)
-			{
-			}
-			_cmbTeamwork = value;
-			if (_cmbTeamwork == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblTeamwork
-	{
-		get
-		{
-			return _lblTeamwork;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblTeamwork != null)
-			{
-			}
-			_lblTeamwork = value;
-			if (_lblTeamwork == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbPositioning
-	{
-		get
-		{
-			return _cmbPositioning;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbPositioning != null)
-			{
-			}
-			_cmbPositioning = value;
-			if (_cmbPositioning == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblPositioning
-	{
-		get
-		{
-			return _lblPositioning;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblPositioning != null)
-			{
-			}
-			_lblPositioning = value;
-			if (_lblPositioning == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbOffTheBall
-	{
-		get
-		{
-			return _cmbOffTheBall;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbOffTheBall != null)
-			{
-			}
-			_cmbOffTheBall = value;
-			if (_cmbOffTheBall == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblOffTheBall
-	{
-		get
-		{
-			return _lblOffTheBall;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblOffTheBall != null)
-			{
-			}
-			_lblOffTheBall = value;
-			if (_lblOffTheBall == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbInfluence
-	{
-		get
-		{
-			return _cmbInfluence;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbInfluence != null)
-			{
-			}
-			_cmbInfluence = value;
-			if (_cmbInfluence == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblInfluence
-	{
-		get
-		{
-			return _lblInfluence;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblInfluence != null)
-			{
-			}
-			_lblInfluence = value;
-			if (_lblInfluence == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbFlair
-	{
-		get
-		{
-			return _cmbFlair;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbFlair != null)
-			{
-			}
-			_cmbFlair = value;
-			if (_cmbFlair == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblFlair
-	{
-		get
-		{
-			return _lblFlair;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblFlair != null)
-			{
-			}
-			_lblFlair = value;
-			if (_lblFlair == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbDetermination
-	{
-		get
-		{
-			return _cmbDetermination;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbDetermination != null)
-			{
-			}
-			_cmbDetermination = value;
-			if (_cmbDetermination == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblDetermination
-	{
-		get
-		{
-			return _lblDetermination;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblDetermination != null)
-			{
-			}
-			_lblDetermination = value;
-			if (_lblDetermination == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbDecisions
-	{
-		get
-		{
-			return _cmbDecisions;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbDecisions != null)
-			{
-			}
-			_cmbDecisions = value;
-			if (_cmbDecisions == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblDecisions
-	{
-		get
-		{
-			return _lblDecisions;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblDecisions != null)
-			{
-			}
-			_lblDecisions = value;
-			if (_lblDecisions == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbCreativity
-	{
-		get
-		{
-			return _cmbCreativity;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbCreativity != null)
-			{
-			}
-			_cmbCreativity = value;
-			if (_cmbCreativity == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblCreativity
-	{
-		get
-		{
-			return _lblCreativity;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblCreativity != null)
-			{
-			}
-			_lblCreativity = value;
-			if (_lblCreativity == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbConcentration
-	{
-		get
-		{
-			return _cmbConcentration;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbConcentration != null)
-			{
-			}
-			_cmbConcentration = value;
-			if (_cmbConcentration == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblConcentration
-	{
-		get
-		{
-			return _lblConcentration;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblConcentration != null)
-			{
-			}
-			_lblConcentration = value;
-			if (_lblConcentration == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbComposure
-	{
-		get
-		{
-			return _cmbComposure;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbComposure != null)
-			{
-			}
-			_cmbComposure = value;
-			if (_cmbComposure == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblComposure
-	{
-		get
-		{
-			return _lblComposure;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblComposure != null)
-			{
-			}
-			_lblComposure = value;
-			if (_lblComposure == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbBravery
-	{
-		get
-		{
-			return _cmbBravery;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbBravery != null)
-			{
-			}
-			_cmbBravery = value;
-			if (_cmbBravery == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblBravery
-	{
-		get
-		{
-			return _lblBravery;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblBravery != null)
-			{
-			}
-			_lblBravery = value;
-			if (_lblBravery == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbAnticipation
-	{
-		get
-		{
-			return _cmbAnticipation;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbAnticipation != null)
-			{
-			}
-			_cmbAnticipation = value;
-			if (_cmbAnticipation == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblAnticipation
-	{
-		get
-		{
-			return _lblAnticipation;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblAnticipation != null)
-			{
-			}
-			_lblAnticipation = value;
-			if (_lblAnticipation == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbAggression
-	{
-		get
-		{
-			return _cmbAggression;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbAggression != null)
-			{
-			}
-			_cmbAggression = value;
-			if (_cmbAggression == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblAggression
-	{
-		get
-		{
-			return _lblAggression;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblAggression != null)
-			{
-			}
-			_lblAggression = value;
-			if (_lblAggression == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbTechnique
-	{
-		get
-		{
-			return _cmbTechnique;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbTechnique != null)
-			{
-			}
-			_cmbTechnique = value;
-			if (_cmbTechnique == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblTechnique
-	{
-		get
-		{
-			return _lblTechnique;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblTechnique != null)
-			{
-			}
-			_lblTechnique = value;
-			if (_lblTechnique == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbTackling
-	{
-		get
-		{
-			return _cmbTackling;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbTackling != null)
-			{
-			}
-			_cmbTackling = value;
-			if (_cmbTackling == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblTackling
-	{
-		get
-		{
-			return _lblTackling;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblTackling != null)
-			{
-			}
-			_lblTackling = value;
-			if (_lblTackling == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbPenaltyTaking
-	{
-		get
-		{
-			return _cmbPenaltyTaking;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbPenaltyTaking != null)
-			{
-			}
-			_cmbPenaltyTaking = value;
-			if (_cmbPenaltyTaking == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblPenaltyTaking
-	{
-		get
-		{
-			return _lblPenaltyTaking;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblPenaltyTaking != null)
-			{
-			}
-			_lblPenaltyTaking = value;
-			if (_lblPenaltyTaking == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbPassing
-	{
-		get
-		{
-			return _cmbPassing;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbPassing != null)
-			{
-			}
-			_cmbPassing = value;
-			if (_cmbPassing == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblPassing
-	{
-		get
-		{
-			return _lblPassing;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblPassing != null)
-			{
-			}
-			_lblPassing = value;
-			if (_lblPassing == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbMarking
-	{
-		get
-		{
-			return _cmbMarking;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbMarking != null)
-			{
-			}
-			_cmbMarking = value;
-			if (_cmbMarking == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblMarking
-	{
-		get
-		{
-			return _lblMarking;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblMarking != null)
-			{
-			}
-			_lblMarking = value;
-			if (_lblMarking == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbLongThrows
-	{
-		get
-		{
-			return _cmbLongThrows;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbLongThrows != null)
-			{
-			}
-			_cmbLongThrows = value;
-			if (_cmbLongThrows == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblLongThrows
-	{
-		get
-		{
-			return _lblLongThrows;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblLongThrows != null)
-			{
-			}
-			_lblLongThrows = value;
-			if (_lblLongThrows == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbLongShots
-	{
-		get
-		{
-			return _cmbLongShots;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbLongShots != null)
-			{
-			}
-			_cmbLongShots = value;
-			if (_cmbLongShots == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblLongShots
-	{
-		get
-		{
-			return _lblLongShots;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblLongShots != null)
-			{
-			}
-			_lblLongShots = value;
-			if (_lblLongShots == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbHeading
-	{
-		get
-		{
-			return _cmbHeading;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbHeading != null)
-			{
-			}
-			_cmbHeading = value;
-			if (_cmbHeading == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblHeading
-	{
-		get
-		{
-			return _lblHeading;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblHeading != null)
-			{
-			}
-			_lblHeading = value;
-			if (_lblHeading == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbFreeKicks
-	{
-		get
-		{
-			return _cmbFreeKicks;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbFreeKicks != null)
-			{
-			}
-			_cmbFreeKicks = value;
-			if (_cmbFreeKicks == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblFreeKicks
-	{
-		get
-		{
-			return _lblFreeKicks;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblFreeKicks != null)
-			{
-			}
-			_lblFreeKicks = value;
-			if (_lblFreeKicks == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbFirstTouch
-	{
-		get
-		{
-			return _cmbFirstTouch;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbFirstTouch != null)
-			{
-			}
-			_cmbFirstTouch = value;
-			if (_cmbFirstTouch == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblFirstTouch
-	{
-		get
-		{
-			return _lblFirstTouch;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblFirstTouch != null)
-			{
-			}
-			_lblFirstTouch = value;
-			if (_lblFirstTouch == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbFinishing
-	{
-		get
-		{
-			return _cmbFinishing;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbFinishing != null)
-			{
-			}
-			_cmbFinishing = value;
-			if (_cmbFinishing == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblFinishing
-	{
-		get
-		{
-			return _lblFinishing;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblFinishing != null)
-			{
-			}
-			_lblFinishing = value;
-			if (_lblFinishing == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbDribbling
-	{
-		get
-		{
-			return _cmbDribbling;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbDribbling != null)
-			{
-			}
-			_cmbDribbling = value;
-			if (_cmbDribbling == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblDribbling
-	{
-		get
-		{
-			return _lblDribbling;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblDribbling != null)
-			{
-			}
-			_lblDribbling = value;
-			if (_lblDribbling == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbCrossing
-	{
-		get
-		{
-			return _cmbCrossing;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbCrossing != null)
-			{
-			}
-			_cmbCrossing = value;
-			if (_cmbCrossing == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblCrossing
-	{
-		get
-		{
-			return _lblCrossing;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblCrossing != null)
-			{
-			}
-			_lblCrossing = value;
-			if (_lblCrossing == null)
-			{
-			}
-		}
-	}
-
-	internal virtual ComboBox cmbCorners
-	{
-		get
-		{
-			return _cmbCorners;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_cmbCorners != null)
-			{
-			}
-			_cmbCorners = value;
-			if (_cmbCorners == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Label lblCorners
-	{
-		get
-		{
-			return _lblCorners;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_lblCorners != null)
-			{
-			}
-			_lblCorners = value;
-			if (_lblCorners == null)
-			{
-			}
-		}
-	}
-
-	internal virtual Button btnConvert
-	{
-		get
-		{
-			return _btnConvert;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_btnConvert != null)
-			{
-				_btnConvert.Click -= btnConvert_Click;
-			}
-			_btnConvert = value;
-			if (_btnConvert != null)
-			{
-				_btnConvert.Click += btnConvert_Click;
-			}
-		}
-	}
-
-	internal virtual Button btnReset
-	{
-		get
-		{
-			return _btnReset;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_btnReset != null)
-			{
-				_btnReset.Click -= btnReset_Click;
-			}
-			_btnReset = value;
-			if (_btnReset != null)
-			{
-				_btnReset.Click += btnReset_Click;
-			}
-		}
-	}
-
-	internal virtual Button btnExit
-	{
-		get
-		{
-			return _btnExit;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_btnExit != null)
-			{
-				_btnExit.Click -= btnExit_Click;
-			}
-			_btnExit = value;
-			if (_btnExit != null)
-			{
-				_btnExit.Click += btnExit_Click;
-			}
-		}
-	}
-
-	internal virtual GroupBox grpPlayerInformation
-	{
-		get
-		{
-			return _grpPlayerInformation;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_grpPlayerInformation != null)
-			{
-			}
-			_grpPlayerInformation = value;
-			if (_grpPlayerInformation == null)
-			{
-			}
-		}
-	}
-
-	internal virtual GroupBox grpFM2005Stats
-	{
-		get
-		{
-			return _grpFM2005Stats;
-		}
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		set
-		{
-			if (_grpFM2005Stats != null)
-			{
-			}
-			_grpFM2005Stats = value;
-			if (_grpFM2005Stats == null)
-			{
-			}
-		}
-	}
-
-	[STAThread]
-	public static void Main()
-	{
-		Application.Run(new Verter());
-	}
-
-	public Verter()
-	{
-		base.Load += Verter_Load;
-		frmWEPES = new frmWEPES();
-		decCBAttackMax = 76m;
-		decCBAttackMin = 32m;
-		decCBDefenseMax = 97m;
-		decCBDefenseMin = 58m;
-		decCBBodyBalanceMax = 98m;
-		decCBBodyBalanceMin = 56m;
-		decCBStaminaMax = 90m;
-		decCBStaminaMin = 48m;
-		decCBTopSpeedMax = 89m;
-		decCBTopSpeedMin = 44m;
-		decCBAccelerationMax = 88m;
-		decCBAccelerationMin = 42m;
-		decCBResponseMax = 93m;
-		decCBResponseMin = 51m;
-		decCBAgilityMax = 84m;
-		decCBAgilityMin = 45m;
-		decCBDribblePrecisionMax = 84m;
-		decCBDribblePrecisionMin = 43m;
-		decCBDribbleSpeedMax = 83m;
-		decCBDribbleSpeedMin = 44m;
-		decCBShortPassPrecisionMax = 84m;
-		decCBShortPassPrecisionMin = 42m;
-		decCBShortPassSpeedMax = 81m;
-		decCBShortPassSpeedMin = 48m;
-		decCBLongPassPrecisionMax = 93m;
-		decCBLongPassPrecisionMin = 51m;
-		decCBLongPassSpeedMax = 88m;
-		decCBLongPassSpeedMin = 52m;
-		decCBShotPrecisionMax = 76m;
-		decCBShotPrecisionMin = 41m;
-		decCBShotPowerMax = 91m;
-		decCBShotPowerMin = 59m;
-		decCBShotTechniqueMax = 82m;
-		decCBShotTechniqueMin = 54m;
-		decCBFreeKickPrecisionMax = 88m;
-		decCBFreeKickPrecisionMin = 39m;
-		decCBBendMax = 85m;
-		decCBBendMin = 37m;
-		decCBHeadingMax = 94m;
-		decCBHeadingMin = 50m;
-		decCBJumpMax = 95m;
-		decCBJumpMin = 48m;
-		decCBTechniqueMax = 90m;
-		decCBTechniqueMin = 48m;
-		decCBAggressivenessMax = 84m;
-		decCBAggressivenessMin = 42m;
-		decCBMentalityMax = 88m;
-		decCBMentalityMin = 52m;
-		decCBCooperationMax = 88m;
-		decCBCooperationMin = 51m;
-		decCBStarPlayer = 12m;
-		decSBAttackMax = 86m;
-		decSBAttackMin = 50m;
-		decSBDefenseMax = 88m;
-		decSBDefenseMin = 51m;
-		decSBBodyBalanceMax = 93m;
-		decSBBodyBalanceMin = 49m;
-		decSBStaminaMax = 96m;
-		decSBStaminaMin = 50m;
-		decSBTopSpeedMax = 93m;
-		decSBTopSpeedMin = 54m;
-		decSBAccelerationMax = 93m;
-		decSBAccelerationMin = 45m;
-		decSBResponseMax = 85m;
-		decSBResponseMin = 56m;
-		decSBAgilityMax = 88m;
-		decSBAgilityMin = 50m;
-		decSBDribblePrecisionMax = 91m;
-		decSBDribblePrecisionMin = 61m;
-		decSBDribbleSpeedMax = 91m;
-		decSBDribbleSpeedMin = 58m;
-		decSBShortPassPrecisionMax = 85m;
-		decSBShortPassPrecisionMin = 54m;
-		decSBShortPassSpeedMax = 85m;
-		decSBShortPassSpeedMin = 54m;
-		decSBLongPassPrecisionMax = 91m;
-		decSBLongPassPrecisionMin = 56m;
-		decSBLongPassSpeedMax = 91m;
-		decSBLongPassSpeedMin = 56m;
-		decSBShotPrecisionMax = 81m;
-		decSBShotPrecisionMin = 52m;
-		decSBShotPowerMax = 96m;
-		decSBShotPowerMin = 60m;
-		decSBShotTechniqueMax = 84m;
-		decSBShotTechniqueMin = 55m;
-		decSBFreeKickPrecisionMax = 91m;
-		decSBFreeKickPrecisionMin = 46m;
-		decSBBendMax = 90m;
-		decSBBendMin = 44m;
-		decSBHeadingMax = 85m;
-		decSBHeadingMin = 52m;
-		decSBJumpMax = 92m;
-		decSBJumpMin = 47m;
-		decSBTechniqueMax = 88m;
-		decSBTechniqueMin = 56m;
-		decSBAggressivenessMax = 88m;
-		decSBAggressivenessMin = 53m;
-		decSBMentalityMax = 84m;
-		decSBMentalityMin = 57m;
-		decSBCooperationMax = 86m;
-		decSBCooperationMin = 54m;
-		decSBStarPlayer = 12.5m;
-		decDMFAttackMax = 85m;
-		decDMFAttackMin = 50m;
-		decDMFDefenseMax = 89m;
-		decDMFDefenseMin = 57m;
-		decDMFBodyBalanceMax = 95m;
-		decDMFBodyBalanceMin = 54m;
-		decDMFStaminaMax = 96m;
-		decDMFStaminaMin = 53m;
-		decDMFTopSpeedMax = 90m;
-		decDMFTopSpeedMin = 51m;
-		decDMFAccelerationMax = 86m;
-		decDMFAccelerationMin = 45m;
-		decDMFResponseMax = 88m;
-		decDMFResponseMin = 55m;
-		decDMFAgilityMax = 86m;
-		decDMFAgilityMin = 51m;
-		decDMFDribblePrecisionMax = 88m;
-		decDMFDribblePrecisionMin = 54m;
-		decDMFDribbleSpeedMax = 82m;
-		decDMFDribbleSpeedMin = 53m;
-		decDMFShortPassPrecisionMax = 94m;
-		decDMFShortPassPrecisionMin = 53m;
-		decDMFShortPassSpeedMax = 85m;
-		decDMFShortPassSpeedMin = 53m;
-		decDMFLongPassPrecisionMax = 95m;
-		decDMFLongPassPrecisionMin = 56m;
-		decDMFLongPassSpeedMax = 91m;
-		decDMFLongPassSpeedMin = 54m;
-		decDMFShotPrecisionMax = 85m;
-		decDMFShotPrecisionMin = 49m;
-		decDMFShotPowerMax = 95m;
-		decDMFShotPowerMin = 60m;
-		decDMFShotTechniqueMax = 89m;
-		decDMFShotTechniqueMin = 56m;
-		decDMFFreeKickPrecisionMax = 90m;
-		decDMFFreeKickPrecisionMin = 47m;
-		decDMFBendMax = 85m;
-		decDMFBendMin = 44m;
-		decDMFHeadingMax = 91m;
-		decDMFHeadingMin = 53m;
-		decDMFJumpMax = 92m;
-		decDMFJumpMin = 48m;
-		decDMFTechniqueMax = 92m;
-		decDMFTechniqueMin = 57m;
-		decDMFAggressivenessMax = 83m;
-		decDMFAggressivenessMin = 49m;
-		decDMFMentalityMax = 93m;
-		decDMFMentalityMin = 54m;
-		decDMFCooperationMax = 92m;
-		decDMFCooperationMin = 52m;
-		decDMFStarPlayer = 13m;
-		decSMFAttackMax = 89m;
-		decSMFAttackMin = 57m;
-		decSMFDefenseMax = 78m;
-		decSMFDefenseMin = 38m;
-		decSMFBodyBalanceMax = 90m;
-		decSMFBodyBalanceMin = 50m;
-		decSMFStaminaMax = 94m;
-		decSMFStaminaMin = 50m;
-		decSMFTopSpeedMax = 95m;
-		decSMFTopSpeedMin = 53m;
-		decSMFAccelerationMax = 94m;
-		decSMFAccelerationMin = 50m;
-		decSMFResponseMax = 87m;
-		decSMFResponseMin = 56m;
-		decSMFAgilityMax = 91m;
-		decSMFAgilityMin = 51m;
-		decSMFDribblePrecisionMax = 95m;
-		decSMFDribblePrecisionMin = 60m;
-		decSMFDribbleSpeedMax = 90m;
-		decSMFDribbleSpeedMin = 60m;
-		decSMFShortPassPrecisionMax = 90m;
-		decSMFShortPassPrecisionMin = 56m;
-		decSMFShortPassSpeedMax = 87m;
-		decSMFShortPassSpeedMin = 54m;
-		decSMFLongPassPrecisionMax = 93m;
-		decSMFLongPassPrecisionMin = 59m;
-		decSMFLongPassSpeedMax = 94m;
-		decSMFLongPassSpeedMin = 57m;
-		decSMFShotPrecisionMax = 87m;
-		decSMFShotPrecisionMin = 52m;
-		decSMFShotPowerMax = 93m;
-		decSMFShotPowerMin = 64m;
-		decSMFShotTechniqueMax = 84m;
-		decSMFShotTechniqueMin = 56m;
-		decSMFFreeKickPrecisionMax = 94m;
-		decSMFFreeKickPrecisionMin = 49m;
-		decSMFBendMax = 93m;
-		decSMFBendMin = 46m;
-		decSMFHeadingMax = 82m;
-		decSMFHeadingMin = 50m;
-		decSMFJumpMax = 89m;
-		decSMFJumpMin = 48m;
-		decSMFTechniqueMax = 91m;
-		decSMFTechniqueMin = 59m;
-		decSMFAggressivenessMax = 89m;
-		decSMFAggressivenessMin = 56m;
-		decSMFMentalityMax = 86m;
-		decSMFMentalityMin = 58m;
-		decSMFCooperationMax = 89m;
-		decSMFCooperationMin = 53m;
-		decSMFStarPlayer = 12.75m;
-		decOMFAttackMax = 91m;
-		decOMFAttackMin = 62m;
-		decOMFDefenseMax = 75m;
-		decOMFDefenseMin = 34m;
-		decOMFBodyBalanceMax = 93m;
-		decOMFBodyBalanceMin = 53m;
-		decOMFStaminaMax = 92m;
-		decOMFStaminaMin = 54m;
-		decOMFTopSpeedMax = 89m;
-		decOMFTopSpeedMin = 54m;
-		decOMFAccelerationMax = 93m;
-		decOMFAccelerationMin = 52m;
-		decOMFResponseMax = 88m;
-		decOMFResponseMin = 58m;
-		decOMFAgilityMax = 91m;
-		decOMFAgilityMin = 53m;
-		decOMFDribblePrecisionMax = 98m;
-		decOMFDribblePrecisionMin = 63m;
-		decOMFDribbleSpeedMax = 90m;
-		decOMFDribbleSpeedMin = 58m;
-		decOMFShortPassPrecisionMax = 97m;
-		decOMFShortPassPrecisionMin = 60m;
-		decOMFShortPassSpeedMax = 87m;
-		decOMFShortPassSpeedMin = 58m;
-		decOMFLongPassPrecisionMax = 95m;
-		decOMFLongPassPrecisionMin = 63m;
-		decOMFLongPassSpeedMax = 90m;
-		decOMFLongPassSpeedMin = 59m;
-		decOMFShotPrecisionMax = 91m;
-		decOMFShotPrecisionMin = 59m;
-		decOMFShotPowerMax = 93m;
-		decOMFShotPowerMin = 63m;
-		decOMFShotTechniqueMax = 92m;
-		decOMFShotTechniqueMin = 58m;
-		decOMFFreeKickPrecisionMax = 95m;
-		decOMFFreeKickPrecisionMin = 53m;
-		decOMFBendMax = 95m;
-		decOMFBendMin = 50m;
-		decOMFHeadingMax = 85m;
-		decOMFHeadingMin = 55m;
-		decOMFJumpMax = 88m;
-		decOMFJumpMin = 49m;
-		decOMFTechniqueMax = 97m;
-		decOMFTechniqueMin = 60m;
-		decOMFAggressivenessMax = 90m;
-		decOMFAggressivenessMin = 55m;
-		decOMFMentalityMax = 87m;
-		decOMFMentalityMin = 57m;
-		decOMFCooperationMax = 90m;
-		decOMFCooperationMin = 54m;
-		decOMFStarPlayer = 13m;
-		decWFAttackMax = 89m;
-		decWFAttackMin = 70m;
-		decWFDefenseMax = 61m;
-		decWFDefenseMin = 33m;
-		decWFBodyBalanceMax = 85m;
-		decWFBodyBalanceMin = 53m;
-		decWFStaminaMax = 90m;
-		decWFStaminaMin = 59m;
-		decWFTopSpeedMax = 95m;
-		decWFTopSpeedMin = 66m;
-		decWFAccelerationMax = 93m;
-		decWFAccelerationMin = 63m;
-		decWFResponseMax = 91m;
-		decWFResponseMin = 64m;
-		decWFAgilityMax = 90m;
-		decWFAgilityMin = 64m;
-		decWFDribblePrecisionMax = 94m;
-		decWFDribblePrecisionMin = 70m;
-		decWFDribbleSpeedMax = 93m;
-		decWFDribbleSpeedMin = 71m;
-		decWFShortPassPrecisionMax = 89m;
-		decWFShortPassPrecisionMin = 62m;
-		decWFShortPassSpeedMax = 84m;
-		decWFShortPassSpeedMin = 62m;
-		decWFLongPassPrecisionMax = 90m;
-		decWFLongPassPrecisionMin = 65m;
-		decWFLongPassSpeedMax = 87m;
-		decWFLongPassSpeedMin = 64m;
-		decWFShotPrecisionMax = 88m;
-		decWFShotPrecisionMin = 64m;
-		decWFShotPowerMax = 90m;
-		decWFShotPowerMin = 70m;
-		decWFShotTechniqueMax = 87m;
-		decWFShotTechniqueMin = 61m;
-		decWFFreeKickPrecisionMax = 87m;
-		decWFFreeKickPrecisionMin = 53m;
-		decWFBendMax = 85m;
-		decWFBendMin = 56m;
-		decWFHeadingMax = 81m;
-		decWFHeadingMin = 60m;
-		decWFJumpMax = 83m;
-		decWFJumpMin = 52m;
-		decWFTechniqueMax = 91m;
-		decWFTechniqueMin = 69m;
-		decWFAggressivenessMax = 92m;
-		decWFAggressivenessMin = 66m;
-		decWFMentalityMax = 77m;
-		decWFMentalityMin = 61m;
-		decWFCooperationMax = 81m;
-		decWFCooperationMin = 56m;
-		decWFStarPlayer = 12.75m;
-		decSTCFAttackMax = 97m;
-		decSTCFAttackMin = 68m;
-		decSTCFDefenseMax = 67m;
-		decSTCFDefenseMin = 27m;
-		decSTCFBodyBalanceMax = 97m;
-		decSTCFBodyBalanceMin = 50m;
-		decSTCFStaminaMax = 92m;
-		decSTCFStaminaMin = 50m;
-		decSTCFTopSpeedMax = 96m;
-		decSTCFTopSpeedMin = 54m;
-		decSTCFAccelerationMax = 97m;
-		decSTCFAccelerationMin = 50m;
-		decSTCFResponseMax = 96m;
-		decSTCFResponseMin = 61m;
-		decSTCFAgilityMax = 96m;
-		decSTCFAgilityMin = 52m;
-		decSTCFDribblePrecisionMax = 95m;
-		decSTCFDribblePrecisionMin = 59m;
-		decSTCFDribbleSpeedMax = 94m;
-		decSTCFDribbleSpeedMin = 57m;
-		decSTCFShortPassPrecisionMax = 92m;
-		decSTCFShortPassPrecisionMin = 54m;
-		decSTCFShortPassSpeedMax = 87m;
-		decSTCFShortPassSpeedMin = 54m;
-		decSTCFLongPassPrecisionMax = 90m;
-		decSTCFLongPassPrecisionMin = 55m;
-		decSTCFLongPassSpeedMax = 89m;
-		decSTCFLongPassSpeedMin = 54m;
-		decSTCFShotPrecisionMax = 97m;
-		decSTCFShotPrecisionMin = 60m;
-		decSTCFShotPowerMax = 97m;
-		decSTCFShotPowerMin = 61m;
-		decSTCFShotTechniqueMax = 98m;
-		decSTCFShotTechniqueMin = 59m;
-		decSTCFFreeKickPrecisionMax = 94m;
-		decSTCFFreeKickPrecisionMin = 46m;
-		decSTCFBendMax = 95m;
-		decSTCFBendMin = 42m;
-		decSTCFHeadingMax = 97m;
-		decSTCFHeadingMin = 58m;
-		decSTCFJumpMax = 95m;
-		decSTCFJumpMin = 50m;
-		decSTCFTechniqueMax = 99m;
-		decSTCFTechniqueMin = 58m;
-		decSTCFAggressivenessMax = 95m;
-		decSTCFAggressivenessMin = 59m;
-		decSTCFMentalityMax = 91m;
-		decSTCFMentalityMin = 57m;
-		decSTCFCooperationMax = 90m;
-		decSTCFCooperationMin = 51m;
-		decSTCFStarPlayer = 13.5m;
-		InitializeComponent();
-	}
-
-	protected override void Dispose(bool disposing)
-	{
-		if (disposing && components != null)
-		{
-			components.Dispose();
-		}
-		base.Dispose(disposing);
-	}
-
-	[DebuggerStepThrough]
-	private void InitializeComponent()
-	{
-		this.txtName = new TextBox();
-		this.lblName = new Label();
-		this.lblPosition = new Label();
-		this.cmbPosition = new ComboBox();
-		this.grpPlayerInformation = new GroupBox();
-		this.grpFM2005Stats = new GroupBox();
-		this.cmbTeamwork = new ComboBox();
-		this.lblTeamwork = new Label();
-		this.cmbPositioning = new ComboBox();
-		this.lblPositioning = new Label();
-		this.cmbOffTheBall = new ComboBox();
-		this.lblOffTheBall = new Label();
-		this.cmbInfluence = new ComboBox();
-		this.lblInfluence = new Label();
-		this.cmbFlair = new ComboBox();
-		this.lblFlair = new Label();
-		this.cmbDetermination = new ComboBox();
-		this.lblDetermination = new Label();
-		this.cmbDecisions = new ComboBox();
-		this.lblDecisions = new Label();
-		this.cmbCreativity = new ComboBox();
-		this.lblCreativity = new Label();
-		this.cmbConcentration = new ComboBox();
-		this.lblConcentration = new Label();
-		this.cmbComposure = new ComboBox();
-		this.lblComposure = new Label();
-		this.cmbPreferredFoot = new ComboBox();
-		this.lblPreferredFoot = new Label();
-		this.cmbStrength = new ComboBox();
-		this.lblStrength = new Label();
-		this.cmbStamina = new ComboBox();
-		this.lblStamina = new Label();
-		this.cmbPace = new ComboBox();
-		this.cmbTechnique = new ComboBox();
-		this.lblTechnique = new Label();
-		this.cmbTackling = new ComboBox();
-		this.lblTackling = new Label();
-		this.cmbPenaltyTaking = new ComboBox();
-		this.lblPenaltyTaking = new Label();
-		this.cmbPassing = new ComboBox();
-		this.lblPassing = new Label();
-		this.cmbMarking = new ComboBox();
-		this.lblMarking = new Label();
-		this.cmbLongThrows = new ComboBox();
-		this.lblLongThrows = new Label();
-		this.cmbLongShots = new ComboBox();
-		this.lblLongShots = new Label();
-		this.cmbHeading = new ComboBox();
-		this.lblHeading = new Label();
-		this.cmbFreeKicks = new ComboBox();
-		this.lblFreeKicks = new Label();
-		this.cmbFirstTouch = new ComboBox();
-		this.lblFirstTouch = new Label();
-		this.cmbFinishing = new ComboBox();
-		this.lblFinishing = new Label();
-		this.cmbDribbling = new ComboBox();
-		this.cmbBravery = new ComboBox();
-		this.lblBravery = new Label();
-		this.cmbAnticipation = new ComboBox();
-		this.lblCrossing = new Label();
-		this.lblAnticipation = new Label();
-		this.cmbAggression = new ComboBox();
-		this.lblAggression = new Label();
-		this.cmbCorners = new ComboBox();
-		this.lblDribbling = new Label();
-		this.lblCorners = new Label();
-		this.lblPace = new Label();
-		this.cmbNaturalFitness = new ComboBox();
-		this.cmbCrossing = new ComboBox();
-		this.lblNaturalFitness = new Label();
-		this.cmbJumping = new ComboBox();
-		this.lblJumping = new Label();
-		this.cmbBalance = new ComboBox();
-		this.lblBalance = new Label();
-		this.cmbAgility = new ComboBox();
-		this.lblAgility = new Label();
-		this.cmbAcceleration = new ComboBox();
-		this.lblAcceleration = new Label();
-		this.cmbWorkRate = new ComboBox();
-		this.lblWorkRate = new Label();
-		this.btnConvert = new Button();
-		this.btnReset = new Button();
-		this.btnExit = new Button();
-		this.grpPlayerInformation.SuspendLayout();
-		this.grpFM2005Stats.SuspendLayout();
-		this.SuspendLayout();
-		this.txtName.AutoSize = false;
-		this.txtName.Enabled = false;
-		TextBox textBox = this.txtName;
-		Point location = new Point(112, 24);
-		textBox.Location = location;
-		this.txtName.Name = "txtName";
-		TextBox textBox2 = this.txtName;
-		textBox2.Size = new Size(160, 24);
-		this.txtName.TabIndex = 0;
-		this.txtName.Text = "";
-		this.lblName.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label = this.lblName;
-		location = new Point(56, 24);
-		label.Location = location;
-		this.lblName.Name = "lblName";
-		Label label2 = this.lblName;
-		label2.Size = new Size(48, 24);
-		this.lblName.TabIndex = 2;
-		this.lblName.Text = "Name";
-		this.lblName.TextAlign = ContentAlignment.MiddleRight;
-		this.lblPosition.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label3 = this.lblPosition;
-		location = new Point(8, 48);
-		label3.Location = location;
-		this.lblPosition.Name = "lblPosition";
-		Label label4 = this.lblPosition;
-		label4.Size = new Size(96, 24);
-		this.lblPosition.TabIndex = 4;
-		this.lblPosition.Text = "WE/PES Position";
-		this.lblPosition.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPosition.ItemHeight = 13;
-		this.cmbPosition.Items.AddRange(new string[8] { "CB", "SB", "DMF", "CMF", "SMF", "OMF", "WF", "ST/CF" });
-		ComboBox comboBox = this.cmbPosition;
-		location = new Point(112, 50);
-		comboBox.Location = location;
-		this.cmbPosition.Name = "cmbPosition";
-		ComboBox comboBox2 = this.cmbPosition;
-		comboBox2.Size = new Size(56, 21);
-        this.cmbPosition.TabIndex = 6;
-		this.grpPlayerInformation.Controls.Add(this.txtName);
-		this.grpPlayerInformation.Controls.Add(this.lblName);
-		this.grpPlayerInformation.Controls.Add(this.lblPosition);
-		this.grpPlayerInformation.Controls.Add(this.cmbPosition);
-		GroupBox groupBox = this.grpPlayerInformation;
-		location = new Point(128, 8);
-		groupBox.Location = location;
-		this.grpPlayerInformation.Name = "grpPlayerInformation";
-		GroupBox groupBox2 = this.grpPlayerInformation;
-		groupBox2.Size = new Size(280, 88);
-        this.grpPlayerInformation.TabIndex = 81;
-		this.grpPlayerInformation.TabStop = false;
-		this.grpPlayerInformation.Text = "Player Information";
-		this.grpFM2005Stats.Controls.Add(this.cmbTeamwork);
-		this.grpFM2005Stats.Controls.Add(this.lblTeamwork);
-		this.grpFM2005Stats.Controls.Add(this.cmbPositioning);
-		this.grpFM2005Stats.Controls.Add(this.lblPositioning);
-		this.grpFM2005Stats.Controls.Add(this.cmbOffTheBall);
-		this.grpFM2005Stats.Controls.Add(this.lblOffTheBall);
-		this.grpFM2005Stats.Controls.Add(this.cmbInfluence);
-		this.grpFM2005Stats.Controls.Add(this.lblInfluence);
-		this.grpFM2005Stats.Controls.Add(this.cmbFlair);
-		this.grpFM2005Stats.Controls.Add(this.lblFlair);
-		this.grpFM2005Stats.Controls.Add(this.cmbDetermination);
-		this.grpFM2005Stats.Controls.Add(this.lblDetermination);
-		this.grpFM2005Stats.Controls.Add(this.cmbDecisions);
-		this.grpFM2005Stats.Controls.Add(this.lblDecisions);
-		this.grpFM2005Stats.Controls.Add(this.cmbCreativity);
-		this.grpFM2005Stats.Controls.Add(this.lblCreativity);
-		this.grpFM2005Stats.Controls.Add(this.cmbConcentration);
-		this.grpFM2005Stats.Controls.Add(this.lblConcentration);
-		this.grpFM2005Stats.Controls.Add(this.cmbComposure);
-		this.grpFM2005Stats.Controls.Add(this.lblComposure);
-		this.grpFM2005Stats.Controls.Add(this.cmbPreferredFoot);
-		this.grpFM2005Stats.Controls.Add(this.lblPreferredFoot);
-		this.grpFM2005Stats.Controls.Add(this.cmbStrength);
-		this.grpFM2005Stats.Controls.Add(this.lblStrength);
-		this.grpFM2005Stats.Controls.Add(this.cmbStamina);
-		this.grpFM2005Stats.Controls.Add(this.lblStamina);
-		this.grpFM2005Stats.Controls.Add(this.cmbPace);
-		this.grpFM2005Stats.Controls.Add(this.cmbTechnique);
-		this.grpFM2005Stats.Controls.Add(this.lblTechnique);
-		this.grpFM2005Stats.Controls.Add(this.cmbTackling);
-		this.grpFM2005Stats.Controls.Add(this.lblTackling);
-		this.grpFM2005Stats.Controls.Add(this.cmbPenaltyTaking);
-		this.grpFM2005Stats.Controls.Add(this.lblPenaltyTaking);
-		this.grpFM2005Stats.Controls.Add(this.cmbPassing);
-		this.grpFM2005Stats.Controls.Add(this.lblPassing);
-		this.grpFM2005Stats.Controls.Add(this.cmbMarking);
-		this.grpFM2005Stats.Controls.Add(this.lblMarking);
-		this.grpFM2005Stats.Controls.Add(this.cmbLongThrows);
-		this.grpFM2005Stats.Controls.Add(this.lblLongThrows);
-		this.grpFM2005Stats.Controls.Add(this.cmbLongShots);
-		this.grpFM2005Stats.Controls.Add(this.lblLongShots);
-		this.grpFM2005Stats.Controls.Add(this.cmbHeading);
-		this.grpFM2005Stats.Controls.Add(this.lblHeading);
-		this.grpFM2005Stats.Controls.Add(this.cmbFreeKicks);
-		this.grpFM2005Stats.Controls.Add(this.lblFreeKicks);
-		this.grpFM2005Stats.Controls.Add(this.cmbFirstTouch);
-		this.grpFM2005Stats.Controls.Add(this.lblFirstTouch);
-		this.grpFM2005Stats.Controls.Add(this.cmbFinishing);
-		this.grpFM2005Stats.Controls.Add(this.lblFinishing);
-		this.grpFM2005Stats.Controls.Add(this.cmbDribbling);
-		this.grpFM2005Stats.Controls.Add(this.cmbBravery);
-		this.grpFM2005Stats.Controls.Add(this.lblBravery);
-		this.grpFM2005Stats.Controls.Add(this.cmbAnticipation);
-		this.grpFM2005Stats.Controls.Add(this.lblCrossing);
-		this.grpFM2005Stats.Controls.Add(this.lblAnticipation);
-		this.grpFM2005Stats.Controls.Add(this.cmbAggression);
-		this.grpFM2005Stats.Controls.Add(this.lblAggression);
-		this.grpFM2005Stats.Controls.Add(this.cmbCorners);
-		this.grpFM2005Stats.Controls.Add(this.lblDribbling);
-		this.grpFM2005Stats.Controls.Add(this.lblCorners);
-		this.grpFM2005Stats.Controls.Add(this.lblPace);
-		this.grpFM2005Stats.Controls.Add(this.cmbNaturalFitness);
-		this.grpFM2005Stats.Controls.Add(this.cmbCrossing);
-		this.grpFM2005Stats.Controls.Add(this.lblNaturalFitness);
-		this.grpFM2005Stats.Controls.Add(this.cmbJumping);
-		this.grpFM2005Stats.Controls.Add(this.lblJumping);
-		this.grpFM2005Stats.Controls.Add(this.cmbBalance);
-		this.grpFM2005Stats.Controls.Add(this.lblBalance);
-		this.grpFM2005Stats.Controls.Add(this.cmbAgility);
-		this.grpFM2005Stats.Controls.Add(this.lblAgility);
-		this.grpFM2005Stats.Controls.Add(this.cmbAcceleration);
-		this.grpFM2005Stats.Controls.Add(this.lblAcceleration);
-		this.grpFM2005Stats.Controls.Add(this.cmbWorkRate);
-		this.grpFM2005Stats.Controls.Add(this.lblWorkRate);
-		GroupBox groupBox3 = this.grpFM2005Stats;
-		location = new Point(8, 104);
-		groupBox3.Location = location;
-		this.grpFM2005Stats.Name = "grpFM2005Stats";
-		GroupBox groupBox4 = this.grpFM2005Stats;
-		groupBox4.Size = new Size(520, 368);
-        this.grpFM2005Stats.TabIndex = 82;
-		this.grpFM2005Stats.TabStop = false;
-		this.grpFM2005Stats.Text = "Football Manager 2005 Stats";
-		this.cmbTeamwork.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbTeamwork.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox3 = this.cmbTeamwork;
-		location = new Point(256, 312);
-		comboBox3.Location = location;
-		this.cmbTeamwork.Name = "cmbTeamwork";
-		ComboBox comboBox4 = this.cmbTeamwork;
-		comboBox4.Size = new Size(48, 21);
-        this.cmbTeamwork.TabIndex = 136;
-		this.lblTeamwork.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label5 = this.lblTeamwork;
-		location = new Point(168, 312);
-		label5.Location = location;
-		this.lblTeamwork.Name = "lblTeamwork";
-		Label label6 = this.lblTeamwork;
-		label6.Size = new Size(80, 24);
-        this.lblTeamwork.TabIndex = 135;
-		this.lblTeamwork.Text = "Teamwork";
-		this.lblTeamwork.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbPositioning.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPositioning.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox5 = this.cmbPositioning;
-		location = new Point(256, 288);
-		comboBox5.Location = location;
-		this.cmbPositioning.Name = "cmbPositioning";
-		ComboBox comboBox6 = this.cmbPositioning;
-		comboBox6.Size = new Size(48, 21);
-		this.cmbPositioning.TabIndex = 134;
-		this.lblPositioning.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label7 = this.lblPositioning;
-		location = new Point(168, 288);
-		label7.Location = location;
-		this.lblPositioning.Name = "lblPositioning";
-		Label label8 = this.lblPositioning;
-		label8.Size = new Size(80, 24);
-		this.lblPositioning.TabIndex = 133;
-		this.lblPositioning.Text = "Positioning";
-		this.lblPositioning.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbOffTheBall.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbOffTheBall.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox7 = this.cmbOffTheBall;
-		location = new Point(256, 264);
-		comboBox7.Location = location;
-		this.cmbOffTheBall.Name = "cmbOffTheBall";
-		ComboBox comboBox8 = this.cmbOffTheBall;
-        Size size = new Size(48, 21);
-        comboBox8.Size = size;
-		this.cmbOffTheBall.TabIndex = 132;
-		this.lblOffTheBall.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label9 = this.lblOffTheBall;
-		location = new Point(168, 264);
-		label9.Location = location;
-		this.lblOffTheBall.Name = "lblOffTheBall";
-		Label label10 = this.lblOffTheBall;
-		size = new Size(80, 24);
-		label10.Size = size;
-		this.lblOffTheBall.TabIndex = 131;
-		this.lblOffTheBall.Text = "Off The Ball";
-		this.lblOffTheBall.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbInfluence.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbInfluence.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox9 = this.cmbInfluence;
-		location = new Point(256, 240);
-		comboBox9.Location = location;
-		this.cmbInfluence.Name = "cmbInfluence";
-		ComboBox comboBox10 = this.cmbInfluence;
-		size = new Size(48, 21);
-		comboBox10.Size = size;
-		this.cmbInfluence.TabIndex = 130;
-		this.lblInfluence.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label11 = this.lblInfluence;
-		location = new Point(168, 240);
-		label11.Location = location;
-		this.lblInfluence.Name = "lblInfluence";
-		Label label12 = this.lblInfluence;
-		size = new Size(80, 24);
-		label12.Size = size;
-		this.lblInfluence.TabIndex = 129;
-		this.lblInfluence.Text = "Influence";
-		this.lblInfluence.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbFlair.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFlair.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox11 = this.cmbFlair;
-		location = new Point(256, 216);
-		comboBox11.Location = location;
-		this.cmbFlair.Name = "cmbFlair";
-		ComboBox comboBox12 = this.cmbFlair;
-		size = new Size(48, 21);
-		comboBox12.Size = size;
-		this.cmbFlair.TabIndex = 128;
-		this.lblFlair.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label13 = this.lblFlair;
-		location = new Point(168, 216);
-		label13.Location = location;
-		this.lblFlair.Name = "lblFlair";
-		Label label14 = this.lblFlair;
-		size = new Size(80, 24);
-		label14.Size = size;
-		this.lblFlair.TabIndex = 127;
-		this.lblFlair.Text = "Flair";
-		this.lblFlair.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbDetermination.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbDetermination.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox13 = this.cmbDetermination;
-		location = new Point(256, 192);
-		comboBox13.Location = location;
-		this.cmbDetermination.Name = "cmbDetermination";
-		ComboBox comboBox14 = this.cmbDetermination;
-		size = new Size(48, 21);
-		comboBox14.Size = size;
-		this.cmbDetermination.TabIndex = 126;
-		this.lblDetermination.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label15 = this.lblDetermination;
-		location = new Point(168, 192);
-		label15.Location = location;
-		this.lblDetermination.Name = "lblDetermination";
-		Label label16 = this.lblDetermination;
-		size = new Size(80, 24);
-		label16.Size = size;
-		this.lblDetermination.TabIndex = 125;
-		this.lblDetermination.Text = "Determination";
-		this.lblDetermination.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbDecisions.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbDecisions.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox15 = this.cmbDecisions;
-		location = new Point(256, 168);
-		comboBox15.Location = location;
-		this.cmbDecisions.Name = "cmbDecisions";
-		ComboBox comboBox16 = this.cmbDecisions;
-		size = new Size(48, 21);
-		comboBox16.Size = size;
-		this.cmbDecisions.TabIndex = 124;
-		this.lblDecisions.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label17 = this.lblDecisions;
-		location = new Point(168, 168);
-		label17.Location = location;
-		this.lblDecisions.Name = "lblDecisions";
-		Label label18 = this.lblDecisions;
-		size = new Size(80, 24);
-		label18.Size = size;
-		this.lblDecisions.TabIndex = 123;
-		this.lblDecisions.Text = "Decisions";
-		this.lblDecisions.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbCreativity.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbCreativity.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox17 = this.cmbCreativity;
-		location = new Point(256, 144);
-		comboBox17.Location = location;
-		this.cmbCreativity.Name = "cmbCreativity";
-		ComboBox comboBox18 = this.cmbCreativity;
-		size = new Size(48, 21);
-		comboBox18.Size = size;
-		this.cmbCreativity.TabIndex = 122;
-		this.lblCreativity.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label19 = this.lblCreativity;
-		location = new Point(168, 144);
-		label19.Location = location;
-		this.lblCreativity.Name = "lblCreativity";
-		Label label20 = this.lblCreativity;
-		size = new Size(80, 24);
-		label20.Size = size;
-		this.lblCreativity.TabIndex = 121;
-		this.lblCreativity.Text = "Creativity";
-		this.lblCreativity.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbConcentration.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbConcentration.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox19 = this.cmbConcentration;
-		location = new Point(256, 120);
-		comboBox19.Location = location;
-		this.cmbConcentration.Name = "cmbConcentration";
-		ComboBox comboBox20 = this.cmbConcentration;
-		size = new Size(48, 21);
-		comboBox20.Size = size;
-		this.cmbConcentration.TabIndex = 120;
-		this.lblConcentration.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label21 = this.lblConcentration;
-		location = new Point(168, 120);
-		label21.Location = location;
-		this.lblConcentration.Name = "lblConcentration";
-		Label label22 = this.lblConcentration;
-		size = new Size(80, 24);
-		label22.Size = size;
-		this.lblConcentration.TabIndex = 119;
-		this.lblConcentration.Text = "Concentration";
-		this.lblConcentration.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbComposure.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbComposure.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox21 = this.cmbComposure;
-		location = new Point(256, 96);
-		comboBox21.Location = location;
-		this.cmbComposure.Name = "cmbComposure";
-		ComboBox comboBox22 = this.cmbComposure;
-		size = new Size(48, 21);
-		comboBox22.Size = size;
-		this.cmbComposure.TabIndex = 118;
-		this.lblComposure.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label23 = this.lblComposure;
-		location = new Point(168, 96);
-		label23.Location = location;
-		this.lblComposure.Name = "lblComposure";
-		Label label24 = this.lblComposure;
-		size = new Size(80, 24);
-		label24.Size = size;
-		this.lblComposure.TabIndex = 117;
-		this.lblComposure.Text = "Composure";
-		this.lblComposure.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbPreferredFoot.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPreferredFoot.Items.AddRange(new string[5] { "Right", "Right Only", "Left", "Left Only", "Either" });
-		ComboBox comboBox23 = this.cmbPreferredFoot;
-		location = new Point(408, 216);
-		comboBox23.Location = location;
-		this.cmbPreferredFoot.Name = "cmbPreferredFoot";
-		ComboBox comboBox24 = this.cmbPreferredFoot;
-		size = new Size(96, 21);
-		comboBox24.Size = size;
-		this.cmbPreferredFoot.TabIndex = 156;
-		this.lblPreferredFoot.BackColor = Color.Transparent;
-		this.lblPreferredFoot.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label25 = this.lblPreferredFoot;
-		location = new Point(320, 216);
-		label25.Location = location;
-		this.lblPreferredFoot.Name = "lblPreferredFoot";
-		Label label26 = this.lblPreferredFoot;
-		size = new Size(80, 24);
-		label26.Size = size;
-		this.lblPreferredFoot.TabIndex = 155;
-		this.lblPreferredFoot.Text = "Preferred Foot";
-		this.lblPreferredFoot.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbStrength.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbStrength.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox25 = this.cmbStrength;
-		location = new Point(408, 192);
-		comboBox25.Location = location;
-		this.cmbStrength.Name = "cmbStrength";
-		ComboBox comboBox26 = this.cmbStrength;
-		size = new Size(48, 21);
-		comboBox26.Size = size;
-		this.cmbStrength.TabIndex = 154;
-		this.lblStrength.BackColor = Color.Transparent;
-		this.lblStrength.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label27 = this.lblStrength;
-		location = new Point(320, 192);
-		label27.Location = location;
-		this.lblStrength.Name = "lblStrength";
-		Label label28 = this.lblStrength;
-		size = new Size(80, 24);
-		label28.Size = size;
-		this.lblStrength.TabIndex = 153;
-		this.lblStrength.Text = "Strength";
-		this.lblStrength.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbStamina.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbStamina.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox27 = this.cmbStamina;
-		location = new Point(408, 168);
-		comboBox27.Location = location;
-		this.cmbStamina.Name = "cmbStamina";
-		ComboBox comboBox28 = this.cmbStamina;
-		size = new Size(48, 21);
-		comboBox28.Size = size;
-		this.cmbStamina.TabIndex = 152;
-		this.lblStamina.BackColor = Color.Transparent;
-		this.lblStamina.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label29 = this.lblStamina;
-		location = new Point(320, 168);
-		label29.Location = location;
-		this.lblStamina.Name = "lblStamina";
-		Label label30 = this.lblStamina;
-		size = new Size(80, 24);
-		label30.Size = size;
-		this.lblStamina.TabIndex = 151;
-		this.lblStamina.Text = "Stamina";
-		this.lblStamina.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbPace.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPace.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox29 = this.cmbPace;
-		location = new Point(408, 144);
-		comboBox29.Location = location;
-		this.cmbPace.Name = "cmbPace";
-		ComboBox comboBox30 = this.cmbPace;
-		size = new Size(48, 21);
-		comboBox30.Size = size;
-		this.cmbPace.TabIndex = 150;
-		this.cmbTechnique.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbTechnique.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox31 = this.cmbTechnique;
-		location = new Point(104, 336);
-		comboBox31.Location = location;
-		this.cmbTechnique.Name = "cmbTechnique";
-		ComboBox comboBox32 = this.cmbTechnique;
-		size = new Size(48, 21);
-		comboBox32.Size = size;
-		this.cmbTechnique.TabIndex = 110;
-		this.lblTechnique.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label31 = this.lblTechnique;
-		location = new Point(16, 336);
-		label31.Location = location;
-		this.lblTechnique.Name = "lblTechnique";
-		Label label32 = this.lblTechnique;
-		size = new Size(80, 24);
-		label32.Size = size;
-		this.lblTechnique.TabIndex = 109;
-		this.lblTechnique.Text = "Technique";
-		this.lblTechnique.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbTackling.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbTackling.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox33 = this.cmbTackling;
-		location = new Point(104, 312);
-		comboBox33.Location = location;
-		this.cmbTackling.Name = "cmbTackling";
-		ComboBox comboBox34 = this.cmbTackling;
-		size = new Size(48, 21);
-		comboBox34.Size = size;
-		this.cmbTackling.TabIndex = 108;
-		this.lblTackling.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label33 = this.lblTackling;
-		location = new Point(16, 312);
-		label33.Location = location;
-		this.lblTackling.Name = "lblTackling";
-		Label label34 = this.lblTackling;
-		size = new Size(80, 24);
-		label34.Size = size;
-		this.lblTackling.TabIndex = 107;
-		this.lblTackling.Text = "Tackling";
-		this.lblTackling.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbPenaltyTaking.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPenaltyTaking.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox35 = this.cmbPenaltyTaking;
-		location = new Point(104, 288);
-		comboBox35.Location = location;
-		this.cmbPenaltyTaking.Name = "cmbPenaltyTaking";
-		ComboBox comboBox36 = this.cmbPenaltyTaking;
-		size = new Size(48, 21);
-		comboBox36.Size = size;
-		this.cmbPenaltyTaking.TabIndex = 106;
-		this.lblPenaltyTaking.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label35 = this.lblPenaltyTaking;
-		location = new Point(16, 288);
-		label35.Location = location;
-		this.lblPenaltyTaking.Name = "lblPenaltyTaking";
-		Label label36 = this.lblPenaltyTaking;
-		size = new Size(80, 24);
-		label36.Size = size;
-		this.lblPenaltyTaking.TabIndex = 105;
-		this.lblPenaltyTaking.Text = "Penalty Taking";
-		this.lblPenaltyTaking.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbPassing.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbPassing.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox37 = this.cmbPassing;
-		location = new Point(104, 264);
-		comboBox37.Location = location;
-		this.cmbPassing.Name = "cmbPassing";
-		ComboBox comboBox38 = this.cmbPassing;
-		size = new Size(48, 21);
-		comboBox38.Size = size;
-		this.cmbPassing.TabIndex = 104;
-		this.lblPassing.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label37 = this.lblPassing;
-		location = new Point(16, 264);
-		label37.Location = location;
-		this.lblPassing.Name = "lblPassing";
-		Label label38 = this.lblPassing;
-		size = new Size(80, 24);
-		label38.Size = size;
-		this.lblPassing.TabIndex = 103;
-		this.lblPassing.Text = "Passing";
-		this.lblPassing.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbMarking.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbMarking.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox39 = this.cmbMarking;
-		location = new Point(104, 240);
-		comboBox39.Location = location;
-		this.cmbMarking.Name = "cmbMarking";
-		ComboBox comboBox40 = this.cmbMarking;
-		size = new Size(48, 21);
-		comboBox40.Size = size;
-		this.cmbMarking.TabIndex = 102;
-		this.lblMarking.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label39 = this.lblMarking;
-		location = new Point(16, 240);
-		label39.Location = location;
-		this.lblMarking.Name = "lblMarking";
-		Label label40 = this.lblMarking;
-		size = new Size(80, 24);
-		label40.Size = size;
-		this.lblMarking.TabIndex = 101;
-		this.lblMarking.Text = "Marking";
-		this.lblMarking.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbLongThrows.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbLongThrows.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox41 = this.cmbLongThrows;
-		location = new Point(104, 216);
-		comboBox41.Location = location;
-		this.cmbLongThrows.Name = "cmbLongThrows";
-		ComboBox comboBox42 = this.cmbLongThrows;
-		size = new Size(48, 21);
-		comboBox42.Size = size;
-		this.cmbLongThrows.TabIndex = 100;
-		this.lblLongThrows.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label41 = this.lblLongThrows;
-		location = new Point(16, 216);
-		label41.Location = location;
-		this.lblLongThrows.Name = "lblLongThrows";
-		Label label42 = this.lblLongThrows;
-		size = new Size(80, 24);
-		label42.Size = size;
-		this.lblLongThrows.TabIndex = 99;
-		this.lblLongThrows.Text = "Long Throws";
-		this.lblLongThrows.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbLongShots.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbLongShots.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox43 = this.cmbLongShots;
-		location = new Point(104, 192);
-		comboBox43.Location = location;
-		this.cmbLongShots.Name = "cmbLongShots";
-		ComboBox comboBox44 = this.cmbLongShots;
-		size = new Size(48, 21);
-		comboBox44.Size = size;
-		this.cmbLongShots.TabIndex = 98;
-		this.lblLongShots.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label43 = this.lblLongShots;
-		location = new Point(16, 192);
-		label43.Location = location;
-		this.lblLongShots.Name = "lblLongShots";
-		Label label44 = this.lblLongShots;
-		size = new Size(80, 24);
-		label44.Size = size;
-		this.lblLongShots.TabIndex = 97;
-		this.lblLongShots.Text = "Long Shots";
-		this.lblLongShots.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbHeading.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbHeading.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox45 = this.cmbHeading;
-		location = new Point(104, 168);
-		comboBox45.Location = location;
-		this.cmbHeading.Name = "cmbHeading";
-		ComboBox comboBox46 = this.cmbHeading;
-		size = new Size(48, 21);
-		comboBox46.Size = size;
-		this.cmbHeading.TabIndex = 96;
-		this.lblHeading.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label45 = this.lblHeading;
-		location = new Point(16, 168);
-		label45.Location = location;
-		this.lblHeading.Name = "lblHeading";
-		Label label46 = this.lblHeading;
-		size = new Size(80, 24);
-		label46.Size = size;
-		this.lblHeading.TabIndex = 95;
-		this.lblHeading.Text = "Heading";
-		this.lblHeading.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbFreeKicks.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFreeKicks.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox47 = this.cmbFreeKicks;
-		location = new Point(104, 144);
-		comboBox47.Location = location;
-		this.cmbFreeKicks.Name = "cmbFreeKicks";
-		ComboBox comboBox48 = this.cmbFreeKicks;
-		size = new Size(48, 21);
-		comboBox48.Size = size;
-		this.cmbFreeKicks.TabIndex = 94;
-		this.lblFreeKicks.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label47 = this.lblFreeKicks;
-		location = new Point(16, 144);
-		label47.Location = location;
-		this.lblFreeKicks.Name = "lblFreeKicks";
-		Label label48 = this.lblFreeKicks;
-		size = new Size(80, 24);
-		label48.Size = size;
-		this.lblFreeKicks.TabIndex = 93;
-		this.lblFreeKicks.Text = "Free Kicks";
-		this.lblFreeKicks.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbFirstTouch.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFirstTouch.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox49 = this.cmbFirstTouch;
-		location = new Point(104, 120);
-		comboBox49.Location = location;
-		this.cmbFirstTouch.Name = "cmbFirstTouch";
-		ComboBox comboBox50 = this.cmbFirstTouch;
-		size = new Size(48, 21);
-		comboBox50.Size = size;
-		this.cmbFirstTouch.TabIndex = 92;
-		this.lblFirstTouch.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label49 = this.lblFirstTouch;
-		location = new Point(16, 120);
-		label49.Location = location;
-		this.lblFirstTouch.Name = "lblFirstTouch";
-		Label label50 = this.lblFirstTouch;
-		size = new Size(80, 24);
-		label50.Size = size;
-		this.lblFirstTouch.TabIndex = 91;
-		this.lblFirstTouch.Text = "First Touch";
-		this.lblFirstTouch.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbFinishing.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbFinishing.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox51 = this.cmbFinishing;
-		location = new Point(104, 96);
-		comboBox51.Location = location;
-		this.cmbFinishing.Name = "cmbFinishing";
-		ComboBox comboBox52 = this.cmbFinishing;
-		size = new Size(48, 21);
-		comboBox52.Size = size;
-		this.cmbFinishing.TabIndex = 90;
-		this.lblFinishing.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label51 = this.lblFinishing;
-		location = new Point(16, 96);
-		label51.Location = location;
-		this.lblFinishing.Name = "lblFinishing";
-		Label label52 = this.lblFinishing;
-		size = new Size(80, 24);
-		label52.Size = size;
-		this.lblFinishing.TabIndex = 89;
-		this.lblFinishing.Text = "Finishing";
-		this.lblFinishing.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbDribbling.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbDribbling.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox53 = this.cmbDribbling;
-		location = new Point(104, 72);
-		comboBox53.Location = location;
-		this.cmbDribbling.Name = "cmbDribbling";
-		ComboBox comboBox54 = this.cmbDribbling;
-		size = new Size(48, 21);
-		comboBox54.Size = size;
-		this.cmbDribbling.TabIndex = 88;
-		this.cmbBravery.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbBravery.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox55 = this.cmbBravery;
-		location = new Point(256, 72);
-		comboBox55.Location = location;
-		this.cmbBravery.Name = "cmbBravery";
-		ComboBox comboBox56 = this.cmbBravery;
-		size = new Size(48, 21);
-		comboBox56.Size = size;
-		this.cmbBravery.TabIndex = 116;
-		this.lblBravery.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label53 = this.lblBravery;
-		location = new Point(168, 72);
-		label53.Location = location;
-		this.lblBravery.Name = "lblBravery";
-		Label label54 = this.lblBravery;
-		size = new Size(80, 24);
-		label54.Size = size;
-		this.lblBravery.TabIndex = 115;
-		this.lblBravery.Text = "Bravery";
-		this.lblBravery.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbAnticipation.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAnticipation.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox57 = this.cmbAnticipation;
-		location = new Point(256, 48);
-		comboBox57.Location = location;
-		this.cmbAnticipation.Name = "cmbAnticipation";
-		ComboBox comboBox58 = this.cmbAnticipation;
-		size = new Size(48, 21);
-		comboBox58.Size = size;
-		this.cmbAnticipation.TabIndex = 114;
-		this.lblCrossing.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label55 = this.lblCrossing;
-		location = new Point(16, 48);
-		label55.Location = location;
-		this.lblCrossing.Name = "lblCrossing";
-		Label label56 = this.lblCrossing;
-		size = new Size(80, 24);
-		label56.Size = size;
-		this.lblCrossing.TabIndex = 85;
-		this.lblCrossing.Text = "Crossing";
-		this.lblCrossing.TextAlign = ContentAlignment.MiddleRight;
-		this.lblAnticipation.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label57 = this.lblAnticipation;
-		location = new Point(168, 48);
-		label57.Location = location;
-		this.lblAnticipation.Name = "lblAnticipation";
-		Label label58 = this.lblAnticipation;
-		size = new Size(80, 24);
-		label58.Size = size;
-		this.lblAnticipation.TabIndex = 113;
-		this.lblAnticipation.Text = "Anticipation";
-		this.lblAnticipation.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbAggression.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAggression.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox59 = this.cmbAggression;
-		location = new Point(256, 24);
-		comboBox59.Location = location;
-		this.cmbAggression.Name = "cmbAggression";
-		ComboBox comboBox60 = this.cmbAggression;
-		size = new Size(48, 21);
-		comboBox60.Size = size;
-		this.cmbAggression.TabIndex = 112;
-		this.lblAggression.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label59 = this.lblAggression;
-		location = new Point(168, 24);
-		label59.Location = location;
-		this.lblAggression.Name = "lblAggression";
-		Label label60 = this.lblAggression;
-		size = new Size(80, 24);
-		label60.Size = size;
-		this.lblAggression.TabIndex = 111;
-		this.lblAggression.Text = "Aggression";
-		this.lblAggression.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbCorners.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbCorners.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox61 = this.cmbCorners;
-		location = new Point(104, 24);
-		comboBox61.Location = location;
-		this.cmbCorners.Name = "cmbCorners";
-		ComboBox comboBox62 = this.cmbCorners;
-		size = new Size(48, 21);
-		comboBox62.Size = size;
-		this.cmbCorners.TabIndex = 84;
-		this.lblDribbling.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label61 = this.lblDribbling;
-		location = new Point(16, 72);
-		label61.Location = location;
-		this.lblDribbling.Name = "lblDribbling";
-		Label label62 = this.lblDribbling;
-		size = new Size(80, 24);
-		label62.Size = size;
-		this.lblDribbling.TabIndex = 87;
-		this.lblDribbling.Text = "Dribbling";
-		this.lblDribbling.TextAlign = ContentAlignment.MiddleRight;
-		this.lblCorners.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label63 = this.lblCorners;
-		location = new Point(16, 24);
-		label63.Location = location;
-		this.lblCorners.Name = "lblCorners";
-		Label label64 = this.lblCorners;
-		size = new Size(80, 24);
-		label64.Size = size;
-		this.lblCorners.TabIndex = 83;
-		this.lblCorners.Text = "Corners";
-		this.lblCorners.TextAlign = ContentAlignment.MiddleRight;
-		this.lblPace.BackColor = Color.Transparent;
-		this.lblPace.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label65 = this.lblPace;
-		location = new Point(320, 144);
-		label65.Location = location;
-		this.lblPace.Name = "lblPace";
-		Label label66 = this.lblPace;
-		size = new Size(80, 24);
-		label66.Size = size;
-		this.lblPace.TabIndex = 149;
-		this.lblPace.Text = "Pace";
-		this.lblPace.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbNaturalFitness.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbNaturalFitness.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox63 = this.cmbNaturalFitness;
-		location = new Point(408, 120);
-		comboBox63.Location = location;
-		this.cmbNaturalFitness.Name = "cmbNaturalFitness";
-		ComboBox comboBox64 = this.cmbNaturalFitness;
-		size = new Size(48, 21);
-		comboBox64.Size = size;
-		this.cmbNaturalFitness.TabIndex = 148;
-		this.cmbCrossing.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbCrossing.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox65 = this.cmbCrossing;
-		location = new Point(104, 48);
-		comboBox65.Location = location;
-		this.cmbCrossing.Name = "cmbCrossing";
-		ComboBox comboBox66 = this.cmbCrossing;
-		size = new Size(48, 21);
-		comboBox66.Size = size;
-		this.cmbCrossing.TabIndex = 86;
-		this.lblNaturalFitness.BackColor = Color.Transparent;
-		this.lblNaturalFitness.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label67 = this.lblNaturalFitness;
-		location = new Point(320, 120);
-		label67.Location = location;
-		this.lblNaturalFitness.Name = "lblNaturalFitness";
-		Label label68 = this.lblNaturalFitness;
-		size = new Size(80, 24);
-		label68.Size = size;
-		this.lblNaturalFitness.TabIndex = 147;
-		this.lblNaturalFitness.Text = "Natural Fitness";
-		this.lblNaturalFitness.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbJumping.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbJumping.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox67 = this.cmbJumping;
-		location = new Point(408, 96);
-		comboBox67.Location = location;
-		this.cmbJumping.Name = "cmbJumping";
-		ComboBox comboBox68 = this.cmbJumping;
-		size = new Size(48, 21);
-		comboBox68.Size = size;
-		this.cmbJumping.TabIndex = 146;
-		this.lblJumping.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label69 = this.lblJumping;
-		location = new Point(320, 96);
-		label69.Location = location;
-		this.lblJumping.Name = "lblJumping";
-		Label label70 = this.lblJumping;
-		size = new Size(80, 24);
-		label70.Size = size;
-		this.lblJumping.TabIndex = 145;
-		this.lblJumping.Text = "Jumping";
-		this.lblJumping.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbBalance.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbBalance.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox69 = this.cmbBalance;
-		location = new Point(408, 72);
-		comboBox69.Location = location;
-		this.cmbBalance.Name = "cmbBalance";
-		ComboBox comboBox70 = this.cmbBalance;
-		size = new Size(48, 21);
-		comboBox70.Size = size;
-		this.cmbBalance.TabIndex = 144;
-		this.lblBalance.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label71 = this.lblBalance;
-		location = new Point(320, 72);
-		label71.Location = location;
-		this.lblBalance.Name = "lblBalance";
-		Label label72 = this.lblBalance;
-		size = new Size(80, 24);
-		label72.Size = size;
-		this.lblBalance.TabIndex = 143;
-		this.lblBalance.Text = "Balance";
-		this.lblBalance.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbAgility.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAgility.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox71 = this.cmbAgility;
-		location = new Point(408, 48);
-		comboBox71.Location = location;
-		this.cmbAgility.Name = "cmbAgility";
-		ComboBox comboBox72 = this.cmbAgility;
-		size = new Size(48, 21);
-		comboBox72.Size = size;
-		this.cmbAgility.TabIndex = 142;
-		this.lblAgility.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label73 = this.lblAgility;
-		location = new Point(320, 48);
-		label73.Location = location;
-		this.lblAgility.Name = "lblAgility";
-		Label label74 = this.lblAgility;
-		size = new Size(80, 24);
-		label74.Size = size;
-		this.lblAgility.TabIndex = 141;
-		this.lblAgility.Text = "Agility";
-		this.lblAgility.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbAcceleration.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbAcceleration.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox73 = this.cmbAcceleration;
-		location = new Point(408, 24);
-		comboBox73.Location = location;
-		this.cmbAcceleration.Name = "cmbAcceleration";
-		ComboBox comboBox74 = this.cmbAcceleration;
-		size = new Size(48, 21);
-		comboBox74.Size = size;
-		this.cmbAcceleration.TabIndex = 140;
-		this.lblAcceleration.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label75 = this.lblAcceleration;
-		location = new Point(320, 24);
-		label75.Location = location;
-		this.lblAcceleration.Name = "lblAcceleration";
-		Label label76 = this.lblAcceleration;
-		size = new Size(80, 24);
-		label76.Size = size;
-		this.lblAcceleration.TabIndex = 139;
-		this.lblAcceleration.Text = "Acceleration";
-		this.lblAcceleration.TextAlign = ContentAlignment.MiddleRight;
-		this.cmbWorkRate.DropDownStyle = ComboBoxStyle.DropDownList;
-		this.cmbWorkRate.Items.AddRange(new string[20]
-		{
-			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-		});
-		ComboBox comboBox75 = this.cmbWorkRate;
-		location = new Point(256, 336);
-		comboBox75.Location = location;
-		this.cmbWorkRate.Name = "cmbWorkRate";
-		ComboBox comboBox76 = this.cmbWorkRate;
-		size = new Size(48, 21);
-		comboBox76.Size = size;
-		this.cmbWorkRate.TabIndex = 138;
-		this.lblWorkRate.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		Label label77 = this.lblWorkRate;
-		location = new Point(168, 336);
-		label77.Location = location;
-		this.lblWorkRate.Name = "lblWorkRate";
-		Label label78 = this.lblWorkRate;
-		size = new Size(80, 24);
-		label78.Size = size;
-		this.lblWorkRate.TabIndex = 137;
-		this.lblWorkRate.Text = "Work Rate";
-		this.lblWorkRate.TextAlign = ContentAlignment.MiddleRight;
-		Button button = this.btnConvert;
-		location = new Point(152, 480);
-		button.Location = location;
-		this.btnConvert.Name = "btnConvert";
-		Button button2 = this.btnConvert;
-		size = new Size(72, 24);
-		button2.Size = size;
-		this.btnConvert.TabIndex = 83;
-		this.btnConvert.Text = "&Convert";
-		Button button3 = this.btnReset;
-		location = new Point(232, 480);
-		button3.Location = location;
-		this.btnReset.Name = "btnReset";
-		Button button4 = this.btnReset;
-		size = new Size(72, 24);
-		button4.Size = size;
-		this.btnReset.TabIndex = 84;
-		this.btnReset.Text = "&Reset";
-		Button button5 = this.btnExit;
-		location = new Point(312, 480);
-		button5.Location = location;
-		this.btnExit.Name = "btnExit";
-		Button button6 = this.btnExit;
-		size = new Size(72, 24);
-		button6.Size = size;
-		this.btnExit.TabIndex = 85;
-		this.btnExit.Text = "E&xit";
-		size = new Size(5, 14);
-		this.AutoScaleBaseSize = size;
-		this.BackColor = SystemColors.Control;
-		size = new Size(536, 518);
-		this.ClientSize = size;
-		this.Controls.Add(this.btnExit);
-		this.Controls.Add(this.btnReset);
-		this.Controls.Add(this.btnConvert);
-		this.Controls.Add(this.grpFM2005Stats);
-		this.Controls.Add(this.grpPlayerInformation);
-		this.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-		this.FormBorderStyle = FormBorderStyle.FixedSingle;
-		this.Name = "Verter";
-		this.StartPosition = FormStartPosition.CenterScreen;
-		this.Text = "Verter - The Ultimate FM-to-WE/PES Stats Converter";
-		this.grpPlayerInformation.ResumeLayout(false);
-		this.grpFM2005Stats.ResumeLayout(false);
-		this.ResumeLayout(false);
-	}
-
-	private void Verter_Load(object sender, EventArgs e)
-	{
-		cmbPosition.SelectedIndex = 0;
-		cmbCorners.SelectedIndex = 9;
-		cmbCrossing.SelectedIndex = 9;
-		cmbDribbling.SelectedIndex = 9;
-		cmbFinishing.SelectedIndex = 9;
-		cmbFirstTouch.SelectedIndex = 9;
-		cmbFreeKicks.SelectedIndex = 9;
-		cmbHeading.SelectedIndex = 9;
-		cmbLongShots.SelectedIndex = 9;
-		cmbLongThrows.SelectedIndex = 9;
-		cmbMarking.SelectedIndex = 9;
-		cmbPassing.SelectedIndex = 9;
-		cmbPenaltyTaking.SelectedIndex = 9;
-		cmbTackling.SelectedIndex = 9;
-		cmbTechnique.SelectedIndex = 9;
-		cmbAggression.SelectedIndex = 9;
-		cmbAnticipation.SelectedIndex = 9;
-		cmbBravery.SelectedIndex = 9;
-		cmbComposure.SelectedIndex = 9;
-		cmbConcentration.SelectedIndex = 9;
-		cmbCreativity.SelectedIndex = 9;
-		cmbDecisions.SelectedIndex = 9;
-		cmbDetermination.SelectedIndex = 9;
-		cmbFlair.SelectedIndex = 9;
-		cmbInfluence.SelectedIndex = 9;
-		cmbOffTheBall.SelectedIndex = 9;
-		cmbPositioning.SelectedIndex = 9;
-		cmbTeamwork.SelectedIndex = 9;
-		cmbWorkRate.SelectedIndex = 9;
-		cmbAcceleration.SelectedIndex = 9;
-		cmbAgility.SelectedIndex = 9;
-		cmbBalance.SelectedIndex = 9;
-		cmbJumping.SelectedIndex = 9;
-		cmbNaturalFitness.SelectedIndex = 9;
-		cmbPace.SelectedIndex = 9;
-		cmbStamina.SelectedIndex = 9;
-		cmbStrength.SelectedIndex = 9;
-		cmbPreferredFoot.SelectedIndex = 0;
-	}
-
-	private void btnConvert_Click(object sender, EventArgs e)
-	{
-		checked
-		{
-			decimal fmStatsOverall = (decimal)((cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbHeading.SelectedIndex + cmbLongShots.SelectedIndex + cmbLongThrows.SelectedIndex + cmbMarking.SelectedIndex + cmbPassing.SelectedIndex + cmbPenaltyTaking.SelectedIndex + cmbTackling.SelectedIndex + cmbTechnique.SelectedIndex + cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbCreativity.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbFlair.SelectedIndex + cmbInfluence.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPositioning.SelectedIndex + cmbTeamwork.SelectedIndex + cmbWorkRate.SelectedIndex + cmbAcceleration.SelectedIndex + cmbAgility.SelectedIndex + cmbBalance.SelectedIndex + cmbJumping.SelectedIndex + cmbNaturalFitness.SelectedIndex + cmbPace.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + 36) / 36.0);
-			int condition = (int)Math.Round(5.0 * ((double)(cmbNaturalFitness.SelectedIndex + 1) * 0.4) / 8.0 + 3.0);
-			if (condition > 7)
-			{
-				frmWEPES.lblStabilityOfCondition.ForeColor = Color.Red;
-				frmWEPES.lblStabilityOfCondition.Text = StringType.FromInteger(8);
-			}
-			else if (condition > 6)
-			{
-				frmWEPES.lblStabilityOfCondition.ForeColor = Color.Orange;
-				frmWEPES.lblStabilityOfCondition.Text = StringType.FromInteger(7);
-			}
-			else
-			{
-				frmWEPES.lblStabilityOfCondition.ForeColor = Color.Empty;
-				frmWEPES.lblStabilityOfCondition.Text = StringType.FromInteger(condition);
-			}
-			int consistency = (int)Math.Round(5.0 * ((double)(cmbComposure.SelectedIndex + cmbDetermination.SelectedIndex + 2) / 2.0 * 0.4) / 8.0 + 3.0);
-			if (consistency > 7)
-			{
-				frmWEPES.lblStabilityOfPlay.ForeColor = Color.Red;
-				frmWEPES.lblStabilityOfPlay.Text = StringType.FromInteger(8);
-			}
-			else if (consistency > 6)
-			{
-				frmWEPES.lblStabilityOfPlay.ForeColor = Color.Orange;
-				frmWEPES.lblStabilityOfPlay.Text = StringType.FromInteger(7);
-			}
-			else
-			{
-				frmWEPES.lblStabilityOfPlay.ForeColor = Color.Empty;
-				frmWEPES.lblStabilityOfPlay.Text = StringType.FromInteger(consistency);
-			}
-			if ((cmbPreferredFoot.SelectedIndex == 0) | (cmbPreferredFoot.SelectedIndex == 2))
+			checked
 			{
-				if (cmbTechnique.SelectedIndex < 14)
+				decimal fmStatsOverall = (decimal)((cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbHeading.SelectedIndex + cmbLongShots.SelectedIndex + cmbLongThrows.SelectedIndex + cmbMarking.SelectedIndex + cmbPassing.SelectedIndex + cmbPenaltyTaking.SelectedIndex + cmbTackling.SelectedIndex + cmbTechnique.SelectedIndex + cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbCreativity.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbFlair.SelectedIndex + cmbInfluence.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPositioning.SelectedIndex + cmbTeamwork.SelectedIndex + cmbWorkRate.SelectedIndex + cmbAcceleration.SelectedIndex + cmbAgility.SelectedIndex + cmbBalance.SelectedIndex + cmbJumping.SelectedIndex + cmbNaturalFitness.SelectedIndex + cmbPace.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + 36) / 36.0);
+				int condition = (int)Math.Round(5.0 * ((double)(cmbNaturalFitness.SelectedIndex + 1) * 0.4) / 8.0 + 3.0);
+				if (condition > 7)
 				{
-					frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootAccuracy.Text = StringType.FromInteger(5);
-					frmWEPES.lblSecondFootFrequency.Text = StringType.FromInteger(5);
+					frmWEPES.lblStabilityOfCondition.ForeColor = Color.Red;
+					frmWEPES.lblStabilityOfCondition.Text = 8.ToString();
+				}
+				else if (condition > 6)
+				{
+					frmWEPES.lblStabilityOfCondition.ForeColor = Color.Orange;
+					frmWEPES.lblStabilityOfCondition.Text = 7.ToString();
 				}
 				else
 				{
-					frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootAccuracy.Text = StringType.FromInteger(6);
-					frmWEPES.lblSecondFootFrequency.Text = StringType.FromInteger(6);
+					frmWEPES.lblStabilityOfCondition.ForeColor = Color.Empty;
+					frmWEPES.lblStabilityOfCondition.Text = condition.ToString();
 				}
-			}
-			else if ((cmbPreferredFoot.SelectedIndex == 1) | (cmbPreferredFoot.SelectedIndex == 3))
-			{
-				if (cmbTechnique.SelectedIndex < 14)
+				int consistency = (int)Math.Round(5.0 * ((double)(cmbComposure.SelectedIndex + cmbDetermination.SelectedIndex + 2) / 2.0 * 0.4) / 8.0 + 3.0);
+				if (consistency > 7)
 				{
-					frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootAccuracy.Text = StringType.FromInteger(3);
-					frmWEPES.lblSecondFootFrequency.Text = StringType.FromInteger(3);
+					frmWEPES.lblStabilityOfPlay.ForeColor = Color.Red;
+					frmWEPES.lblStabilityOfPlay.Text = 8.ToString();
+				}
+				else if (consistency > 6)
+				{
+					frmWEPES.lblStabilityOfPlay.ForeColor = Color.Orange;
+					frmWEPES.lblStabilityOfPlay.Text = 7.ToString();
 				}
 				else
 				{
-					frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
-					frmWEPES.lblSecondFootAccuracy.Text = StringType.FromInteger(4);
-					frmWEPES.lblSecondFootFrequency.Text = StringType.FromInteger(4);
+					frmWEPES.lblStabilityOfPlay.ForeColor = Color.Empty;
+					frmWEPES.lblStabilityOfPlay.Text = consistency.ToString();
 				}
-			}
-			else if (cmbTechnique.SelectedIndex < 14)
-			{
-				frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Red;
-				frmWEPES.lblSecondFootAccuracy.Text = StringType.FromInteger(7);
-				frmWEPES.lblSecondFootFrequency.ForeColor = Color.Red;
-				frmWEPES.lblSecondFootFrequency.Text = StringType.FromInteger(7);
-			}
-			else
-			{
-				frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Red;
-				frmWEPES.lblSecondFootAccuracy.Text = StringType.FromInteger(8);
-				frmWEPES.lblSecondFootFrequency.ForeColor = Color.Red;
-				frmWEPES.lblSecondFootFrequency.Text = StringType.FromInteger(8);
-			}
-			int balance = 0;
-			int stamina = 0;
-			int topSpeed = 0;
-			int acceleration = 0;
-			int agility = 0;
-			int jump = 0;
-			int attack = 0;
-			int defence = 0;
-			int response = 0;
-			int dribbleAccuracy = 0;
-			int dribbleSpeed = 0;
-			int shortPassAccuracy = 0;
-			int shortPassSpeed = 0;
-			int longPassAccuracy = 0;
-			int longPassSpeed = 0;
-			int shotAccuracy = 0;
-			int shotPower = 0;
-			int shotTechnique = 0;
-			int freeKickAccuracy = 0;
-			int curling = 0;
-			int header = 0;
-			int technique = 0;
-			int aggression = 0;
-			int mentality = 0;
-			int teamwork = 0;
-			if (cmbPosition.SelectedIndex == 0)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBBodyBalanceMax, decCBBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBStaminaMax, decCBStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBTopSpeedMax, decCBTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBTopSpeedMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAccelerationMax, decCBAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAccelerationMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAgilityMax, decCBAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAgilityMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBJumpMax, decCBJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBJumpMin));
-				if (decimal.Compare(fmStatsOverall, decCBStarPlayer) >= 0)
+				if ((cmbPreferredFoot.SelectedIndex == 0) | (cmbPreferredFoot.SelectedIndex == 2))
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAttackMax, decCBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDefenseMax, decCBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBResponseMax, decCBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribblePrecisionMax, decCBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribbleSpeedMax, decCBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassPrecisionMax, decCBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassSpeedMax, decCBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassPrecisionMax, decCBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassSpeedMax, decCBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPrecisionMax, decCBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPowerMax, decCBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotTechniqueMax, decCBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBFreeKickPrecisionMax, decCBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBBendMax, decCBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBHeadingMax, decCBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBTechniqueMax, decCBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAggressivenessMax, decCBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBMentalityMax, decCBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decCBMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBCooperationMax, decCBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBCooperationMin));
+					if (cmbTechnique.SelectedIndex < 14)
+					{
+						frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootAccuracy.Text = 5.ToString();
+						frmWEPES.lblSecondFootFrequency.Text = 5.ToString();
+					}
+					else
+					{
+						frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootAccuracy.Text = 6.ToString();
+						frmWEPES.lblSecondFootFrequency.Text = 6.ToString();
+					}
+				}
+				else if ((cmbPreferredFoot.SelectedIndex == 1) | (cmbPreferredFoot.SelectedIndex == 3))
+				{
+					if (cmbTechnique.SelectedIndex < 14)
+					{
+						frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootAccuracy.Text = 3.ToString();
+						frmWEPES.lblSecondFootFrequency.Text = 3.ToString();
+					}
+					else
+					{
+						frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootFrequency.ForeColor = Color.Empty;
+						frmWEPES.lblSecondFootAccuracy.Text = 4.ToString();
+						frmWEPES.lblSecondFootFrequency.Text = 4.ToString();
+					}
+				}
+				else if (cmbTechnique.SelectedIndex < 14)
+				{
+					frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Red;
+					frmWEPES.lblSecondFootAccuracy.Text = 7.ToString();
+					frmWEPES.lblSecondFootFrequency.ForeColor = Color.Red;
+					frmWEPES.lblSecondFootFrequency.Text = 7.ToString();
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAttackMax, decCBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDefenseMax, decCBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBResponseMax, decCBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribblePrecisionMax, decCBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribbleSpeedMax, decCBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassPrecisionMax, decCBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassSpeedMax, decCBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassPrecisionMax, decCBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassSpeedMax, decCBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPrecisionMax, decCBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPowerMax, decCBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotTechniqueMax, decCBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBFreeKickPrecisionMax, decCBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBBendMax, decCBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBHeadingMax, decCBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBTechniqueMax, decCBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAggressivenessMax, decCBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBMentalityMax, decCBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decCBMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBCooperationMax, decCBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBCooperationMin) - 5.0);
+					frmWEPES.lblSecondFootAccuracy.ForeColor = Color.Red;
+					frmWEPES.lblSecondFootAccuracy.Text = 8.ToString();
+					frmWEPES.lblSecondFootFrequency.ForeColor = Color.Red;
+					frmWEPES.lblSecondFootFrequency.Text = 8.ToString();
 				}
-			}
-			if (cmbPosition.SelectedIndex == 1)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBBodyBalanceMax, decSBBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBStaminaMax, decSBStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBTopSpeedMax, decSBTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBTopSpeedMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAgilityMax, decSBAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAgilityMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAccelerationMax, decSBAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAccelerationMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBJumpMax, decSBJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBJumpMin));
-				if (decimal.Compare(fmStatsOverall, decSBStarPlayer) >= 0)
+				int balance = 0;
+				int stamina = 0;
+				int topSpeed = 0;
+				int acceleration = 0;
+				int agility = 0;
+				int jump = 0;
+				int attack = 0;
+				int defence = 0;
+				int response = 0;
+				int dribbleAccuracy = 0;
+				int dribbleSpeed = 0;
+				int shortPassAccuracy = 0;
+				int shortPassSpeed = 0;
+				int longPassAccuracy = 0;
+				int longPassSpeed = 0;
+				int shotAccuracy = 0;
+				int shotPower = 0;
+				int shotTechnique = 0;
+				int freeKickAccuracy = 0;
+				int curling = 0;
+				int header = 0;
+				int technique = 0;
+				int aggression = 0;
+				int mentality = 0;
+				int teamwork = 0;
+				if (cmbPosition.SelectedIndex == 0)
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAttackMax, decSBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDefenseMax, decSBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBResponseMax, decSBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribblePrecisionMax, decSBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribbleSpeedMax, decSBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassPrecisionMax, decSBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassSpeedMax, decSBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassPrecisionMax, decSBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassSpeedMax, decSBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPrecisionMax, decSBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPowerMax, decSBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotTechniqueMax, decSBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBFreeKickPrecisionMax, decSBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBBendMax, decSBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBHeadingMax, decSBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBTechniqueMax, decSBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAggressivenessMax, decSBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBMentalityMax, decSBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSBMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBCooperationMax, decSBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBCooperationMin));
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBBodyBalanceMax, decCBBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBStaminaMax, decCBStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBTopSpeedMax, decCBTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBTopSpeedMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAccelerationMax, decCBAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAccelerationMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAgilityMax, decCBAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAgilityMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBJumpMax, decCBJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBJumpMin));
+					if (decimal.Compare(fmStatsOverall, decCBStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAttackMax, decCBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDefenseMax, decCBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBResponseMax, decCBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribblePrecisionMax, decCBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribbleSpeedMax, decCBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassPrecisionMax, decCBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassSpeedMax, decCBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassPrecisionMax, decCBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassSpeedMax, decCBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPrecisionMax, decCBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPowerMax, decCBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotTechniqueMax, decCBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBFreeKickPrecisionMax, decCBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBBendMax, decCBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBHeadingMax, decCBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBTechniqueMax, decCBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAggressivenessMax, decCBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBMentalityMax, decCBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decCBMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBCooperationMax, decCBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAttackMax, decCBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDefenseMax, decCBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBResponseMax, decCBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribblePrecisionMax, decCBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBDribbleSpeedMax, decCBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassPrecisionMax, decCBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShortPassSpeedMax, decCBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassPrecisionMax, decCBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBLongPassSpeedMax, decCBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPrecisionMax, decCBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotPowerMax, decCBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBShotTechniqueMax, decCBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decCBShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBFreeKickPrecisionMax, decCBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBBendMax, decCBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decCBBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBHeadingMax, decCBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBTechniqueMax, decCBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBAggressivenessMax, decCBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBMentalityMax, decCBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decCBMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decCBCooperationMax, decCBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decCBCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 1)
+				{
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBBodyBalanceMax, decSBBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBStaminaMax, decSBStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBTopSpeedMax, decSBTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBTopSpeedMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAgilityMax, decSBAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAgilityMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAccelerationMax, decSBAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAccelerationMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBJumpMax, decSBJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBJumpMin));
+					if (decimal.Compare(fmStatsOverall, decSBStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAttackMax, decSBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDefenseMax, decSBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBResponseMax, decSBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribblePrecisionMax, decSBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribbleSpeedMax, decSBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassPrecisionMax, decSBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassSpeedMax, decSBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassPrecisionMax, decSBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassSpeedMax, decSBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPrecisionMax, decSBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPowerMax, decSBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotTechniqueMax, decSBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBFreeKickPrecisionMax, decSBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBBendMax, decSBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBHeadingMax, decSBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBTechniqueMax, decSBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAggressivenessMax, decSBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBMentalityMax, decSBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSBMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBCooperationMax, decSBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAttackMax, decSBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDefenseMax, decSBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBResponseMax, decSBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribblePrecisionMax, decSBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribbleSpeedMax, decSBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassPrecisionMax, decSBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassSpeedMax, decSBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassPrecisionMax, decSBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassSpeedMax, decSBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPrecisionMax, decSBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPowerMax, decSBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotTechniqueMax, decSBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBFreeKickPrecisionMax, decSBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBBendMax, decSBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBHeadingMax, decSBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBTechniqueMax, decSBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAggressivenessMax, decSBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBMentalityMax, decSBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSBMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBCooperationMax, decSBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 2)
+				{
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFBodyBalanceMax, decDMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFStaminaMax, decDMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFTopSpeedMax, decDMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTopSpeedMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAccelerationMax, decDMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAccelerationMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAgilityMax, decDMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAgilityMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFJumpMax, decDMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFJumpMin));
+					if (decimal.Compare(fmStatsOverall, decDMFStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 3)
+				{
+					balance = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFBodyBalanceMax, decDMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBodyBalanceMin) + (Convert.ToDouble(decimal.Subtract(decSMFBodyBalanceMax, decSMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBodyBalanceMin)) + (Convert.ToDouble(decimal.Subtract(decOMFBodyBalanceMax, decOMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBodyBalanceMin))) / 3.0);
+					stamina = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFStaminaMax, decDMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFStaminaMin) + (Convert.ToDouble(decimal.Subtract(decSMFStaminaMax, decSMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFStaminaMin)) + (Convert.ToDouble(decimal.Subtract(decOMFStaminaMax, decOMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFStaminaMin))) / 3.0);
+					topSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFTopSpeedMax, decDMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTopSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFTopSpeedMax, decSMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTopSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFTopSpeedMax, decOMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTopSpeedMin))) / 3.0);
+					acceleration = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAccelerationMax, decDMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAccelerationMin) + (Convert.ToDouble(decimal.Subtract(decSMFAccelerationMax, decSMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAccelerationMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAccelerationMax, decOMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAccelerationMin))) / 3.0);
+					agility = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAgilityMax, decDMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAgilityMin) + (Convert.ToDouble(decimal.Subtract(decSMFAgilityMax, decSMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAgilityMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAgilityMax, decOMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAgilityMin))) / 3.0);
+					jump = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFJumpMax, decDMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFJumpMin) + (Convert.ToDouble(decimal.Subtract(decSMFJumpMax, decSMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFJumpMin)) + (Convert.ToDouble(decimal.Subtract(decOMFJumpMax, decOMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFJumpMin))) / 3.0);
+					if (decimal.Compare(fmStatsOverall, decimal.Divide(decimal.Add(decimal.Add(decDMFStarPlayer, decSMFStarPlayer), decOMFStarPlayer), 3m)) >= 0)
+					{
+						attack = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin) + (Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin))) / 3.0);
+						defence = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin) + (Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin)) + (Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin))) / 3.0);
+						response = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin) + (Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin)) + (Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin))) / 3.0);
+						dribbleAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin))) / 3.0);
+						dribbleSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin))) / 3.0);
+						shortPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin))) / 3.0);
+						shortPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin))) / 3.0);
+						longPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin))) / 3.0);
+						longPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin))) / 3.0);
+						shotAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin))) / 3.0);
+						shotPower = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin) + (Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin))) / 3.0);
+						shotTechnique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin) + (Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin))) / 3.0);
+						freeKickAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin))) / 3.0);
+						curling = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin) + (Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin)) + (Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin))) / 3.0);
+						header = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin) + (Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin)) + (Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin))) / 3.0);
+						technique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin) + (Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin)) + (Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin))) / 3.0);
+						aggression = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin) + (Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin))) / 3.0);
+						mentality = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin) + (Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin)) + (Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin))) / 3.0);
+						teamwork = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin) + (Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin)) + (Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin))) / 3.0);
+					}
+					else
+					{
+						attack = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin) - 5.0)) / 3.0);
+						defence = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin) - 5.0)) / 3.0);
+						response = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin) - 5.0)) / 3.0);
+						dribbleAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin) - 5.0)) / 3.0);
+						dribbleSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin) - 5.0)) / 3.0);
+						shortPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin) - 5.0)) / 3.0);
+						shortPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin) - 5.0)) / 3.0);
+						longPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin) - 5.0)) / 3.0);
+						longPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin) - 5.0)) / 3.0);
+						shotAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin) - 5.0)) / 3.0);
+						shotPower = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin) - 5.0)) / 3.0);
+						shotTechnique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin) - 5.0)) / 3.0);
+						freeKickAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin) - 5.0)) / 3.0);
+						curling = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin) - 5.0)) / 3.0);
+						header = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin) - 5.0)) / 3.0);
+						technique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin) - 5.0)) / 3.0);
+						aggression = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin) - 5.0)) / 3.0);
+						mentality = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin) - 5.0)) / 3.0);
+						teamwork = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin) - 5.0)) / 3.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 4)
+				{
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFBodyBalanceMax, decSMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFStaminaMax, decSMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFTopSpeedMax, decSMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTopSpeedMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAccelerationMax, decSMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAccelerationMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAgilityMax, decSMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAgilityMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFJumpMax, decSMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFJumpMin));
+					if (decimal.Compare(fmStatsOverall, decSMFStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 5)
+				{
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFBodyBalanceMax, decOMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFStaminaMax, decOMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFTopSpeedMax, decOMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTopSpeedMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAccelerationMax, decOMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAccelerationMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAgilityMax, decOMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAgilityMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFJumpMax, decOMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFJumpMin));
+					if (decimal.Compare(fmStatsOverall, decOMFStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 6)
+				{
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFBodyBalanceMax, decWFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFStaminaMax, decWFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFTopSpeedMax, decWFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFTopSpeedMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAccelerationMax, decWFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAccelerationMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAgilityMax, decWFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAgilityMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFJumpMax, decWFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFJumpMin));
+					if (decimal.Compare(fmStatsOverall, decWFStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAttackMax, decWFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDefenseMax, decWFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFResponseMax, decWFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribblePrecisionMax, decWFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribbleSpeedMax, decWFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassPrecisionMax, decWFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassSpeedMax, decWFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassPrecisionMax, decWFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassSpeedMax, decWFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPrecisionMax, decWFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPowerMax, decWFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotTechniqueMax, decWFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFFreeKickPrecisionMax, decWFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFBendMax, decWFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFHeadingMax, decWFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFTechniqueMax, decWFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAggressivenessMax, decWFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFMentalityMax, decWFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decWFMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFCooperationMax, decWFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAttackMax, decWFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDefenseMax, decWFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFResponseMax, decWFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribblePrecisionMax, decWFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribbleSpeedMax, decWFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassPrecisionMax, decWFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassSpeedMax, decWFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassPrecisionMax, decWFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassSpeedMax, decWFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPrecisionMax, decWFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPowerMax, decWFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotTechniqueMax, decWFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFFreeKickPrecisionMax, decWFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFBendMax, decWFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFHeadingMax, decWFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFTechniqueMax, decWFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAggressivenessMax, decWFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFMentalityMax, decWFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decWFMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFCooperationMax, decWFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 7)
+				{
+					balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFBodyBalanceMax, decSTCFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFBodyBalanceMin));
+					stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFStaminaMax, decSTCFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFStaminaMin));
+					topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFTopSpeedMax, decSTCFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFTopSpeedMin));
+					acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAccelerationMax, decSTCFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAccelerationMin));
+					agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAgilityMax, decSTCFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAgilityMin));
+					jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFJumpMax, decSTCFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFJumpMin));
+					if (decimal.Compare(fmStatsOverall, decSTCFStarPlayer) >= 0)
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAttackMax, decSTCFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFAttackMin));
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDefenseMax, decSTCFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDefenseMin));
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFResponseMax, decSTCFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFResponseMin));
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribblePrecisionMax, decSTCFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFDribblePrecisionMin));
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribbleSpeedMax, decSTCFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDribbleSpeedMin));
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassPrecisionMax, decSTCFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShortPassPrecisionMin));
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassSpeedMax, decSTCFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShortPassSpeedMin));
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassPrecisionMax, decSTCFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFLongPassPrecisionMin));
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassSpeedMax, decSTCFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFLongPassSpeedMin));
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPrecisionMax, decSTCFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShotPrecisionMin));
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPowerMax, decSTCFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotPowerMin));
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotTechniqueMax, decSTCFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotTechniqueMin));
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFFreeKickPrecisionMax, decSTCFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFFreeKickPrecisionMin));
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFBendMax, decSTCFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFBendMin));
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFHeadingMax, decSTCFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFHeadingMin));
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFTechniqueMax, decSTCFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFTechniqueMin));
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAggressivenessMax, decSTCFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAggressivenessMin));
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFMentalityMax, decSTCFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFMentalityMin));
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFCooperationMax, decSTCFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFCooperationMin));
+					}
+					else
+					{
+						attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAttackMax, decSTCFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFAttackMin) - 5.0);
+						defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDefenseMax, decSTCFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDefenseMin) - 5.0);
+						response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFResponseMax, decSTCFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFResponseMin) - 5.0);
+						dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribblePrecisionMax, decSTCFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFDribblePrecisionMin) - 5.0);
+						dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribbleSpeedMax, decSTCFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDribbleSpeedMin) - 5.0);
+						shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassPrecisionMax, decSTCFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShortPassPrecisionMin) - 5.0);
+						shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassSpeedMax, decSTCFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShortPassSpeedMin) - 5.0);
+						longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassPrecisionMax, decSTCFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFLongPassPrecisionMin) - 5.0);
+						longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassSpeedMax, decSTCFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFLongPassSpeedMin) - 5.0);
+						shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPrecisionMax, decSTCFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShotPrecisionMin) - 5.0);
+						shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPowerMax, decSTCFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotPowerMin) - 5.0);
+						shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotTechniqueMax, decSTCFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotTechniqueMin) - 5.0);
+						freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFFreeKickPrecisionMax, decSTCFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFFreeKickPrecisionMin) - 5.0);
+						curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFBendMax, decSTCFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFBendMin) - 5.0);
+						header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFHeadingMax, decSTCFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFHeadingMin) - 5.0);
+						technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFTechniqueMax, decSTCFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFTechniqueMin) - 5.0);
+						aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAggressivenessMax, decSTCFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAggressivenessMin) - 5.0);
+						mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFMentalityMax, decSTCFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFMentalityMin) - 5.0);
+						teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFCooperationMax, decSTCFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFCooperationMin) - 5.0);
+					}
+				}
+				if (cmbPosition.SelectedIndex == 0)
+				{
+					frmWEPES.lblPosition.Text = "CB";
+				}
+				else if (cmbPosition.SelectedIndex == 1)
+				{
+					frmWEPES.lblPosition.Text = "SB";
+				}
+				else if (cmbPosition.SelectedIndex == 2)
+				{
+					frmWEPES.lblPosition.Text = "DMF";
+				}
+				else if (cmbPosition.SelectedIndex == 3)
+				{
+					frmWEPES.lblPosition.Text = "CMF";
+				}
+				else if (cmbPosition.SelectedIndex == 4)
+				{
+					frmWEPES.lblPosition.Text = "SMF";
+				}
+				else if (cmbPosition.SelectedIndex == 5)
+				{
+					frmWEPES.lblPosition.Text = "OMF";
+				}
+				else if (cmbPosition.SelectedIndex == 6)
+				{
+					frmWEPES.lblPosition.Text = "WF";
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAttackMax, decSBAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDefenseMax, decSBDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBResponseMax, decSBResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribblePrecisionMax, decSBDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBDribbleSpeedMax, decSBDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassPrecisionMax, decSBShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShortPassSpeedMax, decSBShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassPrecisionMax, decSBLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBLongPassSpeedMax, decSBLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPrecisionMax, decSBShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotPowerMax, decSBShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBShotTechniqueMax, decSBShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSBShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBFreeKickPrecisionMax, decSBFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBBendMax, decSBBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSBBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBHeadingMax, decSBHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBTechniqueMax, decSBTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBAggressivenessMax, decSBAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBMentalityMax, decSBMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSBMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSBCooperationMax, decSBCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSBCooperationMin) - 5.0);
+					frmWEPES.lblPosition.Text = "ST/CF";
 				}
-			}
-			if (cmbPosition.SelectedIndex == 2)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFBodyBalanceMax, decDMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFStaminaMax, decDMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFTopSpeedMax, decDMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTopSpeedMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAccelerationMax, decDMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAccelerationMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAgilityMax, decDMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAgilityMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFJumpMax, decDMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFJumpMin));
-				if (decimal.Compare(fmStatsOverall, decDMFStarPlayer) >= 0)
+				if (cmbPreferredFoot.SelectedIndex == 0)
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin));
+					frmWEPES.lblPreferredFoot.Text = "Right";
+				}
+				else if (cmbPreferredFoot.SelectedIndex == 1)
+				{
+					frmWEPES.lblPreferredFoot.Text = "Right";
+				}
+				else if (cmbPreferredFoot.SelectedIndex == 2)
+				{
+					frmWEPES.lblPreferredFoot.Text = "Left";
+				}
+				else if (cmbPreferredFoot.SelectedIndex == 3)
+				{
+					frmWEPES.lblPreferredFoot.Text = "Left";
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin) - 5.0);
+					frmWEPES.lblPreferredFoot.Text = "Either";
 				}
-			}
-			if (cmbPosition.SelectedIndex == 3)
-			{
-				balance = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFBodyBalanceMax, decDMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBodyBalanceMin) + (Convert.ToDouble(decimal.Subtract(decSMFBodyBalanceMax, decSMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBodyBalanceMin)) + (Convert.ToDouble(decimal.Subtract(decOMFBodyBalanceMax, decOMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBodyBalanceMin))) / 3.0);
-				stamina = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFStaminaMax, decDMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFStaminaMin) + (Convert.ToDouble(decimal.Subtract(decSMFStaminaMax, decSMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFStaminaMin)) + (Convert.ToDouble(decimal.Subtract(decOMFStaminaMax, decOMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFStaminaMin))) / 3.0);
-				topSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFTopSpeedMax, decDMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTopSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFTopSpeedMax, decSMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTopSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFTopSpeedMax, decOMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTopSpeedMin))) / 3.0);
-				acceleration = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAccelerationMax, decDMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAccelerationMin) + (Convert.ToDouble(decimal.Subtract(decSMFAccelerationMax, decSMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAccelerationMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAccelerationMax, decOMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAccelerationMin))) / 3.0);
-				agility = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAgilityMax, decDMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAgilityMin) + (Convert.ToDouble(decimal.Subtract(decSMFAgilityMax, decSMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAgilityMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAgilityMax, decOMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAgilityMin))) / 3.0);
-				jump = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFJumpMax, decDMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFJumpMin) + (Convert.ToDouble(decimal.Subtract(decSMFJumpMax, decSMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFJumpMin)) + (Convert.ToDouble(decimal.Subtract(decOMFJumpMax, decOMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFJumpMin))) / 3.0);
-				if (decimal.Compare(fmStatsOverall, decimal.Divide(decimal.Add(decimal.Add(decDMFStarPlayer, decSMFStarPlayer), decOMFStarPlayer), 3m)) >= 0)
+				if (attack >= 95)
 				{
-					attack = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin) + (Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin))) / 3.0);
-					defence = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin) + (Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin)) + (Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin))) / 3.0);
-					response = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin) + (Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin)) + (Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin))) / 3.0);
-					dribbleAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin))) / 3.0);
-					dribbleSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin))) / 3.0);
-					shortPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin))) / 3.0);
-					shortPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin))) / 3.0);
-					longPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin))) / 3.0);
-					longPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin) + (Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin)) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin))) / 3.0);
-					shotAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin))) / 3.0);
-					shotPower = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin) + (Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin))) / 3.0);
-					shotTechnique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin) + (Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin)) + (Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin))) / 3.0);
-					freeKickAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin) + (Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin)) + (Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin))) / 3.0);
-					curling = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin) + (Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin)) + (Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin))) / 3.0);
-					header = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin) + (Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin)) + (Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin))) / 3.0);
-					technique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin) + (Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin)) + (Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin))) / 3.0);
-					aggression = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin) + (Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin)) + (Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin))) / 3.0);
-					mentality = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin) + (Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin)) + (Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin))) / 3.0);
-					teamwork = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin) + (Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin)) + (Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin))) / 3.0);
+					frmWEPES.lblAttack.ForeColor = Color.Red;
+				}
+				else if (attack >= 90)
+				{
+					frmWEPES.lblAttack.ForeColor = Color.Orange;
+				}
+				else if (attack >= 80)
+				{
+					frmWEPES.lblAttack.ForeColor = Color.Yellow;
 				}
 				else
 				{
-					attack = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAttackMax, decDMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFAttackMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin) - 5.0)) / 3.0);
-					defence = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDefenseMax, decDMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDefenseMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin) - 5.0)) / 3.0);
-					response = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFResponseMax, decDMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFResponseMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin) - 5.0)) / 3.0);
-					dribbleAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribblePrecisionMax, decDMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFDribblePrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin) - 5.0)) / 3.0);
-					dribbleSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFDribbleSpeedMax, decDMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFDribbleSpeedMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin) - 5.0)) / 3.0);
-					shortPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassPrecisionMax, decDMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShortPassPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin) - 5.0)) / 3.0);
-					shortPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShortPassSpeedMax, decDMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShortPassSpeedMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin) - 5.0)) / 3.0);
-					longPassAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassPrecisionMax, decDMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFLongPassPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin) - 5.0)) / 3.0);
-					longPassSpeed = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFLongPassSpeedMax, decDMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFLongPassSpeedMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin) - 5.0)) / 3.0);
-					shotAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPrecisionMax, decDMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFShotPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin) - 5.0)) / 3.0);
-					shotPower = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotPowerMax, decDMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotPowerMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin) - 5.0)) / 3.0);
-					shotTechnique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFShotTechniqueMax, decDMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFShotTechniqueMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin) - 5.0)) / 3.0);
-					freeKickAccuracy = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFFreeKickPrecisionMax, decDMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFFreeKickPrecisionMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin) - 5.0)) / 3.0);
-					curling = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFBendMax, decDMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFBendMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin) - 5.0)) / 3.0);
-					header = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFHeadingMax, decDMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFHeadingMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin) - 5.0)) / 3.0);
-					technique = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFTechniqueMax, decDMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFTechniqueMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin) - 5.0)) / 3.0);
-					aggression = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFAggressivenessMax, decDMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFAggressivenessMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin) - 5.0)) / 3.0);
-					mentality = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFMentalityMax, decDMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decDMFMentalityMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin) - 5.0)) / 3.0);
-					teamwork = (int)Math.Round((Convert.ToDouble(decimal.Subtract(decDMFCooperationMax, decDMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decDMFCooperationMin) - 5.0 + (Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin) - 5.0) + (Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin) - 5.0)) / 3.0);
+					frmWEPES.lblAttack.ForeColor = Color.Empty;
 				}
-			}
-			if (cmbPosition.SelectedIndex == 4)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFBodyBalanceMax, decSMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFStaminaMax, decSMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFTopSpeedMax, decSMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTopSpeedMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAccelerationMax, decSMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAccelerationMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAgilityMax, decSMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAgilityMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFJumpMax, decSMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFJumpMin));
-				if (decimal.Compare(fmStatsOverall, decSMFStarPlayer) >= 0)
+				frmWEPES.lblAttack.Text = attack.ToString();
+				if (defence >= 95)
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin));
+					frmWEPES.lblDefense.ForeColor = Color.Red;
+				}
+				else if (defence >= 90)
+				{
+					frmWEPES.lblDefense.ForeColor = Color.Orange;
+				}
+				else if (defence >= 80)
+				{
+					frmWEPES.lblDefense.ForeColor = Color.Yellow;
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAttackMax, decSMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDefenseMax, decSMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFResponseMax, decSMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribblePrecisionMax, decSMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFDribbleSpeedMax, decSMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassPrecisionMax, decSMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShortPassSpeedMax, decSMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassPrecisionMax, decSMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFLongPassSpeedMax, decSMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPrecisionMax, decSMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotPowerMax, decSMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFShotTechniqueMax, decSMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFFreeKickPrecisionMax, decSMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFBendMax, decSMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFHeadingMax, decSMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFTechniqueMax, decSMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFAggressivenessMax, decSMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFMentalityMax, decSMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSMFMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSMFCooperationMax, decSMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSMFCooperationMin) - 5.0);
+					frmWEPES.lblDefense.ForeColor = Color.Empty;
 				}
-			}
-			if (cmbPosition.SelectedIndex == 5)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFBodyBalanceMax, decOMFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFStaminaMax, decOMFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFTopSpeedMax, decOMFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTopSpeedMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAccelerationMax, decOMFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAccelerationMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAgilityMax, decOMFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAgilityMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFJumpMax, decOMFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFJumpMin));
-				if (decimal.Compare(fmStatsOverall, decOMFStarPlayer) >= 0)
+				frmWEPES.lblDefense.Text = defence.ToString();
+				if (balance >= 95)
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin));
+					frmWEPES.lblBodyBalance.ForeColor = Color.Red;
+				}
+				else if (balance >= 90)
+				{
+					frmWEPES.lblBodyBalance.ForeColor = Color.Orange;
+				}
+				else if (balance >= 80)
+				{
+					frmWEPES.lblBodyBalance.ForeColor = Color.Yellow;
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAttackMax, decOMFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDefenseMax, decOMFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFResponseMax, decOMFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribblePrecisionMax, decOMFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFDribbleSpeedMax, decOMFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassPrecisionMax, decOMFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShortPassSpeedMax, decOMFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassPrecisionMax, decOMFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFLongPassSpeedMax, decOMFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPrecisionMax, decOMFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotPowerMax, decOMFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFShotTechniqueMax, decOMFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFFreeKickPrecisionMax, decOMFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFBendMax, decOMFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFHeadingMax, decOMFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFTechniqueMax, decOMFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFAggressivenessMax, decOMFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFMentalityMax, decOMFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decOMFMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decOMFCooperationMax, decOMFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decOMFCooperationMin) - 5.0);
+					frmWEPES.lblBodyBalance.ForeColor = Color.Empty;
 				}
-			}
-			if (cmbPosition.SelectedIndex == 6)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFBodyBalanceMax, decWFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFStaminaMax, decWFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFTopSpeedMax, decWFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFTopSpeedMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAccelerationMax, decWFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAccelerationMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAgilityMax, decWFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAgilityMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFJumpMax, decWFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFJumpMin));
-				if (decimal.Compare(fmStatsOverall, decWFStarPlayer) >= 0)
+				frmWEPES.lblBodyBalance.Text = balance.ToString();
+				if (stamina >= 95)
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAttackMax, decWFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDefenseMax, decWFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFResponseMax, decWFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribblePrecisionMax, decWFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribbleSpeedMax, decWFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassPrecisionMax, decWFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassSpeedMax, decWFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassPrecisionMax, decWFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassSpeedMax, decWFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPrecisionMax, decWFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPowerMax, decWFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotTechniqueMax, decWFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFFreeKickPrecisionMax, decWFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFBendMax, decWFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFHeadingMax, decWFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFTechniqueMax, decWFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAggressivenessMax, decWFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFMentalityMax, decWFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decWFMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFCooperationMax, decWFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFCooperationMin));
+					frmWEPES.lblStamina.ForeColor = Color.Red;
+				}
+				else if (stamina >= 90)
+				{
+					frmWEPES.lblStamina.ForeColor = Color.Orange;
+				}
+				else if (stamina >= 80)
+				{
+					frmWEPES.lblStamina.ForeColor = Color.Yellow;
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAttackMax, decWFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDefenseMax, decWFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFResponseMax, decWFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribblePrecisionMax, decWFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFDribbleSpeedMax, decWFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassPrecisionMax, decWFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShortPassSpeedMax, decWFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassPrecisionMax, decWFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFLongPassSpeedMax, decWFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPrecisionMax, decWFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotPowerMax, decWFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFShotTechniqueMax, decWFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decWFShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFFreeKickPrecisionMax, decWFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFBendMax, decWFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decWFBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFHeadingMax, decWFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFTechniqueMax, decWFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFAggressivenessMax, decWFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFMentalityMax, decWFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decWFMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decWFCooperationMax, decWFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decWFCooperationMin) - 5.0);
+					frmWEPES.lblStamina.ForeColor = Color.Empty;
 				}
-			}
-			if (cmbPosition.SelectedIndex == 7)
-			{
-				balance = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFBodyBalanceMax, decSTCFBodyBalanceMin)) * ((double)(cmbBalance.SelectedIndex + cmbStrength.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFBodyBalanceMin));
-				stamina = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFStaminaMax, decSTCFStaminaMin)) * ((double)((cmbStamina.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFStaminaMin));
-				topSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFTopSpeedMax, decSTCFTopSpeedMin)) * ((double)((cmbPace.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFTopSpeedMin));
-				acceleration = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAccelerationMax, decSTCFAccelerationMin)) * ((double)((cmbAcceleration.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAccelerationMin));
-				agility = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAgilityMax, decSTCFAgilityMin)) * ((double)((cmbAgility.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAgilityMin));
-				jump = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFJumpMax, decSTCFJumpMin)) * ((double)((cmbJumping.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFJumpMin));
-				if (decimal.Compare(fmStatsOverall, decSTCFStarPlayer) >= 0)
+				frmWEPES.lblStamina.Text = stamina.ToString();
+				if (topSpeed >= 95)
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAttackMax, decSTCFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFAttackMin));
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDefenseMax, decSTCFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDefenseMin));
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFResponseMax, decSTCFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFResponseMin));
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribblePrecisionMax, decSTCFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFDribblePrecisionMin));
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribbleSpeedMax, decSTCFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDribbleSpeedMin));
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassPrecisionMax, decSTCFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShortPassPrecisionMin));
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassSpeedMax, decSTCFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShortPassSpeedMin));
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassPrecisionMax, decSTCFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFLongPassPrecisionMin));
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassSpeedMax, decSTCFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFLongPassSpeedMin));
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPrecisionMax, decSTCFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShotPrecisionMin));
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPowerMax, decSTCFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotPowerMin));
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotTechniqueMax, decSTCFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotTechniqueMin));
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFFreeKickPrecisionMax, decSTCFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFFreeKickPrecisionMin));
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFBendMax, decSTCFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFBendMin));
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFHeadingMax, decSTCFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFHeadingMin));
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFTechniqueMax, decSTCFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFTechniqueMin));
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAggressivenessMax, decSTCFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAggressivenessMin));
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFMentalityMax, decSTCFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFMentalityMin));
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFCooperationMax, decSTCFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFCooperationMin));
+					frmWEPES.lblTopSpeed.ForeColor = Color.Red;
+				}
+				else if (topSpeed >= 90)
+				{
+					frmWEPES.lblTopSpeed.ForeColor = Color.Orange;
+				}
+				else if (topSpeed >= 80)
+				{
+					frmWEPES.lblTopSpeed.ForeColor = Color.Yellow;
 				}
 				else
 				{
-					attack = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAttackMax, decSTCFAttackMin)) * ((double)(cmbCreativity.SelectedIndex + cmbCrossing.SelectedIndex + cmbDribbling.SelectedIndex + cmbFreeKicks.SelectedIndex + cmbFinishing.SelectedIndex + cmbFirstTouch.SelectedIndex + cmbFlair.SelectedIndex + cmbLongShots.SelectedIndex + cmbOffTheBall.SelectedIndex + cmbPassing.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFAttackMin) - 5.0);
-					defence = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDefenseMax, decSTCFDefenseMin)) * ((double)(cmbAcceleration.SelectedIndex + cmbAnticipation.SelectedIndex + cmbHeading.SelectedIndex + cmbJumping.SelectedIndex + cmbMarking.SelectedIndex + cmbPace.SelectedIndex + cmbPositioning.SelectedIndex + cmbStamina.SelectedIndex + cmbStrength.SelectedIndex + cmbTackling.SelectedIndex + 10) / 10.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDefenseMin) - 5.0);
-					response = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFResponseMax, decSTCFResponseMin)) * ((double)(cmbAnticipation.SelectedIndex + cmbDecisions.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFResponseMin) - 5.0);
-					dribbleAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribblePrecisionMax, decSTCFDribblePrecisionMin)) * ((double)((cmbDribbling.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFDribblePrecisionMin) - 5.0);
-					dribbleSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFDribbleSpeedMax, decSTCFDribbleSpeedMin)) * ((double)(cmbDribbling.SelectedIndex + cmbAcceleration.SelectedIndex + cmbPace.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFDribbleSpeedMin) - 5.0);
-					shortPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassPrecisionMax, decSTCFShortPassPrecisionMin)) * ((double)((cmbPassing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShortPassPrecisionMin) - 5.0);
-					shortPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShortPassSpeedMax, decSTCFShortPassSpeedMin)) * ((double)(cmbPassing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShortPassSpeedMin) - 5.0);
-					longPassAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassPrecisionMax, decSTCFLongPassPrecisionMin)) * ((double)((cmbCrossing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFLongPassPrecisionMin) - 5.0);
-					longPassSpeed = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFLongPassSpeedMax, decSTCFLongPassSpeedMin)) * ((double)(cmbCrossing.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFLongPassSpeedMin) - 5.0);
-					shotAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPrecisionMax, decSTCFShotPrecisionMin)) * ((double)((cmbFinishing.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFShotPrecisionMin) - 5.0);
-					shotPower = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotPowerMax, decSTCFShotPowerMin)) * ((double)(cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotPowerMin) - 5.0);
-					shotTechnique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFShotTechniqueMax, decSTCFShotTechniqueMin)) * ((double)(cmbFinishing.SelectedIndex + cmbLongShots.SelectedIndex + cmbTechnique.SelectedIndex + 3) / 3.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFShotTechniqueMin) - 5.0);
-					freeKickAccuracy = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFFreeKickPrecisionMax, decSTCFFreeKickPrecisionMin)) * ((double)((cmbFreeKicks.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFFreeKickPrecisionMin) - 5.0);
-					curling = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFBendMax, decSTCFBendMin)) * ((double)(cmbCorners.SelectedIndex + cmbCrossing.SelectedIndex + 2) / 2.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFBendMin) - 5.0);
-					header = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFHeadingMax, decSTCFHeadingMin)) * ((double)((cmbHeading.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFHeadingMin) - 5.0);
-					technique = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFTechniqueMax, decSTCFTechniqueMin)) * ((double)((cmbTechnique.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFTechniqueMin) - 5.0);
-					aggression = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFAggressivenessMax, decSTCFAggressivenessMin)) * ((double)((cmbAggression.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFAggressivenessMin) - 5.0);
-					mentality = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFMentalityMax, decSTCFMentalityMin)) * ((double)(cmbAggression.SelectedIndex + cmbAnticipation.SelectedIndex + cmbBravery.SelectedIndex + cmbComposure.SelectedIndex + cmbConcentration.SelectedIndex + cmbDecisions.SelectedIndex + cmbDetermination.SelectedIndex + cmbInfluence.SelectedIndex + cmbTeamwork.SelectedIndex + 9) / 9.0 * 5.0 / 100.0) + Convert.ToDouble(decSTCFMentalityMin) - 5.0);
-					teamwork = (int)Math.Round(Convert.ToDouble(decimal.Subtract(decSTCFCooperationMax, decSTCFCooperationMin)) * ((double)((cmbTeamwork.SelectedIndex + 1) * 5) / 100.0) + Convert.ToDouble(decSTCFCooperationMin) - 5.0);
+					frmWEPES.lblTopSpeed.ForeColor = Color.Empty;
 				}
+				frmWEPES.lblTopSpeed.Text = topSpeed.ToString();
+				if (acceleration >= 95)
+				{
+					frmWEPES.lblAcceleration.ForeColor = Color.Red;
+				}
+				else if (acceleration >= 90)
+				{
+					frmWEPES.lblAcceleration.ForeColor = Color.Orange;
+				}
+				else if (acceleration >= 80)
+				{
+					frmWEPES.lblAcceleration.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblAcceleration.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblAcceleration.Text = acceleration.ToString();
+				if (response >= 95)
+				{
+					frmWEPES.lblResponse.ForeColor = Color.Red;
+				}
+				else if (response >= 90)
+				{
+					frmWEPES.lblResponse.ForeColor = Color.Orange;
+				}
+				else if (response >= 80)
+				{
+					frmWEPES.lblResponse.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblResponse.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblResponse.Text = response.ToString();
+				if (agility >= 95)
+				{
+					frmWEPES.lblAgility.ForeColor = Color.Red;
+				}
+				else if (agility >= 90)
+				{
+					frmWEPES.lblAgility.ForeColor = Color.Orange;
+				}
+				else if (agility >= 80)
+				{
+					frmWEPES.lblAgility.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblAgility.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblAgility.Text = agility.ToString();
+				if (dribbleAccuracy >= 95)
+				{
+					frmWEPES.lblDribblePrecision.ForeColor = Color.Red;
+				}
+				else if (dribbleAccuracy >= 90)
+				{
+					frmWEPES.lblDribblePrecision.ForeColor = Color.Orange;
+				}
+				else if (dribbleAccuracy >= 80)
+				{
+					frmWEPES.lblDribblePrecision.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblDribblePrecision.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblDribblePrecision.Text = dribbleAccuracy.ToString();
+				if (dribbleSpeed >= 95)
+				{
+					frmWEPES.lblDribbleSpeed.ForeColor = Color.Red;
+				}
+				else if (dribbleSpeed >= 90)
+				{
+					frmWEPES.lblDribbleSpeed.ForeColor = Color.Orange;
+				}
+				else if (dribbleSpeed >= 80)
+				{
+					frmWEPES.lblDribbleSpeed.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblDribbleSpeed.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblDribbleSpeed.Text = dribbleSpeed.ToString();
+				if (shortPassAccuracy >= 95)
+				{
+					frmWEPES.lblShortPassPrecision.ForeColor = Color.Red;
+				}
+				else if (shortPassAccuracy >= 90)
+				{
+					frmWEPES.lblShortPassPrecision.ForeColor = Color.Orange;
+				}
+				else if (shortPassAccuracy >= 80)
+				{
+					frmWEPES.lblShortPassPrecision.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblShortPassPrecision.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblShortPassPrecision.Text = shortPassAccuracy.ToString();
+				if (shortPassSpeed >= 95)
+				{
+					frmWEPES.lblShortPassSpeed.ForeColor = Color.Red;
+				}
+				else if (shortPassSpeed >= 90)
+				{
+					frmWEPES.lblShortPassSpeed.ForeColor = Color.Orange;
+				}
+				else if (shortPassSpeed >= 80)
+				{
+					frmWEPES.lblShortPassSpeed.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblShortPassSpeed.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblShortPassSpeed.Text = shortPassSpeed.ToString();
+				if (longPassAccuracy >= 95)
+				{
+					frmWEPES.lblLongPassPrecision.ForeColor = Color.Red;
+				}
+				else if (longPassAccuracy >= 90)
+				{
+					frmWEPES.lblLongPassPrecision.ForeColor = Color.Orange;
+				}
+				else if (longPassAccuracy >= 80)
+				{
+					frmWEPES.lblLongPassPrecision.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblLongPassPrecision.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblLongPassPrecision.Text = longPassAccuracy.ToString();
+				if (longPassSpeed >= 95)
+				{
+					frmWEPES.lblLongPassSpeed.ForeColor = Color.Red;
+				}
+				else if (longPassSpeed >= 90)
+				{
+					frmWEPES.lblLongPassSpeed.ForeColor = Color.Orange;
+				}
+				else if (longPassSpeed >= 80)
+				{
+					frmWEPES.lblLongPassSpeed.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblLongPassSpeed.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblLongPassSpeed.Text = longPassSpeed.ToString();
+				if (shotAccuracy >= 95)
+				{
+					frmWEPES.lblShotPrecision.ForeColor = Color.Red;
+				}
+				else if (shotAccuracy >= 90)
+				{
+					frmWEPES.lblShotPrecision.ForeColor = Color.Orange;
+				}
+				else if (shotAccuracy >= 80)
+				{
+					frmWEPES.lblShotPrecision.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblShotPrecision.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblShotPrecision.Text = shotAccuracy.ToString();
+				if (shotPower >= 95)
+				{
+					frmWEPES.lblShotPower.ForeColor = Color.Red;
+				}
+				else if (shotPower >= 90)
+				{
+					frmWEPES.lblShotPower.ForeColor = Color.Orange;
+				}
+				else if (shotPower >= 80)
+				{
+					frmWEPES.lblShotPower.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblShotPower.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblShotPower.Text = shotPower.ToString();
+				if (shotTechnique >= 95)
+				{
+					frmWEPES.lblShotTechnique.ForeColor = Color.Red;
+				}
+				else if (shotTechnique >= 90)
+				{
+					frmWEPES.lblShotTechnique.ForeColor = Color.Orange;
+				}
+				else if (shotTechnique >= 80)
+				{
+					frmWEPES.lblShotTechnique.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblShotTechnique.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblShotTechnique.Text = shotTechnique.ToString();
+				if (freeKickAccuracy >= 95)
+				{
+					frmWEPES.lblFreeKickPrecision.ForeColor = Color.Red;
+				}
+				else if (freeKickAccuracy >= 90)
+				{
+					frmWEPES.lblFreeKickPrecision.ForeColor = Color.Orange;
+				}
+				else if (freeKickAccuracy >= 80)
+				{
+					frmWEPES.lblFreeKickPrecision.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblFreeKickPrecision.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblFreeKickPrecision.Text = freeKickAccuracy.ToString();
+				if (curling >= 95)
+				{
+					frmWEPES.lblBend.ForeColor = Color.Red;
+				}
+				else if (curling >= 90)
+				{
+					frmWEPES.lblBend.ForeColor = Color.Orange;
+				}
+				else if (curling >= 80)
+				{
+					frmWEPES.lblBend.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblBend.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblBend.Text = curling.ToString();
+				if (header >= 95)
+				{
+					frmWEPES.lblHeading.ForeColor = Color.Red;
+				}
+				else if (header >= 90)
+				{
+					frmWEPES.lblHeading.ForeColor = Color.Orange;
+				}
+				else if (header >= 80)
+				{
+					frmWEPES.lblHeading.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblHeading.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblHeading.Text = header.ToString();
+				if (jump >= 95)
+				{
+					frmWEPES.lblJump.ForeColor = Color.Red;
+				}
+				else if (jump >= 90)
+				{
+					frmWEPES.lblJump.ForeColor = Color.Orange;
+				}
+				else if (jump >= 80)
+				{
+					frmWEPES.lblJump.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblJump.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblJump.Text = jump.ToString();
+				if (technique >= 95)
+				{
+					frmWEPES.lblTechnique.ForeColor = Color.Red;
+				}
+				else if (technique >= 90)
+				{
+					frmWEPES.lblTechnique.ForeColor = Color.Orange;
+				}
+				else if (technique >= 80)
+				{
+					frmWEPES.lblTechnique.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblTechnique.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblTechnique.Text = technique.ToString();
+				if (aggression >= 95)
+				{
+					frmWEPES.lblAggressiveness.ForeColor = Color.Red;
+				}
+				else if (aggression >= 90)
+				{
+					frmWEPES.lblAggressiveness.ForeColor = Color.Orange;
+				}
+				else if (aggression >= 80)
+				{
+					frmWEPES.lblAggressiveness.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblAggressiveness.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblAggressiveness.Text = aggression.ToString();
+				if (mentality >= 95)
+				{
+					frmWEPES.lblMentality.ForeColor = Color.Red;
+				}
+				else if (mentality >= 90)
+				{
+					frmWEPES.lblMentality.ForeColor = Color.Orange;
+				}
+				else if (mentality >= 80)
+				{
+					frmWEPES.lblMentality.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblMentality.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblMentality.Text = mentality.ToString();
+				if (teamwork >= 95)
+				{
+					frmWEPES.lblCooperation.ForeColor = Color.Red;
+				}
+				else if (teamwork >= 90)
+				{
+					frmWEPES.lblCooperation.ForeColor = Color.Orange;
+				}
+				else if (teamwork >= 80)
+				{
+					frmWEPES.lblCooperation.ForeColor = Color.Yellow;
+				}
+				else
+				{
+					frmWEPES.lblCooperation.ForeColor = Color.Empty;
+				}
+				frmWEPES.lblCooperation.Text = teamwork.ToString();
+				if (cmbDribbling.SelectedIndex >= 16)
+				{
+					frmWEPES.lblDribbler.ForeColor = Color.Yellow;
+					frmWEPES.lblDribbler.Text = "*";
+				}
+				if ((cmbDribbling.SelectedIndex >= 16) & (cmbFlair.SelectedIndex >= 16))
+				{
+					frmWEPES.lblKeepDribble.ForeColor = Color.Yellow;
+					frmWEPES.lblKeepDribble.Text = "*";
+				}
+				if ((cmbPosition.SelectedIndex == 7) & (cmbPositioning.SelectedIndex >= 16))
+				{
+					frmWEPES.lblPositioning.ForeColor = Color.Yellow;
+					frmWEPES.lblPositioning.Text = "*";
+				}
+				if (cmbOffTheBall.SelectedIndex >= 16)
+				{
+					frmWEPES.lblDashIn.ForeColor = Color.Yellow;
+					frmWEPES.lblDashIn.Text = "*";
+				}
+				if ((cmbPassing.SelectedIndex >= 16) & (cmbCreativity.SelectedIndex >= 16))
+				{
+					frmWEPES.lblCommander.ForeColor = Color.Yellow;
+					frmWEPES.lblCommander.Text = "*";
+				}
+				if (cmbPassing.SelectedIndex >= 16)
+				{
+					frmWEPES.lblPasser.ForeColor = Color.Yellow;
+					frmWEPES.lblPasser.Text = "*";
+				}
+				if ((cmbPosition.SelectedIndex == 7) & (cmbFinishing.SelectedIndex >= 16) & (cmbOffTheBall.SelectedIndex >= 16))
+				{
+					frmWEPES.lblStriker.ForeColor = Color.Yellow;
+					frmWEPES.lblStriker.Text = "*";
+				}
+				if ((cmbFinishing.SelectedIndex >= 16) & (cmbComposure.SelectedIndex >= 16))
+				{
+					frmWEPES.lblShoot1On1.ForeColor = Color.Yellow;
+					frmWEPES.lblShoot1On1.Text = "*";
+				}
+				if ((cmbPosition.SelectedIndex == 7) & (cmbBalance.SelectedIndex >= 16) & (cmbStrength.SelectedIndex >= 16))
+				{
+					frmWEPES.lblHoldingUpTheBall.ForeColor = Color.Yellow;
+					frmWEPES.lblHoldingUpTheBall.Text = "*";
+				}
+				if ((cmbDecisions.SelectedIndex >= 16) & (cmbOffTheBall.SelectedIndex >= 16) & (cmbPositioning.SelectedIndex >= 16))
+				{
+					frmWEPES.lblLinePositioning.ForeColor = Color.Yellow;
+					frmWEPES.lblLinePositioning.Text = "*";
+				}
+				if (cmbLongShots.SelectedIndex >= 16)
+				{
+					frmWEPES.lblMiddleShot.ForeColor = Color.Yellow;
+					frmWEPES.lblMiddleShot.Text = "*";
+				}
+				if ((cmbPace.SelectedIndex >= 16) & (cmbAcceleration.SelectedIndex >= 16) & (cmbDribbling.SelectedIndex >= 16))
+				{
+					frmWEPES.lblSidePlayer.ForeColor = Color.Yellow;
+					frmWEPES.lblSidePlayer.Text = "*";
+				}
+				if (cmbPenaltyTaking.SelectedIndex >= 16)
+				{
+					frmWEPES.lblPKKicker.ForeColor = Color.Yellow;
+					frmWEPES.lblPKKicker.Text = "*";
+				}
+				if ((cmbCreativity.SelectedIndex >= 16) & (cmbTechnique.SelectedIndex >= 16))
+				{
+					frmWEPES.lblDirectPlay.ForeColor = Color.Yellow;
+					frmWEPES.lblDirectPlay.Text = "*";
+				}
+				if ((cmbFlair.SelectedIndex >= 16) & (cmbTechnique.SelectedIndex >= 16))
+				{
+					frmWEPES.lblOutside.ForeColor = Color.Yellow;
+					frmWEPES.lblOutside.Text = "*";
+				}
+				if (cmbMarking.SelectedIndex >= 16)
+				{
+					frmWEPES.lblManMarking.ForeColor = Color.Yellow;
+					frmWEPES.lblManMarking.Text = "*";
+				}
+				if ((cmbTackling.SelectedIndex >= 16) & (cmbBravery.SelectedIndex >= 16) & (cmbDecisions.SelectedIndex >= 16))
+				{
+					frmWEPES.lblSliding.ForeColor = Color.Yellow;
+					frmWEPES.lblSliding.Text = "*";
+				}
+				if ((cmbPosition.SelectedIndex == 0) & (cmbInfluence.SelectedIndex >= 16) & (cmbTeamwork.SelectedIndex >= 16))
+				{
+					frmWEPES.lblBackLineControl.ForeColor = Color.Yellow;
+					frmWEPES.lblBackLineControl.Text = "*";
+				}
+				if (cmbLongThrows.SelectedIndex >= 16)
+				{
+					frmWEPES.lblLongThrow.ForeColor = Color.Yellow;
+					frmWEPES.lblLongThrow.Text = "*";
+				}
+				frmWEPES.ShowDialog();
 			}
-			if (cmbPosition.SelectedIndex == 0)
-			{
-				frmWEPES.lblPosition.Text = "CB";
-			}
-			else if (cmbPosition.SelectedIndex == 1)
-			{
-				frmWEPES.lblPosition.Text = "SB";
-			}
-			else if (cmbPosition.SelectedIndex == 2)
-			{
-				frmWEPES.lblPosition.Text = "DMF";
-			}
-			else if (cmbPosition.SelectedIndex == 3)
-			{
-				frmWEPES.lblPosition.Text = "CMF";
-			}
-			else if (cmbPosition.SelectedIndex == 4)
-			{
-				frmWEPES.lblPosition.Text = "SMF";
-			}
-			else if (cmbPosition.SelectedIndex == 5)
-			{
-				frmWEPES.lblPosition.Text = "OMF";
-			}
-			else if (cmbPosition.SelectedIndex == 6)
-			{
-				frmWEPES.lblPosition.Text = "WF";
-			}
-			else
-			{
-				frmWEPES.lblPosition.Text = "ST/CF";
-			}
-			if (cmbPreferredFoot.SelectedIndex == 0)
-			{
-				frmWEPES.lblPreferredFoot.Text = "Right";
-			}
-			else if (cmbPreferredFoot.SelectedIndex == 1)
-			{
-				frmWEPES.lblPreferredFoot.Text = "Right";
-			}
-			else if (cmbPreferredFoot.SelectedIndex == 2)
-			{
-				frmWEPES.lblPreferredFoot.Text = "Left";
-			}
-			else if (cmbPreferredFoot.SelectedIndex == 3)
-			{
-				frmWEPES.lblPreferredFoot.Text = "Left";
-			}
-			else
-			{
-				frmWEPES.lblPreferredFoot.Text = "Either";
-			}
-			if (attack >= 95)
-			{
-				frmWEPES.lblAttack.ForeColor = Color.Red;
-			}
-			else if (attack >= 90)
-			{
-				frmWEPES.lblAttack.ForeColor = Color.Orange;
-			}
-			else if (attack >= 80)
-			{
-				frmWEPES.lblAttack.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblAttack.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblAttack.Text = StringType.FromInteger(attack);
-			if (defence >= 95)
-			{
-				frmWEPES.lblDefense.ForeColor = Color.Red;
-			}
-			else if (defence >= 90)
-			{
-				frmWEPES.lblDefense.ForeColor = Color.Orange;
-			}
-			else if (defence >= 80)
-			{
-				frmWEPES.lblDefense.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblDefense.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblDefense.Text = StringType.FromInteger(defence);
-			if (balance >= 95)
-			{
-				frmWEPES.lblBodyBalance.ForeColor = Color.Red;
-			}
-			else if (balance >= 90)
-			{
-				frmWEPES.lblBodyBalance.ForeColor = Color.Orange;
-			}
-			else if (balance >= 80)
-			{
-				frmWEPES.lblBodyBalance.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblBodyBalance.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblBodyBalance.Text = StringType.FromInteger(balance);
-			if (stamina >= 95)
-			{
-				frmWEPES.lblStamina.ForeColor = Color.Red;
-			}
-			else if (stamina >= 90)
-			{
-				frmWEPES.lblStamina.ForeColor = Color.Orange;
-			}
-			else if (stamina >= 80)
-			{
-				frmWEPES.lblStamina.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblStamina.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblStamina.Text = StringType.FromInteger(stamina);
-			if (topSpeed >= 95)
-			{
-				frmWEPES.lblTopSpeed.ForeColor = Color.Red;
-			}
-			else if (topSpeed >= 90)
-			{
-				frmWEPES.lblTopSpeed.ForeColor = Color.Orange;
-			}
-			else if (topSpeed >= 80)
-			{
-				frmWEPES.lblTopSpeed.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblTopSpeed.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblTopSpeed.Text = StringType.FromInteger(topSpeed);
-			if (acceleration >= 95)
-			{
-				frmWEPES.lblAcceleration.ForeColor = Color.Red;
-			}
-			else if (acceleration >= 90)
-			{
-				frmWEPES.lblAcceleration.ForeColor = Color.Orange;
-			}
-			else if (acceleration >= 80)
-			{
-				frmWEPES.lblAcceleration.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblAcceleration.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblAcceleration.Text = StringType.FromInteger(acceleration);
-			if (response >= 95)
-			{
-				frmWEPES.lblResponse.ForeColor = Color.Red;
-			}
-			else if (response >= 90)
-			{
-				frmWEPES.lblResponse.ForeColor = Color.Orange;
-			}
-			else if (response >= 80)
-			{
-				frmWEPES.lblResponse.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblResponse.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblResponse.Text = StringType.FromInteger(response);
-			if (agility >= 95)
-			{
-				frmWEPES.lblAgility.ForeColor = Color.Red;
-			}
-			else if (agility >= 90)
-			{
-				frmWEPES.lblAgility.ForeColor = Color.Orange;
-			}
-			else if (agility >= 80)
-			{
-				frmWEPES.lblAgility.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblAgility.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblAgility.Text = StringType.FromInteger(agility);
-			if (dribbleAccuracy >= 95)
-			{
-				frmWEPES.lblDribblePrecision.ForeColor = Color.Red;
-			}
-			else if (dribbleAccuracy >= 90)
-			{
-				frmWEPES.lblDribblePrecision.ForeColor = Color.Orange;
-			}
-			else if (dribbleAccuracy >= 80)
-			{
-				frmWEPES.lblDribblePrecision.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblDribblePrecision.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblDribblePrecision.Text = StringType.FromInteger(dribbleAccuracy);
-			if (dribbleSpeed >= 95)
-			{
-				frmWEPES.lblDribbleSpeed.ForeColor = Color.Red;
-			}
-			else if (dribbleSpeed >= 90)
-			{
-				frmWEPES.lblDribbleSpeed.ForeColor = Color.Orange;
-			}
-			else if (dribbleSpeed >= 80)
-			{
-				frmWEPES.lblDribbleSpeed.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblDribbleSpeed.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblDribbleSpeed.Text = StringType.FromInteger(dribbleSpeed);
-			if (shortPassAccuracy >= 95)
-			{
-				frmWEPES.lblShortPassPrecision.ForeColor = Color.Red;
-			}
-			else if (shortPassAccuracy >= 90)
-			{
-				frmWEPES.lblShortPassPrecision.ForeColor = Color.Orange;
-			}
-			else if (shortPassAccuracy >= 80)
-			{
-				frmWEPES.lblShortPassPrecision.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblShortPassPrecision.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblShortPassPrecision.Text = StringType.FromInteger(shortPassAccuracy);
-			if (shortPassSpeed >= 95)
-			{
-				frmWEPES.lblShortPassSpeed.ForeColor = Color.Red;
-			}
-			else if (shortPassSpeed >= 90)
-			{
-				frmWEPES.lblShortPassSpeed.ForeColor = Color.Orange;
-			}
-			else if (shortPassSpeed >= 80)
-			{
-				frmWEPES.lblShortPassSpeed.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblShortPassSpeed.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblShortPassSpeed.Text = StringType.FromInteger(shortPassSpeed);
-			if (longPassAccuracy >= 95)
-			{
-				frmWEPES.lblLongPassPrecision.ForeColor = Color.Red;
-			}
-			else if (longPassAccuracy >= 90)
-			{
-				frmWEPES.lblLongPassPrecision.ForeColor = Color.Orange;
-			}
-			else if (longPassAccuracy >= 80)
-			{
-				frmWEPES.lblLongPassPrecision.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblLongPassPrecision.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblLongPassPrecision.Text = StringType.FromInteger(longPassAccuracy);
-			if (longPassSpeed >= 95)
-			{
-				frmWEPES.lblLongPassSpeed.ForeColor = Color.Red;
-			}
-			else if (longPassSpeed >= 90)
-			{
-				frmWEPES.lblLongPassSpeed.ForeColor = Color.Orange;
-			}
-			else if (longPassSpeed >= 80)
-			{
-				frmWEPES.lblLongPassSpeed.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblLongPassSpeed.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblLongPassSpeed.Text = StringType.FromInteger(longPassSpeed);
-			if (shotAccuracy >= 95)
-			{
-				frmWEPES.lblShotPrecision.ForeColor = Color.Red;
-			}
-			else if (shotAccuracy >= 90)
-			{
-				frmWEPES.lblShotPrecision.ForeColor = Color.Orange;
-			}
-			else if (shotAccuracy >= 80)
-			{
-				frmWEPES.lblShotPrecision.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblShotPrecision.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblShotPrecision.Text = StringType.FromInteger(shotAccuracy);
-			if (shotPower >= 95)
-			{
-				frmWEPES.lblShotPower.ForeColor = Color.Red;
-			}
-			else if (shotPower >= 90)
-			{
-				frmWEPES.lblShotPower.ForeColor = Color.Orange;
-			}
-			else if (shotPower >= 80)
-			{
-				frmWEPES.lblShotPower.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblShotPower.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblShotPower.Text = StringType.FromInteger(shotPower);
-			if (shotTechnique >= 95)
-			{
-				frmWEPES.lblShotTechnique.ForeColor = Color.Red;
-			}
-			else if (shotTechnique >= 90)
-			{
-				frmWEPES.lblShotTechnique.ForeColor = Color.Orange;
-			}
-			else if (shotTechnique >= 80)
-			{
-				frmWEPES.lblShotTechnique.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblShotTechnique.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblShotTechnique.Text = StringType.FromInteger(shotTechnique);
-			if (freeKickAccuracy >= 95)
-			{
-				frmWEPES.lblFreeKickPrecision.ForeColor = Color.Red;
-			}
-			else if (freeKickAccuracy >= 90)
-			{
-				frmWEPES.lblFreeKickPrecision.ForeColor = Color.Orange;
-			}
-			else if (freeKickAccuracy >= 80)
-			{
-				frmWEPES.lblFreeKickPrecision.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblFreeKickPrecision.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblFreeKickPrecision.Text = StringType.FromInteger(freeKickAccuracy);
-			if (curling >= 95)
-			{
-				frmWEPES.lblBend.ForeColor = Color.Red;
-			}
-			else if (curling >= 90)
-			{
-				frmWEPES.lblBend.ForeColor = Color.Orange;
-			}
-			else if (curling >= 80)
-			{
-				frmWEPES.lblBend.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblBend.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblBend.Text = StringType.FromInteger(curling);
-			if (header >= 95)
-			{
-				frmWEPES.lblHeading.ForeColor = Color.Red;
-			}
-			else if (header >= 90)
-			{
-				frmWEPES.lblHeading.ForeColor = Color.Orange;
-			}
-			else if (header >= 80)
-			{
-				frmWEPES.lblHeading.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblHeading.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblHeading.Text = StringType.FromInteger(header);
-			if (jump >= 95)
-			{
-				frmWEPES.lblJump.ForeColor = Color.Red;
-			}
-			else if (jump >= 90)
-			{
-				frmWEPES.lblJump.ForeColor = Color.Orange;
-			}
-			else if (jump >= 80)
-			{
-				frmWEPES.lblJump.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblJump.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblJump.Text = StringType.FromInteger(jump);
-			if (technique >= 95)
-			{
-				frmWEPES.lblTechnique.ForeColor = Color.Red;
-			}
-			else if (technique >= 90)
-			{
-				frmWEPES.lblTechnique.ForeColor = Color.Orange;
-			}
-			else if (technique >= 80)
-			{
-				frmWEPES.lblTechnique.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblTechnique.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblTechnique.Text = StringType.FromInteger(technique);
-			if (aggression >= 95)
-			{
-				frmWEPES.lblAggressiveness.ForeColor = Color.Red;
-			}
-			else if (aggression >= 90)
-			{
-				frmWEPES.lblAggressiveness.ForeColor = Color.Orange;
-			}
-			else if (aggression >= 80)
-			{
-				frmWEPES.lblAggressiveness.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblAggressiveness.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblAggressiveness.Text = StringType.FromInteger(aggression);
-			if (mentality >= 95)
-			{
-				frmWEPES.lblMentality.ForeColor = Color.Red;
-			}
-			else if (mentality >= 90)
-			{
-				frmWEPES.lblMentality.ForeColor = Color.Orange;
-			}
-			else if (mentality >= 80)
-			{
-				frmWEPES.lblMentality.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblMentality.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblMentality.Text = StringType.FromInteger(mentality);
-			if (teamwork >= 95)
-			{
-				frmWEPES.lblCooperation.ForeColor = Color.Red;
-			}
-			else if (teamwork >= 90)
-			{
-				frmWEPES.lblCooperation.ForeColor = Color.Orange;
-			}
-			else if (teamwork >= 80)
-			{
-				frmWEPES.lblCooperation.ForeColor = Color.Yellow;
-			}
-			else
-			{
-				frmWEPES.lblCooperation.ForeColor = Color.Empty;
-			}
-			frmWEPES.lblCooperation.Text = StringType.FromInteger(teamwork);
-			if (cmbDribbling.SelectedIndex >= 16)
-			{
-				frmWEPES.lblDribbler.ForeColor = Color.Yellow;
-				frmWEPES.lblDribbler.Text = "*";
-			}
-			if ((cmbDribbling.SelectedIndex >= 16) & (cmbFlair.SelectedIndex >= 16))
-			{
-				frmWEPES.lblKeepDribble.ForeColor = Color.Yellow;
-				frmWEPES.lblKeepDribble.Text = "*";
-			}
-			if ((cmbPosition.SelectedIndex == 7) & (cmbPositioning.SelectedIndex >= 16))
-			{
-				frmWEPES.lblPositioning.ForeColor = Color.Yellow;
-				frmWEPES.lblPositioning.Text = "*";
-			}
-			if (cmbOffTheBall.SelectedIndex >= 16)
-			{
-				frmWEPES.lblDashIn.ForeColor = Color.Yellow;
-				frmWEPES.lblDashIn.Text = "*";
-			}
-			if ((cmbPassing.SelectedIndex >= 16) & (cmbCreativity.SelectedIndex >= 16))
-			{
-				frmWEPES.lblCommander.ForeColor = Color.Yellow;
-				frmWEPES.lblCommander.Text = "*";
-			}
-			if (cmbPassing.SelectedIndex >= 16)
-			{
-				frmWEPES.lblPasser.ForeColor = Color.Yellow;
-				frmWEPES.lblPasser.Text = "*";
-			}
-			if ((cmbPosition.SelectedIndex == 7) & (cmbFinishing.SelectedIndex >= 16) & (cmbOffTheBall.SelectedIndex >= 16))
-			{
-				frmWEPES.lblStriker.ForeColor = Color.Yellow;
-				frmWEPES.lblStriker.Text = "*";
-			}
-			if ((cmbFinishing.SelectedIndex >= 16) & (cmbComposure.SelectedIndex >= 16))
-			{
-				frmWEPES.lblShoot1On1.ForeColor = Color.Yellow;
-				frmWEPES.lblShoot1On1.Text = "*";
-			}
-			if ((cmbPosition.SelectedIndex == 7) & (cmbBalance.SelectedIndex >= 16) & (cmbStrength.SelectedIndex >= 16))
-			{
-				frmWEPES.lblHoldingUpTheBall.ForeColor = Color.Yellow;
-				frmWEPES.lblHoldingUpTheBall.Text = "*";
-			}
-			if ((cmbDecisions.SelectedIndex >= 16) & (cmbOffTheBall.SelectedIndex >= 16) & (cmbPositioning.SelectedIndex >= 16))
-			{
-				frmWEPES.lblLinePositioning.ForeColor = Color.Yellow;
-				frmWEPES.lblLinePositioning.Text = "*";
-			}
-			if (cmbLongShots.SelectedIndex >= 16)
-			{
-				frmWEPES.lblMiddleShot.ForeColor = Color.Yellow;
-				frmWEPES.lblMiddleShot.Text = "*";
-			}
-			if ((cmbPace.SelectedIndex >= 16) & (cmbAcceleration.SelectedIndex >= 16) & (cmbDribbling.SelectedIndex >= 16))
-			{
-				frmWEPES.lblSidePlayer.ForeColor = Color.Yellow;
-				frmWEPES.lblSidePlayer.Text = "*";
-			}
-			if (cmbPenaltyTaking.SelectedIndex >= 16)
-			{
-				frmWEPES.lblPKKicker.ForeColor = Color.Yellow;
-				frmWEPES.lblPKKicker.Text = "*";
-			}
-			if ((cmbCreativity.SelectedIndex >= 16) & (cmbTechnique.SelectedIndex >= 16))
-			{
-				frmWEPES.lblDirectPlay.ForeColor = Color.Yellow;
-				frmWEPES.lblDirectPlay.Text = "*";
-			}
-			if ((cmbFlair.SelectedIndex >= 16) & (cmbTechnique.SelectedIndex >= 16))
-			{
-				frmWEPES.lblOutside.ForeColor = Color.Yellow;
-				frmWEPES.lblOutside.Text = "*";
-			}
-			if (cmbMarking.SelectedIndex >= 16)
-			{
-				frmWEPES.lblManMarking.ForeColor = Color.Yellow;
-				frmWEPES.lblManMarking.Text = "*";
-			}
-			if ((cmbTackling.SelectedIndex >= 16) & (cmbBravery.SelectedIndex >= 16) & (cmbDecisions.SelectedIndex >= 16))
-			{
-				frmWEPES.lblSliding.ForeColor = Color.Yellow;
-				frmWEPES.lblSliding.Text = "*";
-			}
-			if ((cmbPosition.SelectedIndex == 0) & (cmbInfluence.SelectedIndex >= 16) & (cmbTeamwork.SelectedIndex >= 16))
-			{
-				frmWEPES.lblBackLineControl.ForeColor = Color.Yellow;
-				frmWEPES.lblBackLineControl.Text = "*";
-			}
-			if (cmbLongThrows.SelectedIndex >= 16)
-			{
-				frmWEPES.lblLongThrow.ForeColor = Color.Yellow;
-				frmWEPES.lblLongThrow.Text = "*";
-			}
-			frmWEPES.ShowDialog();
 		}
-	}
 
-	private void btnReset_Click(object sender, EventArgs e)
-	{
-		cmbPosition.SelectedIndex = 0;
-		cmbCorners.SelectedIndex = 9;
-		cmbCrossing.SelectedIndex = 9;
-		cmbDribbling.SelectedIndex = 9;
-		cmbFinishing.SelectedIndex = 9;
-		cmbFirstTouch.SelectedIndex = 9;
-		cmbFreeKicks.SelectedIndex = 9;
-		cmbHeading.SelectedIndex = 9;
-		cmbLongShots.SelectedIndex = 9;
-		cmbLongThrows.SelectedIndex = 9;
-		cmbMarking.SelectedIndex = 9;
-		cmbPassing.SelectedIndex = 9;
-		cmbPenaltyTaking.SelectedIndex = 9;
-		cmbTackling.SelectedIndex = 9;
-		cmbTechnique.SelectedIndex = 9;
-		cmbAggression.SelectedIndex = 9;
-		cmbAnticipation.SelectedIndex = 9;
-		cmbBravery.SelectedIndex = 9;
-		cmbComposure.SelectedIndex = 9;
-		cmbConcentration.SelectedIndex = 9;
-		cmbCreativity.SelectedIndex = 9;
-		cmbDecisions.SelectedIndex = 9;
-		cmbDetermination.SelectedIndex = 9;
-		cmbFlair.SelectedIndex = 9;
-		cmbInfluence.SelectedIndex = 9;
-		cmbOffTheBall.SelectedIndex = 9;
-		cmbPositioning.SelectedIndex = 9;
-		cmbTeamwork.SelectedIndex = 9;
-		cmbWorkRate.SelectedIndex = 9;
-		cmbAcceleration.SelectedIndex = 9;
-		cmbAgility.SelectedIndex = 9;
-		cmbBalance.SelectedIndex = 9;
-		cmbJumping.SelectedIndex = 9;
-		cmbNaturalFitness.SelectedIndex = 9;
-		cmbPace.SelectedIndex = 9;
-		cmbStamina.SelectedIndex = 9;
-		cmbStrength.SelectedIndex = 9;
-		cmbPreferredFoot.SelectedIndex = 0;
-		frmWEPES.ForeColor = Color.Empty;
-		frmWEPES.lblAttack.Text = "";
-		frmWEPES.lblDefense.Text = "";
-		frmWEPES.lblBodyBalance.Text = "";
-		frmWEPES.lblAcceleration.Text = "";
-		frmWEPES.lblTopSpeed.Text = "";
-		frmWEPES.lblStamina.Text = "";
-		frmWEPES.lblShortPassSpeed.Text = "";
-		frmWEPES.lblShortPassPrecision.Text = "";
-		frmWEPES.lblDribbleSpeed.Text = "";
-		frmWEPES.lblDribblePrecision.Text = "";
-		frmWEPES.lblAgility.Text = "";
-		frmWEPES.lblResponse.Text = "";
-		frmWEPES.lblMentality.Text = "";
-		frmWEPES.lblAggressiveness.Text = "";
-		frmWEPES.lblTechnique.Text = "";
-		frmWEPES.lblJump.Text = "";
-		frmWEPES.lblHeading.Text = "";
-		frmWEPES.lblBend.Text = "";
-		frmWEPES.lblFreeKickPrecision.Text = "";
-		frmWEPES.lblShotTechnique.Text = "";
-		frmWEPES.lblShotPower.Text = "";
-		frmWEPES.lblShotPrecision.Text = "";
-		frmWEPES.lblLongPassSpeed.Text = "";
-		frmWEPES.lblLongPassPrecision.Text = "";
-		frmWEPES.lblSecondFootAccuracy.Text = "";
-		frmWEPES.lblStabilityOfCondition.Text = "";
-		frmWEPES.lblCooperation.Text = "";
-		frmWEPES.lblGoalKeeperSkill.Text = "50";
-		frmWEPES.lblStabilityOfPlay.Text = "";
-		frmWEPES.lblSecondFootFrequency.Text = "";
-		frmWEPES.lblSliding.Text = "";
-		frmWEPES.lblBackLineControl.Text = "";
-		frmWEPES.lblManMarking.Text = "";
-		frmWEPES.lblOutside.Text = "";
-		frmWEPES.lblCentrePlayer.Text = "";
-		frmWEPES.lblSidePlayer.Text = "";
-		frmWEPES.lblDirectPlay.Text = "";
-		frmWEPES.lblLongThrow.Text = "";
-		frmWEPES.lblShoot1On1.Text = "";
-		frmWEPES.lblPKKicker.Text = "";
-		frmWEPES.lblCovering.Text = "";
-		frmWEPES.lblPasser.Text = "";
-		frmWEPES.lblCommander.Text = "";
-		frmWEPES.lblStriker.Text = "";
-		frmWEPES.lblLinePositioning.Text = "";
-		frmWEPES.lblDashIn.Text = "";
-		frmWEPES.lblPositioning.Text = "";
-		frmWEPES.lblHoldingUpTheBall.Text = "";
-		frmWEPES.lblKeepDribble.Text = "";
-		frmWEPES.lblDribbler.Text = "";
-		frmWEPES.lblMiddleShot.Text = "";
-	}
+		private void btnReset_Click(object sender, EventArgs e)
+		{
+			cmbPosition.SelectedIndex = 0;
+			cmbCorners.SelectedIndex = 9;
+			cmbCrossing.SelectedIndex = 9;
+			cmbDribbling.SelectedIndex = 9;
+			cmbFinishing.SelectedIndex = 9;
+			cmbFirstTouch.SelectedIndex = 9;
+			cmbFreeKicks.SelectedIndex = 9;
+			cmbHeading.SelectedIndex = 9;
+			cmbLongShots.SelectedIndex = 9;
+			cmbLongThrows.SelectedIndex = 9;
+			cmbMarking.SelectedIndex = 9;
+			cmbPassing.SelectedIndex = 9;
+			cmbPenaltyTaking.SelectedIndex = 9;
+			cmbTackling.SelectedIndex = 9;
+			cmbTechnique.SelectedIndex = 9;
+			cmbAggression.SelectedIndex = 9;
+			cmbAnticipation.SelectedIndex = 9;
+			cmbBravery.SelectedIndex = 9;
+			cmbComposure.SelectedIndex = 9;
+			cmbConcentration.SelectedIndex = 9;
+			cmbCreativity.SelectedIndex = 9;
+			cmbDecisions.SelectedIndex = 9;
+			cmbDetermination.SelectedIndex = 9;
+			cmbFlair.SelectedIndex = 9;
+			cmbInfluence.SelectedIndex = 9;
+			cmbOffTheBall.SelectedIndex = 9;
+			cmbPositioning.SelectedIndex = 9;
+			cmbTeamwork.SelectedIndex = 9;
+			cmbWorkRate.SelectedIndex = 9;
+			cmbAcceleration.SelectedIndex = 9;
+			cmbAgility.SelectedIndex = 9;
+			cmbBalance.SelectedIndex = 9;
+			cmbJumping.SelectedIndex = 9;
+			cmbNaturalFitness.SelectedIndex = 9;
+			cmbPace.SelectedIndex = 9;
+			cmbStamina.SelectedIndex = 9;
+			cmbStrength.SelectedIndex = 9;
+			cmbPreferredFoot.SelectedIndex = 0;
+			frmWEPES.ForeColor = Color.Empty;
+			frmWEPES.lblAttack.Text = "";
+			frmWEPES.lblDefense.Text = "";
+			frmWEPES.lblBodyBalance.Text = "";
+			frmWEPES.lblAcceleration.Text = "";
+			frmWEPES.lblTopSpeed.Text = "";
+			frmWEPES.lblStamina.Text = "";
+			frmWEPES.lblShortPassSpeed.Text = "";
+			frmWEPES.lblShortPassPrecision.Text = "";
+			frmWEPES.lblDribbleSpeed.Text = "";
+			frmWEPES.lblDribblePrecision.Text = "";
+			frmWEPES.lblAgility.Text = "";
+			frmWEPES.lblResponse.Text = "";
+			frmWEPES.lblMentality.Text = "";
+			frmWEPES.lblAggressiveness.Text = "";
+			frmWEPES.lblTechnique.Text = "";
+			frmWEPES.lblJump.Text = "";
+			frmWEPES.lblHeading.Text = "";
+			frmWEPES.lblBend.Text = "";
+			frmWEPES.lblFreeKickPrecision.Text = "";
+			frmWEPES.lblShotTechnique.Text = "";
+			frmWEPES.lblShotPower.Text = "";
+			frmWEPES.lblShotPrecision.Text = "";
+			frmWEPES.lblLongPassSpeed.Text = "";
+			frmWEPES.lblLongPassPrecision.Text = "";
+			frmWEPES.lblSecondFootAccuracy.Text = "";
+			frmWEPES.lblStabilityOfCondition.Text = "";
+			frmWEPES.lblCooperation.Text = "";
+			frmWEPES.lblGoalKeeperSkill.Text = "50";
+			frmWEPES.lblStabilityOfPlay.Text = "";
+			frmWEPES.lblSecondFootFrequency.Text = "";
+			frmWEPES.lblSliding.Text = "";
+			frmWEPES.lblBackLineControl.Text = "";
+			frmWEPES.lblManMarking.Text = "";
+			frmWEPES.lblOutside.Text = "";
+			frmWEPES.lblCentrePlayer.Text = "";
+			frmWEPES.lblSidePlayer.Text = "";
+			frmWEPES.lblDirectPlay.Text = "";
+			frmWEPES.lblLongThrow.Text = "";
+			frmWEPES.lblShoot1On1.Text = "";
+			frmWEPES.lblPKKicker.Text = "";
+			frmWEPES.lblCovering.Text = "";
+			frmWEPES.lblPasser.Text = "";
+			frmWEPES.lblCommander.Text = "";
+			frmWEPES.lblStriker.Text = "";
+			frmWEPES.lblLinePositioning.Text = "";
+			frmWEPES.lblDashIn.Text = "";
+			frmWEPES.lblPositioning.Text = "";
+			frmWEPES.lblHoldingUpTheBall.Text = "";
+			frmWEPES.lblKeepDribble.Text = "";
+			frmWEPES.lblDribbler.Text = "";
+			frmWEPES.lblMiddleShot.Text = "";
+		}
 
-	private void btnExit_Click(object sender, EventArgs e)
-	{
-		ProjectData.EndApp();
+		private void btnExit_Click(object sender, EventArgs e)
+		{
+            this.Close();
+        }
 	}
 }

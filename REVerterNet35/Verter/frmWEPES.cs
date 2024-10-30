@@ -158,42 +158,42 @@ namespace Verter
 
             string position = lblPosition.Text == "ST/CF" ? "CF" : lblPosition.Text;
             string s = $@"Foot: {foot}
-    Positions: {position}*
+Positions: {position}*
 
-    STATS:
-    Attack: {lblAttack.Text}
-    Defence: {lblDefense.Text}
-    Balance: {lblBodyBalance.Text}
-    Stamina: {lblStamina.Text}
-    Top Speed: {lblTopSpeed.Text}
-    Acceleration: {lblAcceleration.Text}
-    Response: {lblResponse.Text}
-    Agility: {lblAgility.Text}
-    Dribble Accuracy: {lblDribblePrecision.Text}
-    Dribble Speed: {lblDribbleSpeed.Text}
-    Short Pass Accuracy: {lblShortPassPrecision.Text}
-    Short Pass Speed: {lblShortPassSpeed.Text}
-    Long Pass Accuracy: {lblLongPassPrecision.Text}
-    Long Pass Speed: {lblLongPassSpeed.Text}
-    Shot Accuracy: {lblShotPrecision.Text}
-    Shot Power: {lblShotPower.Text}
-    Shot Technique: {lblShotTechnique.Text}
-    Free Kick Accuracy: {lblFreeKickPrecision.Text}
-    Curling: {lblBend.Text}
-    Header: {lblHeading.Text}
-    Jump: {lblJump.Text}
-    Technique: {lblTechnique.Text}
-    Aggression: {lblAggressiveness.Text}
-    Mentality: {lblMentality.Text}
-    Keeper Skills: {lblGoalKeeperSkill.Text}
-    Teamwork: {lblCooperation.Text}
-    Consistency: {lblStabilityOfPlay.Text}
-    Condition/Fitness: {lblStabilityOfCondition.Text}
-    Weak Foot Accuracy: {lblSecondFootAccuracy.Text}
-    Weak Foot Frequency: {lblSecondFootFrequency.Text}
+STATS:
+Attack: {lblAttack.Text}
+Defence: {lblDefense.Text}
+Balance: {lblBodyBalance.Text}
+Stamina: {lblStamina.Text}
+Top Speed: {lblTopSpeed.Text}
+Acceleration: {lblAcceleration.Text}
+Response: {lblResponse.Text}
+Agility: {lblAgility.Text}
+Dribble Accuracy: {lblDribblePrecision.Text}
+Dribble Speed: {lblDribbleSpeed.Text}
+Short Pass Accuracy: {lblShortPassPrecision.Text}
+Short Pass Speed: {lblShortPassSpeed.Text}
+Long Pass Accuracy: {lblLongPassPrecision.Text}
+Long Pass Speed: {lblLongPassSpeed.Text}
+Shot Accuracy: {lblShotPrecision.Text}
+Shot Power: {lblShotPower.Text}
+Shot Technique: {lblShotTechnique.Text}
+Free Kick Accuracy: {lblFreeKickPrecision.Text}
+Curling: {lblBend.Text}
+Header: {lblHeading.Text}
+Jump: {lblJump.Text}
+Technique: {lblTechnique.Text}
+Aggression: {lblAggressiveness.Text}
+Mentality: {lblMentality.Text}
+Keeper Skills: {lblGoalKeeperSkill.Text}
+Teamwork: {lblCooperation.Text}
+Consistency: {lblStabilityOfPlay.Text}
+Condition/Fitness: {lblStabilityOfCondition.Text}
+Weak Foot Accuracy: {lblSecondFootAccuracy.Text}
+Weak Foot Frequency: {lblSecondFootFrequency.Text}
 
-    SPECIAL ABILITIES:
-    {specialAbilitiesString}";
+SPECIAL ABILITIES:
+{specialAbilitiesString}";
 
             Clipboard.SetText(s);
         
